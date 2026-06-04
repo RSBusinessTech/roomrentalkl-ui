@@ -1,0 +1,194 @@
+<header class="main-header">
+
+  <div class="header-container">
+
+    <!-- LOGO -->
+    <a routerLink="/" class="logo-wrapper">
+      <img
+        src="assets/icons/logoRoomRentalKL.jpg"
+        alt="RoomRentalKL - Rooms For Rent Kuala Lumpur">
+    </a>
+
+    <!-- MOBILE TOGGLE BUTTON -->
+    <button class="menu-toggle" (click)="menuOpen = !menuOpen">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- NAVIGATION -->
+    <nav class="desktop-nav" [class.mobile-open]="menuOpen">
+
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+     Home
+    </a>
+
+    <!-- ROOMS -->
+    <div class="nav-dropdown" [class.open]="openRooms">
+      <a (click)="openRooms = !openRooms">
+       Rooms <i class="fas fa-chevron-down"></i>
+      </a>
+      <div class="dropdown-menu">
+    
+        <!-- Core -->
+        <a routerLink="/rooms-for-rent-kl">All Rooms for Rent KL</a>
+        <a routerLink="/master-room-rental-kl">Master Rooms KL</a>
+        <a routerLink="/medium-room-rental-kl">Medium Rooms KL</a>
+        <a routerLink="/single-room-rental-kl">Single Rooms KL</a>
+        <a routerLink="/studio-room-rental-kl">Studio Rooms KL</a>
+    
+        <!-- 🔥 NEW SEO HIGH VALUE -->
+        <a routerLink="/cheap-rooms-kl">Cheap Rooms KL</a>
+        <a routerLink="/budget-rooms-kl">Budget Rooms KL</a>
+        <a routerLink="/shared-rooms-kl">Sharing Room KL</a>
+        <a routerLink="/furnished-rooms-kl">Fully Furnished Rooms KL</a>
+        <a routerLink="/semi-furnished-rooms-kl">Semi Furnished Rooms KL</a>
+        <a routerLink="/unfurnished-rooms-kl">Unfurnished Rooms KL</a>
+    
+      </div>
+    </div>
+    
+    <!-- PROPERTY TYPE -->
+    <div class="nav-dropdown" [class.open]="openProperty">
+     <a (click)="openProperty = !openProperty">
+       Property Type <i class="fas fa-chevron-down"></i>
+     </a>
+    
+      <div class="dropdown-menu">
+    
+        <!-- Core -->
+        <a routerLink="/condo-room-rental-kl">Condo Rooms KL</a>
+        <a routerLink="/apartment-room-rental-kl">Apartment Rooms KL</a>
+        <a routerLink="/landed-house-room-rental-kl">Landed House Rooms KL</a>
+        <a routerLink="/co-living-kl">Co-Living Rooms KL</a>
+        <a routerLink="/service-residence-kl">Service Residence KL</a>
+    
+        <!-- 🔥 SEO IMPORTANT ADDITIONS -->
+        <a routerLink="/soho-kl">SOHO Units KL</a>
+        <a routerLink="/serviced-apartment-kl">Serviced Apartments KL</a>
+        <a routerLink="/studio-unit-kl">Studio Units KL</a>
+    
+      </div>
+    </div>
+    
+    <!-- NEAR TRANSIT -->
+    <div class="nav-dropdown" [class.open]="openTransit">
+      <a (click)="openTransit = !openTransit">
+       Near Transit <i class="fas fa-chevron-down"></i>
+      </a>
+      <div class="dropdown-menu">
+    
+        <a routerLink="/room-near-mrt-kl">Near MRT</a>
+        <a routerLink="/room-near-lrt-kl">Near LRT</a>
+        <a routerLink="/room-near-monorail-kl">Near Monorail</a>
+        <a routerLink="/room-near-ktm-kl">Near KTM</a>
+    
+        <!-- 🔥 NEW HIGH TRAFFIC -->
+        <a routerLink="/room-near-kl-sentral">Near KL Sentral</a>
+        <a routerLink="/room-near-klcc-mrt">Near KLCC MRT</a>
+        <a routerLink="/room-near-bukit-bintang-mrt">Near Bukit Bintang MRT</a>
+        <a routerLink="/room-near-tun-razak-exchange">Near TRX MRT</a>
+        <a routerLink="/room-near-muzium-negara">Near Muzium Negara MRT</a>
+        <a routerLink="/room-near-pasar-seni">Near Pasar Seni LRT</a>
+        <a routerLink="/room-near-ampang-park-mrt">Near Ampang Park MRT</a>
+      </div>
+    </div>
+    
+    <!-- AREAS -->
+    <div class="nav-dropdown" [class.open]="openAreas">
+     <a (click)="openAreas = !openAreas">
+       Areas <i class="fas fa-chevron-down"></i>
+     </a>
+    
+      <div class="dropdown-menu">
+    
+        <!-- CORE KL -->
+        <a routerLink="/room-rental-klcc">KLCC</a>
+        <a routerLink="/room-rental-bukit-bintang">Bukit Bintang</a>
+        <a routerLink="/room-rental-mont-kiara">Mont Kiara</a>
+        <a routerLink="/room-rental-bangsar">Bangsar</a>
+        <a routerLink="/room-rental-cheras">Cheras</a>
+        <a routerLink="/room-rental-ampang">Ampang</a>
+        <a routerLink="/room-rental-bukit-jalil">Bukit Jalil</a>
+        <a routerLink="/room-rental-setapak">Setapak</a>
+        <a routerLink="/room-rental-kepong">Kepong</a>
+        <a routerLink="/room-rental-kl-sentral">KL Sentral</a>
+    
+        <!-- 🔥 HIGH TRAFFIC ADDITIONS -->
+        <a routerLink="/room-rental-damansara">Damansara</a>
+        <a routerLink="/room-rental-bandar-utama">Bandar Utama</a>
+        <a routerLink="/room-rental-pj">Petaling Jaya (PJ)</a>
+        <a routerLink="/room-rental-sunway">Sunway</a>
+        <a routerLink="/room-rental-subang-jaya">Subang Jaya</a>
+        <a routerLink="/room-rental-usj">USJ</a>
+    
+        <!-- 🔥 OLD KL HIGH SEO AREAS -->
+        <a routerLink="/room-rental-brickfields">Brickfields</a>
+        <a routerLink="/room-rental-pudu">Pudu</a>
+        <a routerLink="/room-rental-chow-kit">Chow Kit</a>
+        <a routerLink="/room-rental-seputeh">Seputeh</a>
+    
+        <!-- 🔥 EXPAT + PREMIUM -->
+        <a routerLink="/room-rental-ttdi">TTDI</a>
+    
+        <!-- 🔥 FUTURE GROWTH -->
+        <a routerLink="/room-rental-cyberjaya">Cyberjaya</a>
+        <a routerLink="/room-rental-putrajaya">Putrajaya</a>
+    
+      </div>
+    </div>
+    
+    <a routerLink="/agents">Agents</a>
+    <a routerLink="/blog">Blog</a>
+    <a routerLink="/contact">Contact</a>
+    
+     <!-- MOBILE ACTIONS -->
+     <div class="mobile-actions">
+     
+       <a routerLink="/room-request" class="mobile-btn request" title = "Submit your Requirement">
+         <i class="fas fa-home"></i>
+         <span>Request a Room</span>
+       </a>
+     
+      <a href="https://wa.me/601114278964"
+         class="mobile-btn whatsapp-btn"
+         title="Chat on WhatsApp"
+         target="_blank">
+     
+        <i class="fab fa-whatsapp"></i>
+         <span>WhatsApp</span>
+      </a>
+     
+       <a routerLink="/login" class="mobile-btn login" title="Agent Login">
+         <i class="far fa-user"></i>
+         <span>Login</span>
+       </a>
+     
+     
+     </div>
+    
+    </nav>
+
+    <!-- DESKTOP RIGHT SIDE -->
+    <div class="header-actions">
+      <a routerLink="/room-request" class="request-btn" title = "Submit your Requirement">
+        Request a Room
+      </a>
+
+      <a href="https://wa.me/601114278964"
+         class="mobile-btn whatsapp-btn"
+         title="Chat on WhatsApp"
+         target="_blank">
+      
+        <i class="fab fa-whatsapp"></i>
+        <span>WhatsApp</span>   
+      </a>
+
+      <a routerLink="/login" class="login-btn" title="Agent Login">
+        <i class="far fa-user"></i>
+        Login
+      </a>
+
+    </div>
+
+  </div>
+
+</header>
