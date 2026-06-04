@@ -10,7 +10,7 @@
 .footer-top{
   max-width:1400px;
   margin:auto;
-  padding:60px 30px;
+  padding:20px 30px;
 
   display:grid;
   grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;
