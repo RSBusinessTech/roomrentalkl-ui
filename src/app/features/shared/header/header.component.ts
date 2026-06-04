@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+   menuOpen = false;
+
    openRooms = false;
    openProperty = false;
    openTransit = false;
