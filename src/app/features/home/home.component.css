@@ -1,0 +1,287 @@
+.hero{
+  position:relative;
+  min-height:35vh;
+  padding:0px 0 20px;
+  background:url('/assets/images/hero.jpg')
+  center center/cover no-repeat;
+
+  display:flex;
+  align-items:center;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(
+    90deg,
+    rgba(3,15,45,.92),
+    rgba(3,15,45,.55)
+  );
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+
+  width:100%;
+  max-width:1400px;
+
+  margin:auto;
+  padding:40px;
+}
+
+.hero-text{
+  max-width:650px;
+}
+
+.hero-text h1{
+  color:#fff;
+  font-weight:1200;
+  font-size:40px;
+  /* line-height:1.5; */
+  margin-bottom:0;
+}
+
+.hero-text p{
+  color:#e5e7eb;
+  font-size:16px;
+  line-height:1.7;
+}
+
+/* SEARCH */
+
+.search-box{
+  margin-top:25px;
+
+  background:#fff;
+  border-radius:18px;
+
+  padding:10px;
+
+  display:flex;
+  align-items:center;
+
+  gap:0;
+
+  box-shadow:
+  0 20px 50px rgba(0,0,0,.18);
+}
+
+.search-field{
+  flex:1;
+
+  display:flex;
+  align-items:center;
+
+  padding:0 14px;
+  min-width:0;
+}
+
+.search-field i{
+  color:#64748b;
+  margin-right:10px;
+  font-size:14px;
+}
+
+.search-field select,
+.search-field input{
+  width:100%;
+  height:52px;
+
+  border:none;
+  outline:none;
+
+  background:none;
+
+  font-size:14px;
+  color:#111827;
+}
+
+.divider{
+  width:1px;
+  height:36px;
+  background:#e5e7eb;
+}
+
+.search-btn{
+  height:52px;
+
+  border:none;
+  border-radius:12px;
+
+  background:#0A4CC5;
+  color:#fff;
+
+  padding:0 28px;
+
+  font-weight:600;
+  cursor:pointer;
+
+  white-space:nowrap;
+}
+
+.search-btn:hover{
+  background:#083a99;
+}
+
+.hero-features{
+  margin-top:25px;
+  gap:20px;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(4,1fr);
+}
+
+.feature{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.icon{
+  border-radius:50%;
+
+  background:#0A4CC5;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#fff;
+  width:44px;
+  height:44px;
+  font-size:16px;
+}
+
+.feature h4{
+  color:#fff;
+  margin:0 0 5px;
+  font-size:18px;
+}
+
+.feature span{
+  color:#d1d5db;
+  font-size:14px;
+}
+
+@media (max-width:1024px){
+
+  .hero-text h1{
+    font-size:48px;
+  }
+
+  .search-box{
+    grid-template-columns:
+    repeat(2,1fr);
+  }
+
+  .search-btn{
+    height:60px;
+  }
+
+  .hero-features{
+    grid-template-columns:
+    repeat(2,1fr);
+  }
+}
+
+.currency-badge {
+  background: grey;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  margin-right: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* Desktop */
+.price-group{
+  display: flex;
+  flex: 2;          /* takes space similar to two fields */
+  min-width: 0;
+}
+
+.price-group .price-field{
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+
+  /* KEEP SEARCH BOX STACKED */
+  .search-box {
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  /* NORMAL FIELDS (mobile only styling) */
+  .search-field {
+    width: 100%;
+    flex: none;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 10px 12px;
+  }
+
+  /* 🔥 IMPORTANT: ONLY PRICE GROUP ON MOBILE */
+  .price-group {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .price-group .search-field {
+    /* override ONLY inside price group */
+    flex: 1;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 10px 12px;
+  }
+
+  .price-group input {
+    height: 42px;
+    font-size: 10px;
+  }
+
+  /* BUTTON */
+  .search-btn {
+    width: 100%;
+    height: 48px;
+    border-radius: 12px;
+  }
+  .currency-badge {
+  font-size: 8px;
+  font-weight: 400;
+ }
+}
+/* Scroll Reveal */
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .8s ease;
+  will-change:transform, opacity;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Delays */
+
+.delay-1{ transition-delay:.1s; }
+.delay-2{ transition-delay:.2s; }
+.delay-3{ transition-delay:.3s; }
+.delay-4{ transition-delay:.4s; }
+.delay-5{ transition-delay:.5s; }
+
