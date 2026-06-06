@@ -335,9 +335,12 @@
   }
 
   /* make parent clickable full width */
-  .nav-dropdown > a{
+nav-dropdown > a{
     width:100%;
-    justify-content:space-between;
+  }
+
+  .nav-dropdown > a i{
+    margin-left:8px;
   }
 }
 
