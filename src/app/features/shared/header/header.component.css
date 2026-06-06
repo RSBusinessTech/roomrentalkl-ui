@@ -132,6 +132,7 @@
 /* REQUEST A ROOM */
 .request-btn{
   background: linear-gradient(135deg, #0A4CC5, #1E5BFF);
+  /* background: linear-gradient(135deg, #0A4CC5, #1E5BFF); */
   color: #ffffff;
 
   padding: 10px 16px;

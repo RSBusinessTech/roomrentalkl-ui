@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { AREAS } from '../data/areas';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
+
 export class HeaderComponent implements OnInit {
 
    menuOpen = false;
@@ -13,6 +15,8 @@ export class HeaderComponent implements OnInit {
    openProperty = false;
    openTransit = false;
    openAreas = false;
+
+   areas = AREAS;
 
    toggleMenu(section: string) {
 

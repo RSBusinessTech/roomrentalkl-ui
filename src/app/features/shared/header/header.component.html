@@ -100,38 +100,11 @@
     
       <div class="dropdown-menu">
     
-        <!-- CORE KL -->
-        <a routerLink="/room-rental-klcc">KLCC</a>
-        <a routerLink="/room-rental-bukit-bintang">Bukit Bintang</a>
-        <a routerLink="/room-rental-mont-kiara">Mont Kiara</a>
-        <a routerLink="/room-rental-bangsar">Bangsar</a>
-        <a routerLink="/room-rental-cheras">Cheras</a>
-        <a routerLink="/room-rental-ampang">Ampang</a>
-        <a routerLink="/room-rental-bukit-jalil">Bukit Jalil</a>
-        <a routerLink="/room-rental-setapak">Setapak</a>
-        <a routerLink="/room-rental-kepong">Kepong</a>
-        <a routerLink="/room-rental-kl-sentral">KL Sentral</a>
-    
-        <!-- 🔥 HIGH TRAFFIC ADDITIONS -->
-        <a routerLink="/room-rental-damansara">Damansara</a>
-        <a routerLink="/room-rental-bandar-utama">Bandar Utama</a>
-        <a routerLink="/room-rental-pj">Petaling Jaya (PJ)</a>
-        <a routerLink="/room-rental-sunway">Sunway</a>
-        <a routerLink="/room-rental-subang-jaya">Subang Jaya</a>
-        <a routerLink="/room-rental-usj">USJ</a>
-    
-        <!-- 🔥 OLD KL HIGH SEO AREAS -->
-        <a routerLink="/room-rental-brickfields">Brickfields</a>
-        <a routerLink="/room-rental-pudu">Pudu</a>
-        <a routerLink="/room-rental-chow-kit">Chow Kit</a>
-        <a routerLink="/room-rental-seputeh">Seputeh</a>
-    
-        <!-- 🔥 EXPAT + PREMIUM -->
-        <a routerLink="/room-rental-ttdi">TTDI</a>
-    
-        <!-- 🔥 FUTURE GROWTH -->
-        <a routerLink="/room-rental-cyberjaya">Cyberjaya</a>
-        <a routerLink="/room-rental-putrajaya">Putrajaya</a>
+       <a
+       *ngFor="let area of areas"
+       [routerLink]="area.route">
+        {{ area.shortName ? area.name + ' (' + area.shortName + ')' : area.name }}
+       </a>
     
       </div>
     </div>

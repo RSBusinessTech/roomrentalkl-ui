@@ -169,6 +169,138 @@
           <span>Your privacy matters</span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="popular-areas">
+
+  <div class="section-header reveal delay-1">
+
+    <div>
+
+      <h2>Popular Areas in KL</h2>
+
+      <p>Explore the most searched rental locations.</p>
+
+    </div>
+
+    <a
+      routerLink="/areas"
+      class="view-all">
+
+      View all areas
+
+      <i class="fas fa-chevron-right"></i>
+
+    </a>
+
+  </div>
+
+  <!-- CARDS -->
+
+<div class="areas-section reveal delay-2">
+
+  <button
+    class="nav-btn left"
+    (click)="scrollAreas('left')">
+
+    <i class="fas fa-chevron-left"></i>
+
+  </button>
+
+  <div
+    class="areas-wrapper"
+    #areasContainer>
+
+    <a
+      class="area-card"
+      *ngFor="let area of featuredAreas"
+      [routerLink]="area.route">
+
+      <img
+        [src]="area.image"
+        [alt]="area.name + ' Rooms for Rent Kuala Lumpur'">
+
+      <div class="area-overlay"></div>
+
+      <div class="area-content">
+
+        <h3>
+          {{ area.shortName || area.name }}
+        </h3>
+
+        <span>
+          {{ area.listings }} listings
+        </span>
+
+      </div>
+
+    </a>
+
+  </div>
+
+  <button
+    class="nav-btn right"
+    (click)="scrollAreas('right')">
+
+    <i class="fas fa-chevron-right"></i>
+
+  </button>
+
+</div>
+
+  <!-- STATS -->
+
+  <div class="stats-container reveal delay-3">
+
+    <div class="stat">
+
+      <i class="fas fa-home"></i>
+
+      <div>
+        <h3>1,200+</h3>
+        <span>Active Listings</span>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="stat">
+
+      <i class="fas fa-user-check"></i>
+
+      <div>
+        <h3>500+</h3>
+        <span>Verified Agents</span>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="stat">
+
+      <i class="fas fa-users"></i>
+
+      <div>
+        <h3>3,000+</h3>
+        <span>Happy Tenants</span>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="stat">
+
+      <i class="fas fa-shield-alt"></i> 
+
+      <div>
+        <h3>100%</h3>
+        <span>Secure Platform</span>
+      </div>
 
     </div>
 
