@@ -530,7 +530,7 @@
 
   .stat{
     min-width:unset;
-    width:100%;
+    width:90%;
 
     justify-content:flex-start;
     align-items:center;
@@ -543,16 +543,16 @@
   }
 
   .stat i{
-    font-size:5px;
+    font-size:22px;
   }
 
   .stat h3{
-    font-size:16px;
+    font-size:22px;
     margin:0;
   }
 
   .stat span{
-    font-size:2px;
+    font-size:12px;
   }
 
   .divider{
@@ -621,6 +621,13 @@
   font-size:16px;
 }
 @media(max-width:768px){
+  /* .nav-btn{
+    display:none;
+  }
+
+  .areas-wrapper{
+    padding:0;
+  } */
  .areas-wrapper{
     padding:0 10px;
     gap:12px;
