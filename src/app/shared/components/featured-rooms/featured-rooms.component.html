@@ -1,0 +1,227 @@
+<section class="featured">
+  <!-- HEADER -->
+  <div class="featured-header reveal delay-1" >
+    <h2>
+      Featured Rooms in {{ area?.name }}
+    </h2>
+    <a
+      class="view-all"
+      (click)="viewAll()">
+      View All Rooms →
+    </a>
+  </div>
+
+  <!-- ROOMS GRID -->
+  <div class="rooms-grid">
+    <div
+      class="room-card"
+      *ngFor="let room of rooms"
+      (click)="openRoom(room.slug)">
+
+      <!-- IMAGE -->
+      <div class="image-wrapper">
+        <span
+          *ngIf="room.featured"
+          class="featured-badge">
+          FEATURED
+        </span>
+        <img
+          [src]="getCurrentImage(room)"
+          [alt]="room.title"
+          class="room-image"
+          (click)="openGallery(room, $event)">
+        <!-- PREV -->
+        <button
+          *ngIf="room.images && room.images.length > 1"
+          class="nav-btn left"
+          (click)="prevImage(room, $event)">
+          ❮
+        </button>
+        <!-- NEXT -->
+        <button
+          *ngIf="room.images && room.images.length > 1"
+          class="nav-btn right"
+          (click)="nextImage(room, $event)">
+          ❯
+        </button>
+        <!-- DOTS -->
+		
+        <div
+          class="image-dots"
+          *ngIf="room.images && room.images.length > 1">
+          <span
+            *ngFor="let img of room.images; let i=index"
+            [class.active]="i === (room.currentImageIndex || 0)">
+          </span>
+        </div>
+
+        <!-- PRICE -->
+        <div class="price-bar">
+          <div class="price">
+            RM {{ room.price | number }}
+            <span>/month</span>
+          </div>
+          <div class="room-type">
+            {{ room.roomType }}
+          </div>
+        </div>
+       </div>
+
+      <!-- CONTENT -->
+      <div class="card-content">
+        <!-- AGENT -->
+        <div class="agent-section">
+          <img
+            [src]="room.agent && room.agent.avatar ? room.agent.avatar : 'assets/images/default-agent.png'"
+            class="agent-avatar">
+          <div class="agent-info">
+            <div class="agent-name">
+              {{ room.agent ? room.agent.name : '' }}
+               <span
+                 *ngIf="room.agent?.verified"
+                 class="verified-badge">
+                 <i class="fas fa-check"></i>
+               </span>
+            </div>
+            <div class="agency">
+              {{ room.agent ? room.agent.agencyName : '' }}
+            </div>
+          </div>
+        </div>
+
+        <!-- TITLE -->
+        <h3 class="property-title">
+          {{ room.title }}
+        </h3>
+
+        <!-- ADDRESS -->
+        <div class="address">
+          <i class="fas fa-map-marker-alt"></i>
+          {{ room.address }}
+        </div>
+
+        <!-- MRT -->
+        <div
+          class="mrt-distance"
+          *ngIf="room.distanceToMrt">
+          <i class="fas fa-subway"></i>
+          <strong>
+            {{ room.distanceToMrt }}
+          </strong>
+          <span *ngIf="room.mrtStationName">
+            from {{ room.mrtStationName }}
+          </span>
+        </div>
+
+        <!-- FEATURES -->
+        <div class="features-row">
+          <div class="feature feature-inline">
+            <i class="fas fa-bed"></i>
+            <small>{{ room.bedrooms || 0 }}</small>
+          </div>
+
+          <div class="feature">
+            <i class="fas fa-bath"></i>
+            <small>{{ room.bathrooms || 0 }}</small>
+          </div>
+
+           <div class="feature">
+            <i class="fas fa-car"></i>
+            <small>{{ room.carparks || 0 }}</small>
+          </div>
+
+          <div class="feature">
+            <i class="fas fa-couch"></i>
+            <small>{{ room.furnished }}</small>
+          </div>
+
+           <div class="feature">
+            <i class="fas fa-ruler-combined"></i>
+            <small>{{ room.sqft || 0 }}Sqft</small>
+          </div>
+        </div>
+
+        <!-- ACTIONS -->
+        <div class="action-row">
+          <button
+            class="details-btn"
+            (click)="openRoom(room.slug); $event.stopPropagation()">
+            View Details
+          </button>
+
+          <button
+            class="icon-btn"
+            (click)="share(room, $event)">
+            <i class="fas fa-share-alt"></i>
+          </button>
+
+          <button
+            class="icon-btn"
+            (click)="call(room, $event)">
+            <i class="fas fa-phone"></i>
+          </button>
+
+          <button
+            class="icon-btn whatsapp"
+            (click)="whatsapp(room, $event)">
+            <i class="fab fa-whatsapp"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================== -->
+  <!-- FULLSCREEN GALLERY -->
+  <!-- ===================================== -->
+  <div
+    class="gallery-modal"
+    *ngIf="showGallery"
+    (click)="closeGallery()">
+    <!-- CLOSE -->
+    <button
+      class="gallery-close"
+      (click)="closeGallery(); $event.stopPropagation()">
+      ✕
+    </button>
+
+    <!-- PREVIOUS -->
+    <button
+      *ngIf="galleryImages.length > 1"
+      class="gallery-nav gallery-prev"
+      (click)="galleryPrev($event)">
+      ❮
+    </button>
+
+    <!-- IMAGE -->
+    <div
+      class="gallery-content"
+      (click)="$event.stopPropagation()">
+      <img
+        [src]="selectedImage"
+        class="gallery-image">
+      <div class="gallery-counter">
+        {{ galleryIndex + 1 }} / {{ galleryImages.length }}
+      </div>
+    </div>
+
+    <!-- NEXT -->
+    <button
+      *ngIf="galleryImages.length > 1"
+      class="gallery-nav gallery-next"
+      (click)="galleryNext($event)">
+      ❯
+    </button>
+
+    <!-- THUMBNAILS -->
+    <div
+      class="gallery-thumbnails"
+      *ngIf="galleryImages.length > 1">
+      <img
+        *ngFor="let img of galleryImages; let i=index"
+        [src]="img"
+        [class.active]="i === galleryIndex"
+        (click)="selectGalleryImage(i); $event.stopPropagation()">
+    </div>
+  </div>
+</section>

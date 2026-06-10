@@ -1,0 +1,249 @@
+<div class="page">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="overlay"></div>
+    
+    <div class="hero-content">
+      <!-- Breadcrumb -->
+      <div class="breadcrumb reveal delay-1">
+        Home
+        <span>/</span>
+        Areas
+        <span>/</span>
+        {{ pageData?.area?.name }}
+      </div>
+      <!-- Hero Text -->
+      <div class="hero-text reveal delay-2">
+        <h1>
+          Rooms for Rent
+          <br>
+          in {{ pageData?.area?.name }}
+        </h1>
+        <p>
+          Discover the best rooms for rent in {{ pageData.area.name }}, featuring master rooms, single rooms, medium rooms, studio units and shared accommodations. 
+          All listings are fully furnished and budget-friendly, located near MRT stations, business hubs, shopping malls and key transport 
+          links in {{ pageData.area.name }} for convenient city living.
+        </p>
+      </div>
+
+      <!-- Search Box -->
+      <div class="search-box reveal delay-3">
+        <!-- <div class="search-field">
+          <i class="fas fa-search"></i>
+          <input
+            type="text"
+            placeholder="Search room, building..."
+          >
+        </div> -->
+       
+        <div class="search-field">
+          <select [(ngModel)]="filters.roomType">
+             <option value="All Room Types">All Room Types</option>
+             <option value="Master Rooms">Master Rooms</option>
+             <option value="Medium Rooms">Medium Rooms</option>
+             <option value="Single Rooms">Single Rooms</option>
+             <option value="Studio Rooms">Studio Rooms</option>
+             <option value="Cheap Rooms">Cheap Rooms</option>
+             <option value="Budget Rooms">Budget Rooms</option>
+             <option value="Sharing Room">Sharing Room</option>
+             <option value="Fully Furnished Rooms">Fully Furnished Rooms</option>
+             <option value="Semi Furnished Rooms">Semi Furnished Rooms</option>
+             <option value="Unfurnished Rooms">Unfurnished Rooms</option>
+           </select>
+         </div>
+        
+        <div class="search-field">
+          <select [(ngModel)]="filters.propertyType">
+            <option value="All Property Types">All Property Types</option>
+            <option value="All Property Type">Condo Rooms</option>
+            <option value="Apartment Rooms">Apartment Rooms</option>
+            <option value="Landed House Rooms">Landed House Rooms</option>
+            <option value="Co-Living Rooms">Co-Living Rooms</option>
+            <option value="Service Residence Rooms">Service Residence Rooms</option>
+            <option value="SOHO Units Rooms">SOHO Units Rooms</option>
+            <option value="Serviced Apartments Room">Serviced Apartments Room</option>
+            <option value="Studio Units Rooms">Studio Units Rooms</option>
+          </select>
+        </div>
+
+        <div class="search-field">
+           <span class="currency-badge">RM</span>
+          <input
+            type="number"
+            [(ngModel)]="filters.minPrice"
+            placeholder="Min Price"
+          >
+        </div>
+       
+        <div class="search-field">
+           <span class="currency-badge">RM</span>
+          <input
+            type="number"
+            [(ngModel)]="filters.maxPrice"
+            placeholder="Max Price"
+          >
+        </div>
+       
+        <button class="search-btn" (click)="searchRooms()">
+          Search
+        </button>
+      </div>
+
+      <!-- Popular Searches -->
+      <div class="popular-searches reveal delay-4">
+        <span>Popular Searches:</span>
+        <a (click)="onQuickSearch('Master Rooms')">
+           Master Room {{ pageData?.area?.name }}
+        </a>
+        
+        <a (click)="onQuickSearch('Studio Rooms')">
+          Studio Room {{ pageData?.area?.name }}
+        </a>
+        
+        <a (click)="onQuickSearch('Fully Furnished Rooms')">
+          Fully Furnished Rooms
+        </a>
+        
+        <a (click)="onQuickSearch('Sharing Room')">
+          Sharing Room
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Room Categories -->
+  <section class="room-categories reveal delay-5">
+    <a
+      class="category-card"
+      href="javascript:void(0)"
+    >
+      <i class="fas fa-th-large"></i>
+      <span>
+        All Rooms
+      </span>
+    </a>
+
+     <a
+       class="category-card"
+       href="javascript:void(0)"
+     >
+       <i class="fas fa-bed"></i>
+       <span>
+         Master Room
+       </span>
+     </a>
+     <a
+       class="category-card"
+       href="javascript:void(0)"
+     >
+       <i class="fas fa-door-open"></i>
+       <span>
+         Medium Room
+       </span>
+     </a>
+     <a
+       class="category-card"
+       href="javascript:void(0)"
+     >
+       <i class="fas fa-user"></i>
+       <span>
+         Single Room
+       </span>
+     </a>
+     <a
+       class="category-card"
+       href="javascript:void(0)"
+     >
+       <i class="fas fa-home"></i>
+       <span>
+         Studio Room
+       </span>
+     </a>
+     <a
+       class="category-card"
+       href="javascript:void(0)"
+     >
+       <i class="fas fa-tags"></i>
+       <span>
+         Cheap Rooms
+       </span>
+     </a>
+    <a
+       class="category-card"
+       href="javascript:void(0)"
+     >
+       <i class="fas fa-wallet"></i>
+       <span>
+         Budget Rooms
+       </span>
+     </a>
+     <a
+       class="category-card"
+       href="javascript:void(0)"
+     >
+       <i class="fas fa-users"></i>
+       <span>
+         Shared Room
+       </span>
+     </a>
+     <a
+       class="category-card"
+       href="javascript:void(0)"
+     >
+       <i class="fas fa-couch"></i>
+       <span>
+         Fully Furnished Rooms
+       </span>
+     </a>
+    <a
+       class="category-card"
+       href="javascript:void(0)"
+     >
+      <i class="fas fa-wallet"></i>
+       <span>
+         Semi Furnished Rooms
+       </span>
+    </a>
+    <a
+       class="category-card"
+       href="javascript:void(0)"
+     >
+      <i class="fas fa-box-open"></i>
+       <span>
+         Unfurnished Rooms
+       </span>
+    </a>
+  </section>
+  <!-- CATEGORY STRIP -->
+  <!-- <app-room-types></app-room-types> -->
+
+  <div class="layout">
+    <main class="content"> 
+      <app-featured-rooms [rooms]="pageData?.featuredRooms" [area]="pageData?.area"></app-featured-rooms>
+      <app-latest-rooms   [rooms]="pageData?.latestRooms"   [area]="pageData?.area"></app-latest-rooms>
+
+      <!-- <app-living-klcc [guide]="pageData?.areaGuide"></app-living-klcc>
+
+      <app-mrt-stations [stations]="pageData?.mrtStations"></app-mrt-stations>
+
+      <app-price-guide [pricing]="pageData?.priceGuide"></app-price-guide>
+
+      <app-market-insights [insights]="pageData?.marketInsights"></app-market-insights>
+
+      <app-compare-areas [areas]="pageData?.nearbyAreas"></app-compare-areas>
+
+      <app-popular-searches [searches]="pageData?.popularSearches"></app-popular-searches>
+
+      <app-recently-rented [rooms]="pageData?.recentlyRented"></app-recently-rented>
+
+      <app-people-looking [requests]="pageData?.roomRequests"></app-people-looking>
+
+      <app-faq [faqs]="pageData?.faqs"></app-faq>  -->
+    </main>
+
+    <!-- SIDEBAR -->
+    <!-- <aside class="sidebar">
+      <app-side-panel [area]="pageData?.area"></app-side-panel>
+    </aside> -->
+  </div> 
+</div>

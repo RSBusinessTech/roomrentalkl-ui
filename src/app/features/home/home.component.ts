@@ -1,5 +1,5 @@
 import { Component,  HostListener,  OnInit, ViewChild, ElementRef} from '@angular/core';
-import { AREAS } from '../shared/data/areas';
+import { AREAS } from 'src/app/shared/data/areas';
 
 @Component({
   selector: 'app-home',

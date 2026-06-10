@@ -1,0 +1,724 @@
+/* ==================================================
+   FEATURED SECTION
+================================================== */
+
+.featured {
+  padding: 40px 0;
+}
+
+.featured-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  margin-top: -30px;
+}
+
+.featured-header h2 {
+  margin: 0;
+  font-size: 50px;
+  font-weight: 800;
+  color: #FE4042;
+}
+
+.view-all {
+  color: grey;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.view-all:hover {
+  color: #002874;
+}
+
+/* ==================================================
+   GRID
+================================================== */
+
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* ==================================================
+   CARD
+================================================== */
+
+.room-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+
+  box-shadow:
+    0 6px 18px rgba(0,0,0,.08);
+
+  transition: all .25s ease;
+
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+}
+
+.room-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 18px 36px rgba(0,0,0,.14);
+}
+
+/* ==================================================
+   IMAGE
+================================================== */
+
+.image-wrapper {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+}
+
+.room-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==================================================
+   FEATURED BADGE
+================================================== */
+
+.featured-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+
+  z-index: 5;
+
+  /* background: #0052cc; */
+  background: #002874;
+  color: #fff;
+
+  padding: 6px 12px;
+
+  border-radius: 8px;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+
+/* ==================================================
+   IMAGE NAVIGATION
+================================================== */
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 36px;
+  height: 36px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.95);
+
+  color: #0f172a;
+
+  cursor: pointer;
+
+  z-index: 5;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left {
+  left: 10px;
+}
+
+.right {
+  right: 10px;
+}
+
+/* ==================================================
+   IMAGE DOTS
+================================================== */
+
+.image-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 70px;
+
+  transform: translateX(-50%);
+
+  z-index: 5;
+}
+
+.image-dots span {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  display: inline-block;
+
+  margin: 0 3px;
+
+  background: rgba(255,255,255,.6);
+}
+
+.image-dots span.active {
+  background: #fff;
+}
+
+/* ==================================================
+   PRICE BAR
+================================================== */
+
+.price-bar {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding: 14px 18px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: linear-gradient(
+    90deg,
+    rgba(0,24,74,.96),
+    rgba(0,60,150,.95)
+  );
+
+  color: #fff;
+}
+
+.price {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.price span {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.room-type {
+  border: 1px solid rgba(255,255,255,.5);
+
+  padding: 6px 12px;
+
+  border-radius: 8px;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ==================================================
+   CONTENT
+================================================== */
+
+.card-content {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* ==================================================
+   AGENT
+================================================== */
+
+.agent-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.agent-avatar {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  border: 2px solid #f1f5f9;
+}
+
+.agent-info {
+  margin-left: 10px;
+}
+
+.agent-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.verified-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 18px;
+  height: 18px;
+
+  margin-left: 6px;
+
+  background: #1a73e8;
+  color: #fff;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  /* starburst shape */
+  clip-path: polygon(
+    50% 0%,
+    62% 12%,
+    78% 5%,
+    82% 22%,
+    100% 25%,
+    90% 42%,
+    100% 58%,
+    82% 78%,
+    78% 95%,
+    62% 88%,
+    50% 100%,
+    38% 88%,
+    22% 95%,
+    18% 78%,
+    0% 58%,
+    10% 42%,
+    0% 25%,
+    18% 22%,
+    22% 5%,
+    38% 12%
+  );
+}
+
+.agency {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* ==================================================
+   TITLE
+================================================== */
+
+.property-title {
+  margin: 0 0 10px;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  color: #0f172a;
+
+  line-height: 1.4;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+/* ==================================================
+   ADDRESS
+================================================== */
+
+.address {
+  color: #475569;
+  font-size: 13px;
+
+  margin-bottom: 10px;
+
+  line-height: 1.5;
+}
+
+.address i {
+  margin-right: 6px;
+  color: #002874;
+}
+
+/* ==================================================
+   MRT
+================================================== */
+
+.mrt-distance {
+  font-size: 13px;
+  color: grey;
+
+  font-weight: 600;
+
+  margin-bottom: 16px;
+}
+
+.mrt-distance i {
+  margin-right: 6px;
+  color:green;
+}
+
+/* ==================================================
+   FEATURES
+================================================== */
+
+.features-row {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  gap: 8px;
+
+  padding-top: 14px;
+
+  border-top: 1px solid #e5e7eb;
+}
+
+.feature {
+  text-align: center;
+}
+
+.feature i {
+  display: block;
+
+  font-size: 16px;
+
+  margin-bottom: 6px;
+
+  color: #002874;
+}
+
+.feature span {
+  display: block;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  color: #002874;
+}
+
+.feature small {
+  display: block;
+
+  font-size: 11px;
+
+  color: #64748b;
+}
+
+/* ==================================================
+   ACTIONS
+================================================== */
+
+.action-row {
+  display: flex;
+  gap: 10px;
+
+  margin-top: 18px;
+}
+
+.details-btn {
+  flex: 1;
+
+  height: 44px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #003b95;
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.details-btn:hover {
+  background: #002f76;
+}
+
+.icon-btn {
+  width: 44px;
+  height: 44px;
+
+  border-radius: 10px;
+
+  border: 1px solid #e5e7eb;
+
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  color: #003b95;
+}
+
+.icon-btn .fa-phone {
+  transform: rotate(-190deg);
+}
+
+.whatsapp {
+  color: #25d366;
+}
+
+.whatsapp i {
+  font-size: 19px;
+}
+
+/* ==================================================
+   RESPONSIVE
+================================================== */
+
+@media (max-width: 1600px) {
+
+  .rooms-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+@media (max-width: 992px) {
+
+  .rooms-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 768px) {
+  .rooms-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .image-wrapper {
+    height: 220px;
+  }
+
+  .features-row {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 15px;
+  }
+
+  .featured-header h2 {
+  font-size: 35px;
+  font-weight: 800;
+}
+
+}
+
+@media (max-width: 480px) {
+  .featured-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .featured-header h2 {
+    /* font-size: 22px; */
+  }
+
+  .price {
+    font-size: 22px;
+  }
+
+  .room-type {
+    display: none;
+  }
+
+  .features-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+.gallery-modal {
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0,0,0,.92);
+
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-image {
+
+  max-width: 85vw;
+  max-height: 85vh;
+
+  object-fit: contain;
+
+  border-radius: 6px;
+}
+
+.gallery-close {
+
+  position: absolute;
+
+  top: 20px;
+  right: 25px;
+
+  background: transparent;
+
+  border: none;
+
+  color: #fff;
+
+  font-size: 40px;
+
+  cursor: pointer;
+}
+
+.gallery-nav {
+
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 60px;
+  height: 60px;
+
+  border: none;
+
+  background: rgba(255,255,255,.15);
+
+  color: white;
+
+  font-size: 32px;
+
+  cursor: pointer;
+}
+
+.gallery-prev {
+  left: 25px;
+}
+
+.gallery-next {
+  right: 25px;
+}
+
+.gallery-counter {
+
+  position: absolute;
+
+  bottom: 25px;
+
+  color: white;
+
+  font-size: 18px;
+
+  font-weight: 600;
+}
+
+.gallery-content {
+  text-align: center;
+  position: relative;
+}
+
+.gallery-thumbnails {
+
+  position: absolute;
+  bottom: 70px;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 10px;
+
+  max-width: 90%;
+
+  overflow-x: auto;
+}
+
+.gallery-thumbnails img {
+
+  width: 90px;
+  height: 65px;
+
+  object-fit: cover;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  opacity: .6;
+
+  border: 2px solid transparent;
+}
+
+.gallery-thumbnails img.active {
+
+  opacity: 1;
+
+  border-color: #ffffff;
+}
+
+.gallery-close {
+  z-index: 100001;
+}
+
+.gallery-prev,
+.gallery-next {
+  z-index: 100001;
+}
+
+
+/* ======================================
+   REVEAL ANIMATION
+====================================== */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+
+  will-change:transform,opacity;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.delay-1{ transition-delay:.1s; }
+.delay-2{ transition-delay:.2s; }
+.delay-3{ transition-delay:.3s; }
+.delay-4{ transition-delay:.4s; }
+.delay-5{ transition-delay:.5s; }

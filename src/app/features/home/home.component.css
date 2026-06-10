@@ -167,12 +167,13 @@
   font-size:14px;
 }
 
-@media (max-width:1024px){
-
-  .hero-text h1{
-    font-size:48px;
+.hero-text h1{
+  margin-top: 10px;
+  font-size: 50px;
+  font-weight: 800;
   }
 
+@media (max-width:1024px){
   .search-box{
     grid-template-columns:
     repeat(2,1fr);
@@ -303,24 +304,30 @@
 
 .section-header h2{
   margin:0;
-  font-size:38px;
-  font-weight:800;
-  color:#111827;
+  margin-top: -25px;
+  font-size: 50px;
+  font-weight: 800;
+  color:#002874;
 }
 
 .section-header p{
   margin-top:8px;
-  color:#64748b;
+  color:grey;
 }
 
 .view-all{
-  color:#002874;
+  color:grey;
   text-decoration:none;
   font-weight:600;
 }
 
 .view-all i{
   margin-left:6px;
+}
+
+
+.view-all:hover {
+  color: #002874;
 }
 
 .areas-wrapper{
