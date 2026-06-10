@@ -128,7 +128,6 @@ export class AreasComponent implements OnInit {
 // QUICK SEARCH HANDLER
 // =========================
 onQuickSearch(roomType: string) {
-
   // Update selected filter
   this.filters.roomType = roomType;
 
