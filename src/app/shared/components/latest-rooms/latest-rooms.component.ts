@@ -14,9 +14,6 @@ export class LatestRoomsComponent {
   selectedImage = '';
 
   constructor(private router: Router) {}
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
 
   openRoom(slug: string) {
     this.router.navigate(['/room', slug]);
