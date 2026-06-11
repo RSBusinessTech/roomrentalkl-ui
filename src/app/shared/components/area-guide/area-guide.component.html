@@ -21,14 +21,14 @@
       </li>
 
     </ul>
-<!-- 
+
     <a
       class="explore-btn"
       [href]="areaGuide.buttonLink || 'javascript:void(0)'">
 
       {{ areaGuide.buttonText }}
 
-    </a> -->
+    </a>
 
   </div>
 
@@ -54,5 +54,54 @@
     </div>
 
   </div>
+
 </section>
 
+ <!-- SEO CONTENT -->
+<div class="seo-grid">
+
+  <!-- Popular Residences -->
+  <div class="seo-card">
+    <h3>Popular Residences</h3>
+
+    <ul>
+      <li *ngFor="let item of areaGuide.popularResidences">
+        {{ item }}
+      </li>
+    </ul>
+  </div>
+
+  <!-- Nearby Landmarks -->
+  <div class="seo-card">
+    <h3>Nearby Landmarks</h3>
+
+    <ul>
+      <li *ngFor="let item of areaGuide.nearbyLandmarks">
+        {{ item }}
+      </li>
+    </ul>
+  </div>
+
+  <!-- Universities -->
+  <div class="seo-card">
+    <h3>Nearby Universities</h3>
+
+    <ul>
+      <li *ngFor="let item of areaGuide.nearbyUniversities">
+        {{ item }}
+      </li>
+    </ul>
+  </div>
+
+  <!-- Employers -->
+  <div class="seo-card">
+    <h3>Major Employers</h3>
+
+    <ul>
+      <li *ngFor="let item of areaGuide.majorEmployers">
+        {{ item }}
+      </li>
+    </ul>
+  </div>
+
+</div>
