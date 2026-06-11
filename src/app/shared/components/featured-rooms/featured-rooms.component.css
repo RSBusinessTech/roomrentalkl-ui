@@ -1,7 +1,6 @@
 /* ==================================================
    FEATURED SECTION
 ================================================== */
-
 .featured {
   padding: 40px 0;
 }
@@ -34,16 +33,6 @@
 }
 
 /* ==================================================
-   GRID
-================================================== */
-
-.rooms-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 24px;
-}
-
-/* ==================================================
    CARD
 ================================================== */
 
@@ -52,7 +41,6 @@
   border-radius: 18px;
   overflow: hidden;
   border: 1px solid #e5e7eb;
-
   box-shadow:
     0 6px 18px rgba(0,0,0,.08);
 
@@ -325,7 +313,7 @@
 ================================================== */
 
 .property-title {
-  margin: 10 0 10px;
+  margin: 10px 0 10px;
   font-size: 18px;
   font-weight: 700;
 
@@ -527,28 +515,13 @@
 /* ==================================================
    RESPONSIVE
 ================================================== */
-
-@media (max-width: 1600px) {
-
-  .rooms-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-}
-
-@media (max-width: 992px) {
-
-  .rooms-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
+.rooms-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:24px;
 }
 
 @media (max-width: 768px) {
-  .rooms-grid {
-    grid-template-columns: 1fr;
-  }
-
   .image-wrapper {
     height: 220px;
   }
@@ -561,9 +534,9 @@
   .featured-header h2 {
   font-size: 35px;
   font-weight: 800;
+  }
 }
 
-}
 
 @media (max-width: 480px) {
   .featured-header {
@@ -572,9 +545,9 @@
     gap: 10px;
   }
 
-  .featured-header h2 {
-    /* font-size: 22px; */
-  }
+  /* .featured-header h2 
+     font-size: 22px; 
+  } */
 
   .price {
     font-size: 22px;

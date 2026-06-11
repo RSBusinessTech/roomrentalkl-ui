@@ -1,6 +1,6 @@
 <section class="featured">
   <!-- HEADER -->
-  <div class="featured-header reveal delay-1" >
+  <div class="featured-header reveal delay-4" >
     <h2>
       Featured Rooms in {{ area?.name }}
     </h2>
@@ -14,7 +14,7 @@
   <!-- ROOMS GRID -->
   <div class="rooms-grid">
     <div
-      class="room-card"
+      class="room-card reveal delay5"
       *ngFor="let room of rooms"
       (click)="openRoom(room.slug)">
 
@@ -88,8 +88,6 @@
           </div>
         </div>
        </div>
-
-     
 
         <!-- TITLE -->
         <h3 class="property-title">

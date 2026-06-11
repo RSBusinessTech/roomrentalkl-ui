@@ -1,1 +1,58 @@
-<p>area-guide works!</p>
+<section
+  class="living-section"
+  *ngIf="areaGuide">
+
+  <!-- LEFT -->
+  <div class="living-content reveal delay-1">
+
+    <h2>
+      {{ areaGuide.title }}
+    </h2>
+
+    <p class="intro">
+      {{ areaGuide.description }}
+    </p>
+
+    <ul class="highlights">
+
+      <li *ngFor="let item of areaGuide.highlights">
+        <i class="fas fa-check-circle"></i>
+        <span>{{ item }}</span>
+      </li>
+
+    </ul>
+<!-- 
+    <a
+      class="explore-btn"
+      [href]="areaGuide.buttonLink || 'javascript:void(0)'">
+
+      {{ areaGuide.buttonText }}
+
+    </a> -->
+
+  </div>
+
+  <!-- RIGHT -->
+  <div class="features-grid">
+
+    <div
+      class="feature-card reveal delay-1"
+      *ngFor="let feature of areaGuide.features">
+
+      <div class="icon">
+        <i [class]="feature.icon"></i>
+      </div>
+
+      <h3>
+        {{ feature.title }}
+      </h3>
+
+      <p>
+        {{ feature.description }}
+      </p>
+
+    </div>
+
+  </div>
+</section>
+

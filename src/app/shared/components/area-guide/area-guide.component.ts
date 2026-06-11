@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { AreaGuide } from 'src/app/models/areaguide';
 
 @Component({
   selector: 'app-area-guide',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./area-guide.component.css']
 })
 export class AreaGuideComponent implements OnInit {
-
+  @Input() areaGuide!: AreaGuide;
+  
   constructor() { }
 
   ngOnInit() {

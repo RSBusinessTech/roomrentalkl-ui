@@ -14,11 +14,11 @@
   <!-- ROOMS GRID -->
   <div class="rooms-grid">
     <div
-      class="room-card"
+      class="room-card room-card reveal delay5"
       *ngFor="let room of rooms"
       (click)="openRoom(room.slug)">
 
-          <!-- CONTENT -->
+     <!-- CONTENT -->
       <div class="card-content">
         <!-- AGENT -->
         <div class="agent-section">
@@ -37,8 +37,8 @@
             <div class="agency">
               {{ room.agent ? room.agent.agencyName : '' }}
             </div>
-          </div>
-        </div>
+         </div>
+      </div>
 
       <!-- IMAGE -->
       <div class="image-wrapper">
