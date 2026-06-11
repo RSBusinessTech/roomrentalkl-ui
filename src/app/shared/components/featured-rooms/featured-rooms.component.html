@@ -18,6 +18,28 @@
       *ngFor="let room of rooms"
       (click)="openRoom(room.slug)">
 
+       <!-- CONTENT -->
+      <div class="card-content">
+        <!-- AGENT -->
+        <div class="agent-section">
+          <img
+            [src]="room.agent && room.agent.avatar ? room.agent.avatar : 'assets/images/default-agent.png'"
+            class="agent-avatar">
+          <div class="agent-info">
+            <div class="agent-name">
+              {{ room.agent ? room.agent.name : '' }}
+               <span
+                 *ngIf="room.agent?.verified"
+                 class="verified-badge">
+                 <i class="fas fa-check"></i>
+               </span>
+            </div>
+            <div class="agency">
+              {{ room.agent ? room.agent.agencyName : '' }}
+            </div>
+          </div>
+        </div>
+
       <!-- IMAGE -->
       <div class="image-wrapper">
         <span
@@ -67,27 +89,7 @@
         </div>
        </div>
 
-      <!-- CONTENT -->
-      <div class="card-content">
-        <!-- AGENT -->
-        <div class="agent-section">
-          <img
-            [src]="room.agent && room.agent.avatar ? room.agent.avatar : 'assets/images/default-agent.png'"
-            class="agent-avatar">
-          <div class="agent-info">
-            <div class="agent-name">
-              {{ room.agent ? room.agent.name : '' }}
-               <span
-                 *ngIf="room.agent?.verified"
-                 class="verified-badge">
-                 <i class="fas fa-check"></i>
-               </span>
-            </div>
-            <div class="agency">
-              {{ room.agent ? room.agent.agencyName : '' }}
-            </div>
-          </div>
-        </div>
+     
 
         <!-- TITLE -->
         <h3 class="property-title">

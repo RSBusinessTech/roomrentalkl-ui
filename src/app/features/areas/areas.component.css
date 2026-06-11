@@ -218,6 +218,7 @@
   z-index:10;
 
   box-shadow:0 15px 40px rgba(0,0,0,.08);
+  text-decoration: underline;
 }
 
 .category-card{
@@ -238,7 +239,7 @@
 }
 
 .category-card:hover{
-  background:#f8fafc;
+  background:#bbc5cf;
   transform:translateY(-3px);
 }
 

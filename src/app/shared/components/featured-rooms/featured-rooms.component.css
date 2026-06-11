@@ -325,8 +325,7 @@
 ================================================== */
 
 .property-title {
-  margin: 0 0 10px;
-
+  margin: 10 0 10px;
   font-size: 18px;
   font-weight: 700;
 
@@ -381,7 +380,7 @@
    FEATURES
 ================================================== */
 
-.features-row {
+/* .features-row {
   display: grid;
 
   grid-template-columns:
@@ -423,6 +422,48 @@
   font-size: 11px;
 
   color: #64748b;
+} */
+
+.features-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 4px;
+
+  padding-top: 14px;
+
+  border-top: 1px solid #e5e7eb;
+}
+
+.feature {
+  flex: 1;
+
+  text-align: center;
+
+  min-width: 0;
+}
+
+.feature i {
+  display: block;
+
+  font-size: 15px;
+
+  margin-bottom: 4px;
+
+  color: #002874;
+}
+
+.feature small {
+  display: block;
+
+  font-size: 10px;
+
+  color: #64748b;
+
+  line-height: 1.2;
+
+  word-break: break-word;
 }
 
 /* ==================================================

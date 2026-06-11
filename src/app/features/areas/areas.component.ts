@@ -41,7 +41,7 @@ export class AreasComponent implements OnInit {
     this.areaService.getArea(area).subscribe(response => {
       this.pageData = response;
 
-      // ✅ Angular 8 safe null check
+      // Angular 8 safe null check
       if (this.pageData && this.pageData.area) {
         this.filters.area = this.pageData.area.slug || '';
       }

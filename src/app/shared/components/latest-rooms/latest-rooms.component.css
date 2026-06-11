@@ -324,7 +324,7 @@
 ================================================== */
 
 .property-title {
-  margin: 0 0 10px;
+  margin: 10 0 10px;
 
   font-size: 18px;
   font-weight: 700;
@@ -381,12 +381,11 @@
 ================================================== */
 
 .features-row {
-  display: grid;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 
-  grid-template-columns:
-    repeat(5, 1fr);
-
-  gap: 8px;
+  gap: 4px;
 
   padding-top: 14px;
 
@@ -394,24 +393,19 @@
 }
 
 .feature {
+  flex: 1;
+
   text-align: center;
+
+  min-width: 0;
 }
 
 .feature i {
   display: block;
 
-  font-size: 16px;
+  font-size: 15px;
 
-  margin-bottom: 6px;
-
-  color: #002874;
-}
-
-.feature span {
-  display: block;
-
-  font-size: 13px;
-  font-weight: 700;
+  margin-bottom: 4px;
 
   color: #002874;
 }
@@ -419,11 +413,14 @@
 .feature small {
   display: block;
 
-  font-size: 11px;
+  font-size: 10px;
 
   color: #64748b;
-}
 
+  line-height: 1.2;
+
+  word-break: break-word;
+}
 /* ==================================================
    ACTIONS
 ================================================== */
