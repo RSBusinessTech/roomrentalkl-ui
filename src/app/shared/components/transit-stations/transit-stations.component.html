@@ -1,0 +1,98 @@
+<section class="transit-section" *ngIf="transitstations?.length">
+
+  <!-- HEADER -->
+  <div class="section-header">
+    <h2 class = "reveal delay-1">Nearby Transit Stations in {{ areaName }}</h2>
+    <p class = "reveal delay-2">
+      Explore MRT, LRT, Monorail and KTM stations around {{ areaName }}.
+    </p>
+  </div>
+
+  <!-- GRID -->
+  <div class="transit-grid reveal delay-3">
+
+    <div class="transit-card"
+         *ngFor="let station of showAll ? transitstations : (transitstations | slice:0:3)">
+
+      <div class="card-top">
+       <div class="station-icon"
+     [ngClass]="station.stationType?.toLowerCase().trim()">
+
+  <i class="fas fa-subway"></i>
+</div>
+
+        <div class="station-info">
+          <h3>{{ station.name }}</h3>
+
+          <div class="line">
+           <span class="type" [ngClass]="station.stationType?.toLowerCase()">
+          {{ station.stationType }}
+           </span>
+            <span class="divider"></span>
+            {{ station.line }}
+          </div>
+        </div>
+      </div>
+
+      <div class="distance">
+        <i class="fas fa-walking"></i>
+        {{ station.distanceText }}
+      </div>
+
+      <p class="description">
+        {{ station.shortDescription }}
+      </p>
+
+      <div class="rent">
+        Average Room Rent
+        <strong>RM {{ station.averageRoomRent }}</strong>
+      </div>
+
+      <div class="sub-title">Nearby Landmarks</div>
+      <div class="tags">
+        <span *ngFor="let l of station.nearbyLandmarks">
+          {{ l }}
+        </span>
+      </div>
+
+      <div class="sub-title">Nearby Residences</div>
+      <div class="tags">
+        <span *ngFor="let r of station.nearbyResidences">
+          {{ r }}
+        </span>
+      </div>
+
+      <div class="sub-title">Popular Searches</div>
+      <div class="tags searches">
+        <span *ngFor="let s of station.popularSearches">
+          {{ s }}
+        </span>
+      </div>
+
+      <!-- <a class="view-btn"
+         [routerLink]="['/rooms-near', station.slug]">
+        View Rooms Near {{ station.name }}
+      </a> -->
+
+    </div>
+
+  </div>
+
+  <!-- VIEW ALL -->
+<div class="view-all-wrapper" *ngIf="transitstations.length > 6">
+
+  <div class="view-all-bar" (click)="toggleViewAll()">
+
+    <span>
+      {{ showAll ? 'Show Less Transit Stations' : 'View All Transit Stations' }}
+    </span>
+
+    <i class="fas" 
+       [ngClass]="showAll ? 'fa-chevron-up' : 'fa-chevron-down'">
+    </i>
+
+  </div>
+
+</div>
+
+</section>

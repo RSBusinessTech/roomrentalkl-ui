@@ -112,6 +112,15 @@
   </section>
 
   <!-- Room Categories -->
+  <div class="section-heading reveal">
+    <h2 class="reveal delay-4">Choose KLCC Rooms by Category</h2>
+     <p class="reveal delay-5">
+       Find master rooms, single rooms, studio rooms,
+       shared rooms, furnished rooms and affordable
+       rental options in KLCC.
+     </p>
+  </div>
+
   <section class="room-categories reveal delay-5">
     <a
       class="category-card"
@@ -224,9 +233,9 @@
 
       <app-area-guide [areaGuide]="pageData?.areaGuide"></app-area-guide>
 
-      <!-- <app-mrt-stations [stations]="pageData?.mrtStations"></app-mrt-stations>
+      <app-transit-stations [transitstations]="pageData?.transitStations" [areaName]="pageData?.area?.name"> </app-transit-stations>
 
-      <app-price-guide [pricing]="pageData?.priceGuide"></app-price-guide>
+      <!-- <app-price-guide [pricing]="pageData?.priceGuide"></app-price-guide>
 
       <app-market-insights [insights]="pageData?.marketInsights"></app-market-insights>
 

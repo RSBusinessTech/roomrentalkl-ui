@@ -113,6 +113,24 @@
           </span>
         </div>
 
+        <!-- LISTED DATE -->
+        <div class="listing-meta">
+          <div class="listing-date">
+            <i class="far fa-clock"></i>
+            Listed on
+            {{ room.listedDate | date:'MMM dd, yyyy' }}
+            <span class="days-ago">
+              ({{ getDaysAgo(room.listedDate) }} days ago)
+            </span>
+          </div>
+          <div
+            class="listing-updated"
+            *ngIf="room.updatedDate">
+            Updated
+            {{ room.updatedDate | date:'MMM dd' }}
+          </div>
+        </div>
+
         <!-- FEATURES -->
         <div class="features-row">
           <div class="feature feature-inline">

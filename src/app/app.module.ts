@@ -13,7 +13,6 @@ import { HeaderComponent } from './shared/header/header.component';
 import { HeroSearchComponent } from './shared/components/hero-search/hero-search.component';
 import { RoomFiltersComponent } from './shared/components/room-filters/room-filters.component';
 import { LatestRoomsComponent } from './shared/components/latest-rooms/latest-rooms.component';
-import { MrtStationsComponent } from './shared/components/mrt-stations/mrt-stations.component';
 import { RentalPriceGuideComponent } from './shared/components/rental-price-guide/rental-price-guide.component';
 import { MarketInsightsComponent } from './shared/components/market-insights/market-insights.component';
 import { CompareAreasComponent } from './shared/components/compare-areas/compare-areas.component';
@@ -27,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FeaturedRoomsComponent } from './shared/components/featured-rooms/featured-rooms.component';
 import { AreaGuideComponent } from './shared/components/area-guide/area-guide.component';
+import { TransitStationsComponent } from './shared/components/transit-stations/transit-stations.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,6 @@ import { AreaGuideComponent } from './shared/components/area-guide/area-guide.co
     RoomFiltersComponent,
     LatestRoomsComponent,
     AreaGuideComponent,
-    MrtStationsComponent,
     RentalPriceGuideComponent,
     MarketInsightsComponent,
     CompareAreasComponent,
@@ -53,6 +52,7 @@ import { AreaGuideComponent } from './shared/components/area-guide/area-guide.co
     FaqComponent,
     SidebarComponent,
     RoomCardComponent,
+    TransitStationsComponent,
   ],
   imports: [
     BrowserModule,

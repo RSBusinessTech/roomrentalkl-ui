@@ -151,4 +151,12 @@ export class FeaturedRoomsComponent {
      this.galleryIndex = index;
      this.selectedImage = this.galleryImages[index];
    }
+
+  getDaysAgo(dateString: string): number {
+   const listedDate = new Date(dateString);
+   const today = new Date();
+   const diffTime = today.getTime() - listedDate.getTime();
+
+   return Math.floor(diffTime / (1000 * 60 * 60 * 24));
+  }
 }
