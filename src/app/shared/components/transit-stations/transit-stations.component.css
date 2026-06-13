@@ -1,372 +1,324 @@
-/* ===========================
-   SECTION
-=========================== */
+/* ==========================
+SECTION
+========================== */
 
 .transit-section{
-  margin-top:20px;
+    margin-top:30px;
 }
 
-/* HEADER */
+/* ==========================
+HEADER
+========================== */
 
 .section-header{
-  margin-bottom:30px;
+    margin-bottom:35px;
 }
 
 .section-header h2{
-  font-size:50px;
-  font-weight:800;
-  color:#FE4042;
-  margin-bottom:12px;
+    font-size:50px;
+    font-weight:800;
+    color:#FE4042;
+    margin-bottom:12px;
 }
 
 .section-header p{
-  color:#64748b;
-  line-height:1.7;
-  max-width:900px;
+    color:#64748b;
+    line-height:1.8;
 }
 
-/* ===========================
-   GRID
-=========================== */
+/* ==========================
+GRID
+========================== */
 
 .transit-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
-  gap:24px;
+    display:grid;
+    gap:24px;
 }
 
-/* ===========================
-   CARD
-=========================== */
+@media (min-width:1600px){
+    .transit-grid{
+        grid-template-columns:repeat(4,1fr);
+    }
+}
+
+@media (min-width:1200px) and (max-width:1599px){
+    .transit-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+@media (min-width:768px) and (max-width:1199px){
+    .transit-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media (max-width:767px){
+    .transit-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+/* ==========================
+CARD (FIXED)
+========================== */
 
 .transit-card{
-  background:#fff;
-  border:1px solid #e5e7eb;
-  border-radius:18px;
-  padding:28px;
-  box-shadow:0 4px 16px rgba(0,0,0,.05);
-  transition:.3s ease;
+    background:#fff;
+    border:2px solid #dbe4ff;
+    border-radius:28px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+    transition:.3s;
+
+    /* ✅ FIX */
+    display:flex;
+    flex-direction:column;
+    height:100%;
 }
 
 .transit-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 16px 40px rgba(0,0,0,.08);
+    transform:translateY(-6px);
 }
 
-/* ===========================
-   TOP
-=========================== */
-.card-top{
-  display:flex;
-  gap:18px;
-  align-items:center;
+/* ==========================
+TOP
+========================== */
+
+.top-section{
+    padding:30px;
 }
 
-.station-icon{
-  width:62px;
-  height:62px;
-  border-radius:16px;
-  background:#eef4ff;
-  color:#002874;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:26px;
+/* ==========================
+BOTTOM (FIXED STRETCH)
+========================== */
+
+.bottom-section{
+    border-top:1px solid #e5e7eb;
+
+    display:flex;              /* ✅ changed from grid */
+    align-items:stretch;       /* important */
+    flex:1;                    /* ✅ take remaining card height */
 }
 
-.station-info h3{
-  margin:0;
-  font-size:22px;
-  font-weight:700;
-  color:#002874;
+/* ==========================
+COLUMN (FIXED)
+========================== */
+
+.column{
+    padding:28px;
+
+    display:flex;
+    flex-direction:column;
+
+    flex:1;                    /* equal width + full height */
+    height:100%;
 }
 
-.line{
-  margin-top:8px;
-  color:#64748b;
-  font-size:14px;
+/* vertical divider that ALWAYS spans full height */
+.column:not(:last-child){
+    border-right:1px solid #e5e7eb;
 }
 
-/* ===========================
-   TYPE BADGES (SEO BOOST)
-=========================== */
-
-.type{
-  font-weight:700;
-  padding:4px 10px;
-  border-radius:20px;
-  font-size:12px;
+.column h4{
+    margin-top:0;
+    margin-bottom:18px;
+    color:#08245c;
+    font-size:20px;
 }
 
-.type.mrt{
-  background:#e0f2fe;
-  color:#000;
-}
-
-.type.lrt{
-  background:#fef3c7;
-  color:#000;
-}
-
-.type.monorail{
-  background:#ede9fe;
-  color:#000;
-}
-
-.type.ktm{
-  background:#dcfce7;
-  color:000;
-}
-
-.divider{
-  display:inline-block;
-  width:5px;
-  height:5px;
-  border-radius:50%;
-  background:#94a3b8;
-  margin:0 10px;
-}
-.station-icon.mrt {
-  background: #e0f2fe;
-  color: #002874;
-}
-
-.station-icon.lrt {
-  background: #fef3c7;
-  color: #b45309;
-}
-
-.station-icon.monorail {
-  background: #dcfce7; /* light green */
-  color: #16a34a;      /* real monorail green */
-}
-
-.station-icon.ktm {
-  background: #ede9fe;
-  color: red;
-}
-/* ===========================
-   DISTANCE
-=========================== */
-
-.distance{
-  margin-top:22px;
-  color:#000;
-  font-weight:700;
-  font-size:15px;
-}
-
-/* ===========================
-   DESCRIPTION
-=========================== */
-
-.description{
-  margin-top:18px;
-  color:#475569;
-  line-height:1.8;
-  font-size:15px;
-}
-
-/* ===========================
-   RENT
-=========================== */
-.rent{
-  margin-top:22px;
-  padding:16px;
-  background:#f8fafc;
-  border-radius:12px;
-  color:#475569;
-}
-
-.rent strong{
-  display:block;
-  margin-top:8px;
-  color:#111827;
-  font-size:24px;
-}
-
-/* ===========================
-   SUB TITLES
-=========================== */
-
-.sub-title{
-  margin-top:24px;
-  margin-bottom:14px;
-  font-weight:700;
-  color:#111827;
-}
-
-/* ===========================
-   TAGS
-=========================== */
+/* ==========================
+TAGS
+========================== */
 
 .tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
 }
 
 .tags span{
-  background:#eff6ff;
-  color:#334155;
-  padding:8px 14px;
-  border-radius:50px;
-  font-size:13px;
+    background:#edf4ff;
+    color:#163c85;
+
+    padding:10px 16px;
+    border-radius:30px;
+
+    font-size:13px;
+    font-weight:600;
 }
 
-.searches span{
-  background:#f1f5f9;
-  color:#334155;
+/* ==========================
+TOP CONTENT
+========================== */
+
+.card-top{
+    display:flex;
+    align-items:flex-start;
+    gap:18px;
 }
 
-/* ===========================
-   CTA BUTTON
-=========================== */
-.view-btn{
-  margin-top:28px;
-  display:block;
-  text-align:center;
-  background:#003b95;
-  color:#fff;
-  text-decoration:none;
-  padding:14px;
-  border-radius:12px;
-  font-weight:700;
-  transition:.3s;
-  margin-bottom: 10px;
+.station-icon{
+    width:72px;
+    height:72px;
+    min-width:72px;
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    font-size:28px;
 }
 
-.view-btn:hover{
-  background:#002f75;
+.station-info{
+    flex:1;
 }
 
-/* ===========================
-   VIEW ALL BUTTON (NEW SEO CTA)
-=========================== */
+.station-info h3{
+    margin:0;
+    font-size:30px;
+    line-height:1.2;
+    font-weight:800;
+    color:#08245c;
+}
+
+.line{
+    margin-top:12px;
+    color:#64748b;
+}
+
+.type{
+    padding:6px 16px;
+    border-radius:30px;
+    background:#edf4ff;
+    font-weight:700;
+    font-size:13px;
+}
+
+.divider{
+    margin:0 10px;
+}
+
+/* ==========================
+DISTANCE
+========================== */
+
+.distance{
+    margin-top:28px;
+    font-size:17px;
+    font-weight:700;
+    color:#111827;
+}
+
+/* ==========================
+DESCRIPTION
+========================== */
+
+.description{
+    margin-top:18px;
+    line-height:1.9;
+    color:#475569;
+}
+
+/* ==========================
+RENT BOX
+========================== */
+
+.rent-box{
+    margin:18px auto 0;
+    padding:16px 20px;
+    border-radius:16px;
+    color:white;
+
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+
+    width:fit-content;
+    min-width:150px;
+    text-align:center;
+}
+
+.rent-title{
+    font-size:13px;
+    font-weight:600;
+    opacity:0.9;
+}
+
+.rent-price{
+    font-size:28px;
+    font-weight:800;
+    line-height:1.1;
+    letter-spacing:.3px;
+}
+
+/* ==========================
+COLORS
+========================== */
+
+.station-icon.mrt,
+.rent-box.mrt{
+    background:#002874;
+}
+
+.station-icon.lrt,
+.rent-box.lrt{
+    background:#7c3aed;
+}
+
+.station-icon.monorail,
+.rent-box.monorail{
+    background:#16a34a;
+}
+
+.station-icon.ktm,
+.rent-box.ktm{
+    background:#dc2626;
+}
+
+/* ==========================
+VIEW ALL
+========================== */
+
 .view-all-wrapper{
-  margin-top:40px;
-  text-align:center;
-  margin-bottom: 20px;
+    margin-top:35px;
 }
 
-.view-all-btn{
-  display:inline-block;
-  background:#111827;
-  color:#fff;
-  padding:14px 26px;
-  border-radius:12px;
-  font-weight:700;
-  cursor:pointer;
-  transition:.3s;
+.view-all-bar{
+    background:#002874;
+    color:white;
+
+    border-radius:18px;
+
+    padding:16px 24px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+
+    cursor:pointer;
+
+    font-weight:700;
+
+    transition:.3s;
 }
 
-.view-all-btn:hover{
-  background:#000;
+.view-all-bar:hover{
+    background:#FE4042;
 }
 
-/* ===========================
-   RESPONSIVE
-=========================== */
+/* ==========================
+REVEAL
+========================== */
 
-@media(max-width:992px){
-  .transit-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-@media(max-width:576px){
-  .section-header h2{
-    font-size:35px;
-  }
-
-  .transit-card{
-    padding:20px;
-  }
-
-  .station-info h3{
-    font-size:18px;
-  }
-}
-
-.view-all-wrapper{
-  text-align:center;
-  margin-top:30px;
-}
-
-.view-all-btn{
-  background:#002874;
-  color:#fff;
-  border:none;
-  padding:12px 22px;
-  border-radius:10px;
-  font-weight:700;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.view-all-btn:hover{
-  background:#002f78;
-}
-
-.view-all-wrapper{
-  text-align:center;
-  margin-top:30px;
-}
-
-.view-all-btn{
-  background:#003b95;
-  color:#fff;
-  border:none;
-  padding:12px 22px;
-  border-radius:10px;
-  font-weight:700;
-  cursor:pointer;
-}
-
-.view-all-wrapper {
-  margin-top: 30px;
-}
-
-.view-all-bar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-
-  padding: 14px 18px;
-
-  background: #002874;
-
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-
-  cursor: pointer;
-
-  font-weight: 600;
-  color: white;
-
-  transition: all 0.25s ease;
-}
-
-.view-all-bar:hover {
-  background: #FE4042;
-  transform: translateY(-1px);
-}
-
-.view-all-bar i {
-  font-size: 14px;
-}
-
-/* ======================================
-   REVEAL ANIMATION
-====================================== */
 .reveal{
   opacity:0;
   transform:translateY(40px);
 
-  transition:
-    opacity .8s ease,
-    transform .8s ease;
+  transition:opacity .8s ease, transform .8s ease;
 
   will-change:transform,opacity;
 }
@@ -381,3 +333,81 @@
 .delay-3{ transition-delay:.3s; }
 .delay-4{ transition-delay:.4s; }
 .delay-5{ transition-delay:.5s; }
+
+/* ==========================
+RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+    .bottom-section{
+        flex-direction:column;
+    }
+
+    .column{
+        border-right:none !important;
+        border-bottom:1px solid #e5e7eb;
+    }
+
+    .column:last-child{
+        border-bottom:none;
+    }
+
+    .station-info h3{
+        font-size:24px;
+    }
+
+    .rent-price{
+        font-size:34px;
+    }
+
+    .section-header h2{
+        font-size:36px;
+    }
+}
+
+@media (max-width:768px){
+
+    .bottom-section{
+        flex-direction:column;
+    }
+
+    .column{
+        border-right:none !important;
+        border-bottom:1px solid #e5e7eb;
+    }
+
+    .column:last-child{
+        border-bottom:none;
+    }
+
+    .station-info h3{
+        font-size:24px;
+    }
+
+    /* FIX FOR MRT LINE TEXT */
+    .line{
+        display:flex;
+        align-items:center;
+        flex-wrap:nowrap;
+        gap:8px;
+        font-size:14px;
+    }
+
+    .divider{
+        margin:0;
+        flex-shrink:0;
+    }
+
+    .type{
+        flex-shrink:0;
+    }
+
+    .rent-price{
+        font-size:34px;
+    }
+
+    .section-header h2{
+        font-size:36px;
+    }
+}
