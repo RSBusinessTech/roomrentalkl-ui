@@ -92,7 +92,6 @@ TOP
 /* ==========================
 BOTTOM (FIXED STRETCH)
 ========================== */
-
 .bottom-section{
     border-top:1px solid #e5e7eb;
 
@@ -104,10 +103,8 @@ BOTTOM (FIXED STRETCH)
 /* ==========================
 COLUMN (FIXED)
 ========================== */
-
 .column{
-    padding:28px;
-
+    padding:8px;
     display:flex;
     flex-direction:column;
 
@@ -127,6 +124,12 @@ COLUMN (FIXED)
     font-size:20px;
 }
 
+.column .tags span{
+    font-size:12px;   /* readable */
+    padding:8px 12px;
+    line-height:1.2;
+}
+
 /* ==========================
 TAGS
 ========================== */
@@ -141,7 +144,7 @@ TAGS
     background:#edf4ff;
     color:#163c85;
 
-    padding:10px 16px;
+    padding:10px 6px;
     border-radius:30px;
 
     font-size:13px;
@@ -206,7 +209,7 @@ DISTANCE
 ========================== */
 
 .distance{
-    margin-top:28px;
+    margin-top:15px;
     font-size:17px;
     font-weight:700;
     color:#111827;
@@ -217,8 +220,8 @@ DESCRIPTION
 ========================== */
 
 .description{
-    margin-top:18px;
-    line-height:1.9;
+    margin-top:8px;
+    line-height:1-1;
     color:#475569;
 }
 
@@ -227,8 +230,8 @@ RENT BOX
 ========================== */
 
 .rent-box{
-    margin:18px auto 0;
-    padding:16px 20px;
+    margin:8px auto 0;
+    padding:8px 20px;
     border-radius:16px;
     color:white;
 
@@ -239,6 +242,8 @@ RENT BOX
     width:fit-content;
     min-width:150px;
     text-align:center;
+    margin-top: -10px;
+    margin-bottom: -20px;
 }
 
 .rent-title{
@@ -410,4 +415,25 @@ RESPONSIVE
     .section-header h2{
         font-size:36px;
     }
+}
+
+.transit-card{
+    position: relative;
+    border-left: 6px solid #002874;
+}
+
+.transit-card.mrt{
+    border-left-color:#002874;
+}
+
+.transit-card.lrt{
+    border-left-color:#7c3aed;
+}
+
+.transit-card.monorail{
+    border-left-color:#16a34a;
+}
+
+.transit-card.ktm{
+    border-left-color:#dc2626;
 }
