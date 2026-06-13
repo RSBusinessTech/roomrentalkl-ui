@@ -396,7 +396,7 @@
   color: #64748b;
   line-height: 0.5;
   word-break: break-word;
-  margin-bottom: -5px;
+  margin-bottom: 0px;
 }
 
 /* ==================================================
@@ -415,19 +415,19 @@
   border-radius: 10px;
   background: #003b95;
   color: #fff;
-  height:30px;
+  height:38px;
   font-size:13px;
   font-weight: 700;
   cursor: pointer;
 }
 
 .details-btn:hover {
-  background: #002f76;
+  background: #FE4042;
 }
 
 .icon-btn {
-  width:38px;
-  height:30px;
+ width:38px;
+ height:38px;
 
   border-radius: 10px;
 
@@ -446,6 +446,42 @@
 
 .icon-btn .fa-phone {
   transform: rotate(-190deg);
+}
+
+.icon-btn:hover{
+  background:#FE4042;
+  transform:translateY(-2px);
+  color: white;
+}
+
+.whatsapp-btn{
+  border:none;
+  background:#22c55e;
+  color:#fff;
+
+  height:38px;
+  padding:0 16px;
+
+  border-radius:12px;
+
+  display:flex;
+  align-items:center;
+  gap:8px;
+
+  font-size:13px;
+  font-weight:600;
+
+  cursor:pointer;
+  transition:.25s;
+}
+
+.whatsapp-btn:hover{
+  background:#FE4042;
+  transform:translateY(-2px);
+}
+
+.whatsapp-btn i{
+  font-size:16px;
 }
 
 .whatsapp {
@@ -712,4 +748,23 @@
   border-radius:20px;
 
   font-weight:600;
+}
+
+@media (max-width:768px){
+  .action-row{
+    gap:8px;
+  }
+
+  .details-btn,
+  .whatsapp-btn{
+    padding:0 10px;
+    font-size:12px;
+    gap:5px;
+    height:40px;
+  }
+
+  .details-btn i,
+  .whatsapp-btn i{
+    font-size:13px;
+  }
 }
