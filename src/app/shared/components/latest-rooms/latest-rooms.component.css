@@ -767,3 +767,57 @@
 
   font-weight:600;
 } 
+
+.agent-section{
+  padding:12px 14px;
+  margin:-14px -14px 10px -14px;
+}
+
+.theme-0 .agent-section{
+  background:#002874;
+}
+.theme-0 .agent-section .agent-name{
+  color:#fff;
+}
+
+.theme-0 .agent-section .agency{
+  color:rgba(255,255,255,0.8);
+}
+
+
+.theme-1 .agent-section{
+  background:#FE4042;
+}
+
+.theme-1 .agent-section .agent-name{
+  color:#fff;
+}
+
+.theme-1 .agent-section .agency{
+  color:#fff;
+}
+
+
+.theme-2 .agent-section{
+  background:green;
+}
+
+.theme-2 .agent-section .agent-name{
+  color:#fff;
+}
+
+.theme-2 .agent-section .agency{
+  color:#fff;
+}
+
+.theme-0 .featured-badge{
+  background:#002874;
+}
+
+.theme-1 .featured-badge{
+  background:#FE4042;
+}
+
+.theme-2 .featured-badge{
+  background:green;
+}

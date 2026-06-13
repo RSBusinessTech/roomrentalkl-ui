@@ -13,11 +13,7 @@
 
   <!-- ROOMS GRID -->
   <div class="rooms-grid">
-    <div
-      class="room-card room-card reveal delay5"
-      *ngFor="let room of rooms"
-      (click)="openRoom(room.slug)">
-
+   <div class="room-card reveal delay-5" [ngClass]="'theme-' + (i % 5)" *ngFor="let room of rooms; let i = index" (click)="openRoom(room.slug)">
      <!-- CONTENT -->
       <div class="card-content">
         <!-- AGENT -->
