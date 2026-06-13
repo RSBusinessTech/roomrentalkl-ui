@@ -149,7 +149,8 @@
 }
 
 .request-btn:hover{
-  transform: translateY(-2px);
+  background:#FE4042;
+  transform:translateY(-2px);
   box-shadow: 0 8px 20px rgba(10, 76, 197, 0.25);
 }
 
@@ -177,6 +178,12 @@
 
 .mobile-btn.whatsapp-btn i{
   font-size:18px;
+}
+
+.whatsapp-btn:hover{
+  background:#FE4042;
+  transform:translateY(-2px);
+  box-shadow: 0 8px 20px rgba(10, 76, 197, 0.25);
 }
 
 /* LOGIN */
