@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { PriceGuide } from 'src/app/models/priceGuide';
 
 @Component({
   selector: 'app-rental-price-guide',
@@ -6,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rental-price-guide.component.css']
 })
 export class RentalPriceGuideComponent implements OnInit {
+  
+  @Input() pricing: PriceGuide[] = [];
+  @Input() area: any;
+
+  trackByRoomType(
+    index: number,
+    item: PriceGuide
+  ): string {
+    return item.roomType;
+  }
 
   constructor() { }
 

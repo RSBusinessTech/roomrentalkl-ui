@@ -1,10 +1,6 @@
-<section
-  class="living-section"
-  *ngIf="areaGuide">
-
+<section class="living-section" *ngIf="areaGuide">
   <!-- LEFT -->
   <div class="living-content reveal delay-1">
-
     <h2>
       {{ areaGuide.title }}
     </h2>
@@ -14,27 +10,21 @@
     </p>
 
     <ul class="highlights">
-
       <li *ngFor="let item of areaGuide.highlights">
         <i class="fas fa-check-circle"></i>
         <span>{{ item }}</span>
       </li>
-
     </ul>
 
     <a
-      class="explore-btn"
+      class="explore-btn reveal delay-2"
       [href]="areaGuide.buttonLink || 'javascript:void(0)'">
-
       {{ areaGuide.buttonText }}
-
     </a>
-
   </div>
 
   <!-- RIGHT -->
   <div class="features-grid">
-
     <div
       class="feature-card reveal delay-1"
       *ngFor="let feature of areaGuide.features">
@@ -50,20 +40,16 @@
       <p>
         {{ feature.description }}
       </p>
-
     </div>
-
   </div>
 
 </section>
 
  <!-- SEO CONTENT -->
-<div class="seo-grid">
-
+<div class="seo-grid reveal delay-4">
   <!-- Popular Residences -->
   <div class="seo-card">
     <h3>Popular Residences</h3>
-
     <ul>
       <li *ngFor="let item of areaGuide.popularResidences">
         {{ item }}
@@ -74,7 +60,6 @@
   <!-- Nearby Landmarks -->
   <div class="seo-card">
     <h3>Nearby Landmarks</h3>
-
     <ul>
       <li *ngFor="let item of areaGuide.nearbyLandmarks">
         {{ item }}
@@ -85,7 +70,6 @@
   <!-- Universities -->
   <div class="seo-card">
     <h3>Nearby Universities</h3>
-
     <ul>
       <li *ngFor="let item of areaGuide.nearbyUniversities">
         {{ item }}
@@ -96,12 +80,10 @@
   <!-- Employers -->
   <div class="seo-card">
     <h3>Major Employers</h3>
-
     <ul>
       <li *ngFor="let item of areaGuide.majorEmployers">
         {{ item }}
       </li>
     </ul>
   </div>
-
 </div>

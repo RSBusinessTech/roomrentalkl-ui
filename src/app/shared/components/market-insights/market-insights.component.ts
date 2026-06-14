@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MarketInsight } from 'src/app/models/marketInsight';
 
 @Component({
   selector: 'app-market-insights',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MarketInsightsComponent implements OnInit {
 
+   @Input() insights!: MarketInsight;
+   @Input() area: any;
+   
+   get demandBadgeClass(): string {
+   if (!this.insights || !this.insights.demandLevel) {
+    return '';
+  }
+
+  switch (this.insights.demandLevel.toLowerCase()) {
+    case 'high':
+      return 'high';
+    case 'medium':
+      return 'medium';
+    case 'low':
+      return 'low';
+
+    default:
+      return '';
+   }
+ }
   constructor() { }
 
   ngOnInit() {
   }
-
 }

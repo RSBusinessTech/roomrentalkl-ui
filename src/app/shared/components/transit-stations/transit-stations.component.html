@@ -21,41 +21,28 @@
 
       <!-- TOP -->
       <div class="top-section">
-
         <div class="card-top">
-
           <div
             class="station-icon"
             [ngClass]="station.stationType?.toLowerCase().trim()">
-
             <i class="fas fa-subway"></i>
-
           </div>
 
           <div class="station-info">
-
             <h3>
               {{ station.name }}
             </h3>
 
             <div class="line">
-
               <span
                 class="type"
                 [ngClass]="station.stationType?.toLowerCase().trim()">
-
                 {{ station.stationType }}
-
               </span>
-
               <span class="divider"></span>
-
               {{ station.line }}
-
             </div>
-
           </div>
-
         </div>
 
         <div class="distance">
@@ -79,82 +66,55 @@
           <div class="rent-price">
             RM {{ station.averageRoomRent }}
           </div>
-
         </div>
-
       </div>
 
       <!-- BOTTOM -->
       <div class="bottom-section">
-
         <div class="column">
-
           <h4>Nearby Landmarks</h4>
-
           <div class="tags">
-
             <span *ngFor="let l of station.nearbyLandmarks">
               {{ l }}
             </span>
-
           </div>
-
         </div>
 
         <div class="column">
-
           <h4>Nearby Residences</h4>
-
           <div class="tags">
-
             <span *ngFor="let r of station.nearbyResidences">
               {{ r }}
             </span>
-
           </div>
-
         </div>
 
         <div class="column">
-
           <h4>Popular Searches</h4>
-
           <div class="tags">
-
             <span *ngFor="let s of station.popularSearches">
               {{ s }}
             </span>
-
           </div>
-
         </div>
-
       </div>
-
     </div>
-
   </div>
 
   <!-- VIEW ALL -->
   <div
     class="view-all-wrapper"
     *ngIf="transitstations.length > 6">
-
     <div
-      class="view-all-bar"
+      class="view-all-bar reveal delay-4"
       (click)="toggleViewAll()">
-
       <span>
         {{ showAll ? 'Show Less Transit Stations' : 'View All Transit Stations' }}
       </span>
-
       <i
         class="fas"
         [ngClass]="showAll ? 'fa-chevron-up' : 'fa-chevron-down'">
       </i>
-
     </div>
-
   </div>
-
 </section>

@@ -20,7 +20,7 @@ export class TransitStationsComponent implements OnInit {
       : this.transitstations.slice(0, 6);
   }
 
-toggleViewAll() {
-  this.showAll = !this.showAll;
-}
+  toggleViewAll() {
+   this.showAll = !this.showAll;
+  }
 }

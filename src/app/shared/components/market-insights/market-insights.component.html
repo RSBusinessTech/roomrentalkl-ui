@@ -1,1 +1,199 @@
-<p>market-insights works!</p>
+<div class="market-widget">
+
+  <!-- HEADER -->
+  <div class="market-header">
+    <div class="market-header-left">
+      <div class="market-icon reveal delay-1">
+        <i class="fas fa-chart-line reveal delay-1"></i>
+      </div>
+
+      <div class = "reveal delay-1">
+        <h3 class = "reveal delay-1">
+          {{ area?.name }} Rental Market Insights
+        </h3>
+
+        <p class = "reveal delay-1">
+          Stay updated with the latest {{ area?.name }} rental market trends, including 
+          average room rent, price growth, demand level and vacancy rates. Our market 
+          insights help students, working professionals and expatriates understand 
+          rental trends and discover the best opportunities for affordable and fully 
+          furnished rooms in {{ area?.name }}.
+        </p>
+      </div>
+    </div>
+
+    <!-- <div class="skyline">
+      <i class="fas fa-city"></i>
+    </div> -->
+
+  </div>
+
+
+  <!-- STAT CARDS -->
+  <div class="stats-grid reveal delay-2">
+    <!-- Average Rent -->
+    <div class="stat-card">
+      <div class="circle-icon">
+        <i class="fas fa-money-bill-wave"></i>
+      </div>
+      <div>
+        <label>
+          Average Monthly Rent
+        </label>
+        <h4>
+          RM {{insights.averageRent | number}}
+        </h4>
+        <span class="status green-bg">
+          ↗ vs last month
+        </span>
+      </div>
+    </div>
+
+    <!-- Rental Growth -->
+    <div class="stat-card">
+      <div class="circle-icon">
+        <i class="fas fa-chart-line"></i>
+      </div>
+      <div>
+        <label>
+          Rental Growth
+        </label>
+        <h4 class="green-text">
+          +{{insights.priceGrowth}}%
+        </h4>
+        <span class="status green-bg">
+          ↗ vs last month
+        </span>
+      </div>
+    </div>
+
+    <!-- Demand -->
+    <div class="stat-card">
+      <div class="circle-icon">
+        <i class="fas fa-fire"></i>
+      </div>
+      <div>
+        <label>
+          Demand Level
+        </label>
+        <h4>
+          {{insights.demandLevel}}
+        </h4>
+        <span class="status blue-bg">
+          Strong demand in {{ area?.name }}
+        </span>
+      </div>
+    </div>
+
+    <!-- Vacancy -->
+    <div class="stat-card">
+      <div class="circle-icon">
+        <i class="fas fa-chart-pie"></i>
+      </div>
+
+      <div>
+        <label>
+          Vacancy Rate
+        </label>
+        <h4>
+          {{insights.vacancyRate}}%
+        </h4>
+        <span class="status blue-bg">
+          Low vacancy
+        </span>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- MARKET DETAILS -->
+  <div class="market-details reveal delay-3">
+    <!-- Popular Room -->
+    <div class="detail-item">
+      <div class="detail-icon">
+        <i class="fas fa-star"></i>
+      </div>
+      <div>
+        <span>
+          Most Popular Room Type
+        </span>
+        <strong>
+          Master Room
+        </strong>
+      </div>
+    </div>
+
+
+    <!-- Demand Areas -->
+    <div class="detail-item">
+      <div class="detail-icon">
+        <i class="fas fa-map-marker-alt"></i>
+      </div>
+      <div>
+        <span>
+          High Demand Areas
+        </span>
+        <strong>
+          KLCC, TRX, Ampang Park
+        </strong>
+      </div>
+    </div>
+
+    <!-- Rental Trend -->
+    <div class="detail-item">
+      <div class="detail-icon">
+        <i class="fas fa-chart-line"></i>
+      </div>
+      <div>
+        <span>
+          Rental Trend
+        </span>
+        <strong class="green-text">
+          Increasing
+        </strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="market-footer reveal delay-4">
+    <div class="footer-left">
+      <div class="footer-icon">
+        <i class="fas fa-calendar-alt"></i>
+      </div>
+      <div>
+        <span>
+          Last Updated
+        </span>
+        <strong>
+          June 2026
+        </strong>
+      </div>
+    </div>
+
+    <div class="footer-text">
+      {{ area?.name }} is one of the most sought-after locations for room rentals in 
+       Kuala Lumpur due to its excellent public transport, MRT connectivity, office 
+       towers, shopping destinations and lifestyle facilities. Whether you are looking 
+       for a master room, single room, shared accommodation or studio room, 
+       {{ area?.name }} offers rental options suitable for students, professionals and 
+       expatriates.
+    </div>
+  </div>
+</div>
+
+<section class="rental-seo-content reveal delay-5">
+  <h3>
+    Why Rent a Room in {{ area?.name }}?
+  </h3>
+  <p>
+   Finding the right room for rent in {{ area?.name }} is easier when you understand the local rental market. {{ area?.name }} offers a wide range of accommodation choices including 
+   master rooms, single rooms, medium rooms, studio units and shared rooms. Many properties come with facilities such as WiFi, air conditioning, parking, security
+   and access to public transport.Popular among students, young professionals and expatriates, {{ area?.name }} provides convenient access to MRT stations, commercial areas, 
+   restaurants, shopping malls and major highways. Compare the latest room rental listings, prices and market trends to find affordable and fully furnished rooms 
+   that match your lifestyle and monthly budget.With its strategic location near the Petronas Twin Towers and Kuala Lumpur's major business district, {{ area?.name }} remains
+   one of the most desirable locations for both long-term and short-term room rentals. Whether you are searching for a budget-friendly room, luxury accommodation,
+   or a fully furnished room in {{ area?.name }}, there are rental options available to suit different preferences, lifestyles and budgets.
+  </p>
+</section>

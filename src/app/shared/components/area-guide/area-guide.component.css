@@ -90,7 +90,11 @@
 
   border-radius:10px;
 
-  background:#002874;
+  background:linear-gradient(
+    135deg,
+    #0038c7,
+    #001f75
+  );;
   color:#fff;
 
   text-decoration:none;

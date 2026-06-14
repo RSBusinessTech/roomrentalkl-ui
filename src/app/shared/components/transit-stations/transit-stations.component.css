@@ -265,7 +265,11 @@ COLORS
 
 .station-icon.mrt,
 .rent-box.mrt{
-    background:#002874;
+    background:linear-gradient(
+    135deg,
+    #0038c7,
+    #001f75
+  ); ;
 }
 
 .station-icon.lrt,
@@ -292,7 +296,11 @@ VIEW ALL
 }
 
 .view-all-bar{
-    background:#002874;
+    background:linear-gradient(
+    135deg,
+    #0038c7,
+    #001f75
+  ); ;
     color:white;
 
     border-radius:18px;
@@ -419,11 +427,19 @@ RESPONSIVE
 
 .transit-card{
     position: relative;
-    border-left: 6px solid #002874;
+    border-left: 6px solid linear-gradient(
+    135deg,
+    #0038c7,
+    #001f75
+  ); ;
 }
 
 .transit-card.mrt{
-    border-left-color:#002874;
+    border-left-color:linear-gradient(
+    135deg,
+    #0038c7,
+    #001f75
+  ); ;
 }
 
 .transit-card.lrt{

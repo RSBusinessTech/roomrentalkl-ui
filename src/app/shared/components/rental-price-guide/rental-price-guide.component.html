@@ -1,1 +1,82 @@
-<p>rental-price-guide works!</p>
+<div class="price-guide-widget">
+
+  <!-- HEADER -->
+  <div class="price-top">
+    <div class="header-icon reveal delay-1">
+      <i class="fas fa-home reveal delay-1"></i>
+    </div>
+
+    <div class = "reveal delay-1">
+      <h3 class = "reveal delay-1">{{ area?.name }} Rental Price Guide 2026</h3>
+      <p class = "reveal delay-1">
+         Explore the latest {{ area?.name }} room rental prices for 2026, including 
+         master rooms, medium rooms, single rooms, studio units and shared 
+         accommodation. This rental price guide helps tenants compare average monthly 
+         room rates in {{ area?.name }}, whether you are searching for cheap rooms, 
+         budget-friendly rooms, fully furnished rooms or premium accommodation near 
+         MRT stations, shopping malls and business districts.
+      </p>
+      <span class = "reveal delay-1">
+        Updated monthly using actual room rental listings.
+      </span>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <table class="price-table reveal delay-2">
+    <thead>
+      <tr>
+        <th>Room Type</th>
+        <th>Monthly Rental Range (RM)</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of pricing">
+        <td class="room">
+          <div class="room-icon">
+            <i class="fas fa-door-open"></i>
+          </div>
+          {{item.roomType}}
+        </td>
+
+        <td class="price">
+          RM {{item.minPrice | number}}
+          -
+          RM {{item.maxPrice | number}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <!-- NOTE -->
+  <div class="pricing-note reveal delay-3">
+    <div class="note-icon">
+      <i class="fas fa-info"></i>
+    </div>
+
+    <div>
+      <h4>
+        Pricing Note
+      </h4>
+      <p>
+        Prices may vary depending on the property type, room size, furnishing level, 
+         building facilities and exact location in {{ area?.name }}. Rooms near MRT 
+         stations, office towers and shopping centres often have higher demand and 
+         rental rates. Compare multiple listings to find the best room for rent in 
+         {{ area?.name }} that matches your budget and lifestyle.
+         
+         Whether you are looking for a master room, single room, medium room, studio 
+         unit or shared accommodation, {{ area?.name }} offers a wide range of rental 
+         options for students, working professionals and expatriates. Many rooms come 
+         fully furnished with facilities such as WiFi, air conditioning, security and 
+         parking, providing a comfortable and convenient living experience. Explore the 
+         latest room rental listings, compare monthly rental prices and discover cheap 
+         or affordable rooms in {{ area?.name }} with easy access to public transport, 
+         business districts, restaurants and lifestyle amenities.
+      </p>
+    </div>
+  </div>
+
+</div>

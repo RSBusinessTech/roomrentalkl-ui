@@ -13,5 +13,4 @@ export class AreaGuideComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

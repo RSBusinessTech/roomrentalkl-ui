@@ -231,16 +231,19 @@
     <main class="content"> 
       <app-featured-rooms [rooms]="pageData?.featuredRooms" [area]="pageData?.area"></app-featured-rooms>
       <app-latest-rooms   [rooms]="pageData?.latestRooms"   [area]="pageData?.area"></app-latest-rooms>
-
       <app-area-guide [areaGuide]="pageData?.areaGuide"></app-area-guide>
+      <app-transit-stations [transitstations]="pageData?.transitStations" [areaName]="pageData?.area?.name"></app-transit-stations>
+      
+      <section class="market-overview">
+       <div class="container">
+         <div class="overview-grid">
+          <app-rental-price-guide [pricing]="pageData?.priceGuide" [area]="pageData?.area"></app-rental-price-guide>
+          <app-market-insights [insights]="pageData?.marketInsights" [area]="pageData?.area"></app-market-insights>
+         </div>
+       </div>
+      </section>
 
-      <app-transit-stations [transitstations]="pageData?.transitStations" [areaName]="pageData?.area?.name"> </app-transit-stations>
-
-      <!-- <app-price-guide [pricing]="pageData?.priceGuide"></app-price-guide>
-
-      <app-market-insights [insights]="pageData?.marketInsights"></app-market-insights>
-
-      <app-compare-areas [areas]="pageData?.nearbyAreas"></app-compare-areas>
+      <!-- <app-compare-areas [areas]="pageData?.nearbyAreas"></app-compare-areas>
 
       <app-popular-searches [searches]="pageData?.popularSearches"></app-popular-searches>
 
