@@ -427,19 +427,11 @@ RESPONSIVE
 
 .transit-card{
     position: relative;
-    border-left: 6px solid linear-gradient(
-    135deg,
-    #0038c7,
-    #001f75
-  ); ;
+    border-left: 6px solid #002874;
 }
 
 .transit-card.mrt{
-    border-left-color:linear-gradient(
-    135deg,
-    #0038c7,
-    #001f75
-  ); ;
+    border-left-color:#002874;
 }
 
 .transit-card.lrt{
