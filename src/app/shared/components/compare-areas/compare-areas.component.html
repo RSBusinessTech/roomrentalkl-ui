@@ -1,1 +1,105 @@
-<p>compare-areas works!</p>
+<section class="compare-areas">
+    <div class="compare-header reveal delay-1">
+        <div>
+            <h2>
+                Compare Nearby Areas Around  {{ area?.name }}
+            </h2>
+            <p>
+                Compare room rental prices, MRT accessibility,
+                distance, and lifestyle options to find the best
+                area for your budget and living preference.
+            </p>
+        </div>
+        <a class="view-all" (click)="toggleViewAll()">
+         {{ showAll ? 'Show Less Areas' : 'View All Areas' }}
+         <i 
+           class="fas"
+           [class.fa-chevron-down]="!showAll"
+           [class.fa-chevron-up]="showAll">
+         </i>
+        </a>
+    </div>
+
+
+    <div class="table-wrapper reveal delay-2">
+        <table>
+            <thead>
+                <tr>
+                    <th>Area</th>
+                    <th>Average Monthly Rent</th>
+                    <th>MRT Access</th>
+                    <th>Distance to {{ areaName }}</th>
+                    <th>Popular For</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let item of displayedAreas">
+                    <td class="area-name">
+                        {{ item.name }}
+                    </td>
+                    <td>
+                        RM {{ item.averageRent | number }}
+                    </td>
+                    <td>
+                        <span 
+                        class="mrt"
+                        [class.no]="!item.mrtAccess">
+                            <i 
+                            class="fas"
+                            [class.fa-check-circle]="item.mrtAccess"
+                            [class.fa-times-circle]="!item.mrtAccess">
+                            </i>
+                            {{ item.mrtAccess ? 'Yes' : 'No' }}
+                        </span>
+                    </td>
+                    <td>
+                        {{ item.distanceFromArea }} km
+                    </td>
+                    <td>
+                        {{ item.popularFor }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- SEO Content -->
+    <div class="compare-seo reveal delay-3">
+        <h3>
+            Choosing the Best Area Near {{ area?.name }} for Room Rental
+        </h3>
+
+        <p class="reveal delay-4">
+            {{ area?.name }} remains one of Kuala Lumpur's most desirable
+            locations for room rentals due to its excellent
+            connectivity, iconic landmarks, office towers,
+            shopping malls and lifestyle facilities.
+            However, nearby areas such as Bukit Bintang,
+            Ampang, KL Sentral, Mont Kiara and Cheras offer
+            different rental prices and accommodation choices.
+        </p>
+
+        <p class="reveal delay-4">
+            Whether you are searching for a cheap room,
+            master room, single room, fully furnished room
+            or shared accommodation near {{ area?.name }}, comparing
+            nearby locations helps you find the perfect
+            balance between budget, convenience and comfort.
+            Students, working professionals and expatriates
+            can explore multiple areas to discover affordable
+            rentals with MRT access and easy travel to {{ area?.name }}.
+        </p>
+
+        <p class="reveal delay-4">
+           Our {{ area?.name }} room rental comparison guide provides
+           updated rental trends, average room prices, MRT access and
+           neighbourhood insights to help you choose the ideal rental
+           property. Compare different areas, discover affordable
+           accommodation and find the perfect room for your budget
+           and preferred lifestyle.
+       </p>
+    </div>
+	
+</section>
