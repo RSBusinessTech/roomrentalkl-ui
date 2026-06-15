@@ -1,1 +1,109 @@
-<p>faq works!</p>
+<section class="faq-section">
+
+  <!-- Header -->
+  <div class="faq-header">
+    <div class="faq-icon reveal delay-1">
+      <i class="fas fa-question-circle"></i>
+    </div>
+    <div>
+      <h2 class = "reveal delay-1">
+        Rooms for Rent in {{ area?.name }} – Affordable, Furnished & Near MRT Access in Kuala Lumpur
+      </h2>
+      <p class = "reveal delay-2">
+        Find verified rooms for rent in {{ area?.name }}, including master rooms, single rooms, studio units and shared accommodations.
+        Compare affordable rental prices, furnished options, and properties near MRT, LRT, KLCC, and major business hubs in Kuala Lumpur.
+      </p>
+    </div>
+  </div>
+
+
+  <!-- FAQ List -->
+  <div class="faq-list">
+    <div class="faq-card reveal delay-2" *ngFor="let item of displayedFaqs">
+      <div class="faq-question">
+        <i class="fas fa-circle-question"></i>
+        <h3 class = "delay-3">
+          {{ item.question }}
+        </h3>
+      </div>
+      <div class="faq-answer">
+        <p class = "delay-3">
+          {{ item.answer }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- View More Button -->
+  <div class="faq-view-all reveal delay-3" *ngIf="faqs && faqs.length > 5">
+    <button 
+      class="view-btn"
+      (click)="toggleFaqs()">
+      {{ showAll ? 'Show Less FAQs' : 'Read All FAQs About Room Rental in ' + area?.name }}
+      <i 
+        class="fas"
+        [class.fa-chevron-down]="!showAll"
+        [class.fa-chevron-up]="showAll">
+      </i>
+    </button>
+  </div>
+
+  <!-- SEO CONTENT -->
+  <div class="faq-seo reveal delay-4">
+    <h3 class = "reveal delay-4">
+      Why Rent a Room in {{ area?.name }}? Best Location for Affordable Living in Kuala Lumpur
+    </h3>
+    <p class = "reveal delay-4">
+      Searching for <strong>rooms for rent in {{ area?.name }}</strong>? This area is one of the most in-demand residential zones in Kuala Lumpur
+      for students, expats, and working professionals due to its excellent connectivity and affordable rental options.
+      Many properties are located near MRT and LRT stations, making daily travel to KLCC, Bukit Bintang, and nearby business districts fast and convenient.
+    </p>
+    <p class = "reveal delay-4">
+      You can find a wide range of options including <strong>cheap single rooms</strong>, <strong>fully furnished master rooms</strong>,
+      and <strong>modern studio units in {{ area?.name }}</strong>. Most listings come with essential facilities such as high-speed WiFi,
+      air conditioning, security access, and nearby amenities like supermarkets, restaurants, and laundromats.
+    </p>
+    <p class = "reveal delay-4">
+      If you are searching for terms like <strong>"room for rent near KLCC"</strong>, <strong>"furnished room near MRT {{ area?.name }}"</strong>,
+      or <strong>"budget room rental Kuala Lumpur"</strong>, this page is designed to help you quickly find the best matching listings
+      in {{ area?.name }} with updated prices and verified details.
+    </p>
+  </div>
+
+
+  <!-- TRUST FEATURES -->
+  <div class="trust-features">
+    <div class="feature-card reveal delay-5">
+      <i class="fas fa-shield-alt"></i>
+      <h4>
+        Verified Room Listings
+      </h4>
+      <p>
+        All listings are checked for accuracy, ensuring reliable rental information and updated availability.
+      </p>
+    </div>
+
+    <div class="feature-card reveal delay-5">
+      <i class="fas fa-home"></i>
+      <h4>
+        Wide Range of Rooms
+      </h4>
+      <p>
+        Choose from master rooms, single rooms, shared units, and fully furnished studio apartments.
+      </p>
+    </div>
+
+    <div class="feature-card reveal delay-5">
+      <i class="fas fa-map-marker-alt"></i>
+      <h4>
+        Prime MRT & KLCC Locations
+      </h4>
+      <p>
+        Find rooms near MRT stations, KLCC, business districts, shopping malls, and major transport routes.
+      </p>
+    </div>
+
+  </div>
+
+</section>

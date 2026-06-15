@@ -444,8 +444,8 @@
 
 
   .market-header-left {
-
-    flex-direction: column;
+    flex-direction: row;   /* FORCE same row */
+    align-items: center;   /* vertical center alignment */
 
     align-items: flex-start;
   }
