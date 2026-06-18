@@ -8,6 +8,7 @@ import { PriceGuide } from "./priceGuide";
 import { RecentlyRented } from "./recentlyRented";
 import { Room } from "./room";
 import { RoomRequest } from "./roomRequest";
+import { SeoMetadata } from "./seoMetadata";
 import { TransitStation } from "./transitStation";
 
 export interface AreasResponse {
@@ -23,4 +24,16 @@ export interface AreasResponse {
   recentlyRented: RecentlyRented[];
   roomRequests: RoomRequest[];
   faqs: Faq[];
+
+   //  SEO FIELDS (ADD THESE)
+  metaTitle: string;
+  metaDescription: string;
+
+  focusKeywords: string[];
+  longTailKeywords: string[];
+
+  intentMapping: Record<string, string[]>;
+
+    //  SEO LAYER (NEW)
+  seo: SeoMetadata;
 }
