@@ -131,7 +131,7 @@
 
 /* REQUEST A ROOM */
 .request-btn{
-  background: linear-gradient(135deg, #0A4CC5, #1E5BFF);
+  background:#FE4042;
   /* background: linear-gradient(135deg, #0A4CC5, #1E5BFF); */
   color: #ffffff;
 
@@ -149,7 +149,7 @@
 }
 
 .request-btn:hover{
-  background:#FE4042;
+  background: linear-gradient(135deg, #0A4CC5, #1E5BFF);
   transform:translateY(-2px);
   box-shadow: 0 8px 20px rgba(10, 76, 197, 0.25);
 }
@@ -181,7 +181,7 @@
 }
 
 .whatsapp-btn:hover{
-  background:#FE4042;
+  background: linear-gradient(135deg, #0A4CC5, #1E5BFF);
   transform:translateY(-2px);
   box-shadow: 0 8px 20px rgba(10, 76, 197, 0.25);
 }
@@ -386,8 +386,7 @@ nav-dropdown > a{
   /* ================= REQUEST (WIDER) ================= */
   .mobile-btn.request{
     flex:2;   /* 👈 makes it wider than others */
-
-    background: linear-gradient(135deg, #0A4CC5, #1E5BFF);
+    background:#FE4042;
     color:#fff;
 
     gap:6px;

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './features/home/home.component';
 import { AreasComponent } from './features/areas/areas.component';
+import { ContactComponent } from './features/contact/contact.component';
 
 
 const routes: Routes = [
@@ -29,15 +30,8 @@ const routes: Routes = [
   { path: 'room-rental-seputeh',  component: AreasComponent, data: { area: 'seputeh' }},
   { path: 'room-rental-ttdi', component: AreasComponent,  data: { area: 'ttdi' }},
   { path: 'room-rental-cyberjaya', component: AreasComponent,  data: { area: 'cyberjaya' }},
-  { path: 'room-rental-putrajaya', component: AreasComponent,  data: { area: 'putrajaya' }}
-  // { path: 'personalcare', loadChildren: () => import('./features/personalcare/personalcare.module').then(m => m.PersonalCareModule) },
-  // { path: 'homecare', loadChildren: () => import('./features/homecare/homecare.module').then(m => m.HomeCareModule) },
-  // { path: 'snacks', loadChildren: () => import('./features/snacks/snacks.module').then(m => m.SnacksModule) },
-  // { path: 'drinks', loadChildren: () => import('./features/drinks/drinks.module').then(m => m.DrinksModule) },
-  // { path: 'stationery', loadChildren: () => import('.do u/features/stationery/stationery.module').then(m => m.StationeryModule) },
-  // { path: 'cafe', loadChildren: () => import('./features/cafe/cafe.module').then(m => m.CafeModule) },
-  // { path: 'about', loadChildren: () => import('./features/about/about.module').then(m => m.AboutModule) },
-  // { path: 'contact', loadChildren: () => import('./features/contact/contact.module').then(m => m.ContactModule) },
+  { path: 'room-rental-putrajaya', component: AreasComponent,  data: { area: 'putrajaya' }},
+  { path: "contact", component: ContactComponent }
 ];
 
 @NgModule({

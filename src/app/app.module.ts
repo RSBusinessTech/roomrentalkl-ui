@@ -27,6 +27,7 @@ import { FormsModule } from '@angular/forms';
 import { FeaturedRoomsComponent } from './shared/components/featured-rooms/featured-rooms.component';
 import { AreaGuideComponent } from './shared/components/area-guide/area-guide.component';
 import { TransitStationsComponent } from './shared/components/transit-stations/transit-stations.component';
+import { ContactComponent } from './features/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { TransitStationsComponent } from './shared/components/transit-stations/t
     SidebarComponent,
     RoomCardComponent,
     TransitStationsComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
