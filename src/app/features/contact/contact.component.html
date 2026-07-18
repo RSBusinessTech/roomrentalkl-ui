@@ -456,3 +456,733 @@ CONTACT HERO
         </div>
     </div>
 </section>
+
+<section class="faq-section">
+    <div class="container">
+        <!-- Section Heading -->
+        <div class="section-header ">
+            <h2 class="reveal delay-1">
+                Frequently Asked Questions About
+                <span>Rental Properties in Kuala Lumpur</span>
+            </h2>
+            <p class="reveal delay-1">
+                Find answers to common questions about room rentals, condominiums,
+                apartments, serviced residences and shared accommodation across
+                Kuala Lumpur including KLCC, Bukit Bintang, Bangsar, Mont Kiara,
+                Cheras, Bukit Jalil, Petaling Jaya, Sunway, Cyberjaya and nearby areas.
+            </p>
+        </div>
+
+        <div class="faq-grid">
+            <!-- FAQ 1 -->
+            <div class="faq-card reveal delay-1">
+                <button class="faq-question"(click)="toggleFaq(0)">
+                    <div class="faq-left">
+                        <div class="faq-icon reveal delay-1">
+                            <i class="fas fa-money-bill-wave reveal delay-1"></i>
+                        </div>
+                        <h3>
+                            How much does it cost to rent a room in Kuala Lumpur?
+                        </h3>
+                    </div>
+                    <i class="fas"
+					   [ngClass]="openIndex==0 ? 'fa-chevron-up':'fa-chevron-down'">
+					</i>
+                </button>
+                <div class="faq-answer" *ngIf="openIndex==0">
+                    <p>
+                        Room rental prices in Kuala Lumpur typically range from RM400
+                        to RM2,500 per month depending on the location, room size,
+                        furnishings, condominium facilities and proximity to MRT or
+                        LRT stations. Popular locations including KLCC, Bukit Bintang,
+                        Mont Kiara, Bangsar, Bukit Jalil, Cheras, Damansara and
+                        Petaling Jaya generally command higher rental prices due to
+                        excellent connectivity and lifestyle amenities.
+                    </p>
+                </div>
+            </div>
+			
+            <!-- FAQ 2 -->
+            <div class="faq-card reveal delay-1">
+                <button class="faq-question" (click)="toggleFaq(1)">
+                    <div class="faq-left">
+                        <div class="faq-icon reveal delay-1">
+                            <i class="fas fa-train reveal delay-1"></i>
+                        </div>
+                        <h3>
+                            Can I find rooms for rent near MRT and LRT stations in Kuala Lumpur?
+                        </h3>
+                    </div>
+                    <i class="fas" 
+					   [ngClass]="openIndex==1 ? 'fa-chevron-up':'fa-chevron-down'">
+					</i>
+                </button>
+                <div class="faq-answer"
+                     *ngIf="openIndex==1">
+                    <p>
+                        Yes. We specialise in helping tenants find rooms for rent near
+                        MRT, LRT, Monorail and KTM stations across Kuala Lumpur.
+                        Many listings are within walking distance of public transport
+                        in KLCC, Bukit Bintang, Bangsar, TTDI, KL Sentral,
+                        Petaling Jaya, Bandar Utama, Ampang and Cyberjaya,
+                        making daily commuting faster and more convenient.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-card reveal delay-1">
+                <button class="faq-question"
+                        (click)="toggleFaq(2)">
+                    <div class="faq-left">
+                        <div class="faq-icon reveal delay-1">
+                            <i class="fas fa-home reveal delay-1"></i>
+                        </div>
+                        <h3>
+                            What types of rental properties are available in Kuala Lumpur?
+                        </h3>
+                    </div>
+                    <i class="fas"
+                       [ngClass]="openIndex==2 ? 'fa-chevron-up':'fa-chevron-down'">
+                    </i>
+                </button>
+                <div class="faq-answer"
+                     *ngIf="openIndex==2">
+                    <p>
+                        We list master rooms, medium rooms, single rooms, shared rooms,
+                        studio apartments, serviced apartments, condominiums,
+                        apartments, landed homes and entire houses for rent throughout
+                        Kuala Lumpur and nearby locations. Whether you are a student,
+                        working professional or family, you can compare thousands of
+                        rental listings in one place.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+             <div class="faq-card reveal delay-1">            
+                 <button class="faq-question"
+                         (click)="toggleFaq(30)">            
+                     <div class="faq-left">            
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-search-location reveal delay-1"></i>
+                         </div>            
+                         <h3>
+                             How can I find affordable rooms for rent in Kuala Lumpur?
+                         </h3>           
+                     </div>           
+                     <i class="fas"
+                        [ngClass]="openIndex==30 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>           
+                 </button>             
+                 <div class="faq-answer"
+                      *ngIf="openIndex==30">            
+                     <p>
+                         You can find affordable rooms for rent in Kuala Lumpur by filtering listings according to your monthly budget, preferred location, room type and nearby public transport. Areas such as Cheras, Setapak, Kepong, Wangsa Maju, Sri Petaling and Petaling Jaya often provide budget-friendly rental options while still offering convenient access to MRT and LRT stations.
+                     </p>            
+                 </div>             
+             </div>
+                        
+            <!-- FAQ 5 -->          
+             <div class="faq-card reveal delay-1">            
+                 <button class="faq-question"
+                         (click)="toggleFaq(31)">           
+                     <div class="faq-left">            
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-user-friends reveal delay-1"></i>
+                         </div>            
+                         <h3>
+                             Is co-living popular in Kuala Lumpur?
+                         </h3>            
+                     </div>            
+                     <i class="fas"
+                        [ngClass]="openIndex==31 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>           
+                 </button>            
+                 <div class="faq-answer"
+                      *ngIf="openIndex==31">             
+                     <p>
+                         Yes. Co-living has become increasingly popular among students, young professionals and expatriates in Kuala Lumpur. Many co-living spaces offer fully furnished rooms, high-speed WiFi, regular housekeeping, shared kitchens and flexible tenancy agreements in locations such as KLCC, Bangsar, Mont Kiara, Bukit Jalil and Petaling Jaya.
+                     </p>            
+                 </div>            
+             </div>
+                        
+             <!-- FAQ 6 -->           
+             <div class="faq-card reveal delay-1">           
+                 <button class="faq-question"
+                         (click)="toggleFaq(32)">          
+                     <div class="faq-left">          
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-clock reveal delay-1"></i>
+                         </div>
+                         <h3>
+                             How quickly can I move into a rental room?
+                         </h3>
+                     </div>
+                     <i class="fas"
+                        [ngClass]="openIndex==32 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>             
+                 </button>            
+                 <div class="faq-answer"
+                      *ngIf="openIndex==32">           
+                     <p>
+                         Many rooms for rent in Kuala Lumpur are available for immediate move-in once the tenancy agreement has been signed and the required deposits have been paid. Availability depends on the landlord, current tenant's move-out date and the property's readiness.
+                     </p>            
+                 </div>          
+             </div>
+                         
+             <!-- FAQ 7 -->       
+             <div class="faq-card reveal delay-1">           
+                 <button class="faq-question"
+                         (click)="toggleFaq(34)">           
+                     <div class="faq-left">            
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-lock reveal delay-1"></i>
+                         </div>           
+                         <h3>
+                             What should I check before signing a tenancy agreement?
+                         </h3>           
+                     </div>            
+                     <i class="fas"
+                        [ngClass]="openIndex==34 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>            
+                 </button>             
+                 <div class="faq-answer"
+                      *ngIf="openIndex==34">           
+                     <p>
+                         Before signing a tenancy agreement, review the monthly rental, security deposit, utility charges, tenancy duration, notice period, maintenance responsibilities, house rules and any additional fees. It is also advisable to inspect the room and confirm that all furniture and appliances are in good working condition.
+                     </p>            
+                 </div>            
+             </div>
+                          
+             <!-- FAQ 8 -->           
+             <div class="faq-card reveal delay-1">         
+                 <button class="faq-question"
+                         (click)="toggleFaq(35)">            
+                     <div class="faq-left">       
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-star reveal delay-1"></i>
+                         </div>           
+                         <h3>
+                             Why choose RoomRentalKL for finding rooms in Kuala Lumpur?
+                         </h3>           
+                     </div>            
+                     <i class="fas"
+                        [ngClass]="openIndex==35 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>           
+                 </button>           
+                 <div class="faq-answer"
+                      *ngIf="openIndex==35">         
+                     <p>
+                         RoomRentalKL makes it easy to compare room rentals, condominiums, serviced apartments and shared accommodation across Kuala Lumpur. Our platform helps tenants search by location, budget, room type and nearby MRT or LRT stations, allowing you to quickly find a property that suits your lifestyle and rental requirements.
+                     </p>           
+                 </div>          
+             </div>  
+			 
+             <!-- See More Button -->            
+             <div class="faq-more-btn" *ngIf="!showAllFaqs">
+                 <button
+                     class="see-more-btn reveal delay-1"
+                     (click)="toggleMoreFaqs()">
+                     Show More
+                     <i class="fas fa-chevron-down reveal delay-1"></i>
+                 </button>
+             </div>
+             
+            <!-- FAQ 9 -->
+             <ng-container *ngIf="showAllFaqs">
+             <div class="faq-card reveal delay-1">             
+                 <button class="faq-question"
+                         (click)="toggleFaq(10)">            
+                     <div class="faq-left">             
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-couch reveal delay-1"></i>
+                         </div>            
+                         <h3>
+                             Are the rooms fully furnished?
+                         </h3>            
+                     </div>            
+                     <i class="fas"
+                        [ngClass]="openIndex==10 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>           
+                 </button>             
+                 <div class="faq-answer"
+                      *ngIf="openIndex==10">           
+                     <p>
+                         Most room rentals in Kuala Lumpur are fully or partially furnished with essentials such as a bed, mattress, wardrobe, air conditioner, study table, WiFi and washing machine. Furnishings vary depending on the property owner, so always review the listing details before arranging a viewing.
+                     </p>             
+                 </div>            
+             </div>             
+             
+            <!-- FAQ 10 -->            
+             <div class="faq-card reveal delay-1">            
+                 <button class="faq-question"
+                         (click)="toggleFaq(11)">             
+                     <div class="faq-left">         
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-key reveal delay-1"></i>
+                         </div>             
+                         <h3>
+                             How much rental deposit is usually required in Malaysia?
+                         </h3>            
+                     </div>            
+                     <i class="fas"
+                        [ngClass]="openIndex==11 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>           
+                 </button>           
+                 <div class="faq-answer"
+                      *ngIf="openIndex==11">           
+                     <p>
+                         Most landlords require two months' rental deposit together with one month's advance rental. Some properties may also require a utility deposit. Deposit requirements vary depending on the landlord, rental duration and tenancy agreement.
+                     </p>            
+                 </div>           
+             </div>            
+             
+             <!-- FAQ 11 -->       
+             <div class="faq-card reveal delay-1">            
+                 <button class="faq-question"
+                         (click)="toggleFaq(12)">             
+                     <div class="faq-left">           
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-calendar-alt reveal delay-1"></i>
+                         </div>            
+                         <h3>
+                             Do you offer short-term room rentals in Kuala Lumpur?
+                         </h3>            
+                     </div>             
+                     <i class="fas"
+                        [ngClass]="openIndex==12 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>            
+                 </button>            
+                 <div class="faq-answer"
+                      *ngIf="openIndex==12">            
+                     <p>
+                         Yes. Some landlords provide short-term room rentals with flexible tenancy periods. Availability depends on the property and location, especially in popular areas such as KLCC, Bukit Bintang, Mont Kiara, Bangsar and Cyberjaya.
+                     </p>            
+                 </div>            
+             </div>
+                        
+            <!-- FAQ 12 -->             
+             <div class="faq-card reveal delay-1">            
+                 <button class="faq-question"
+                         (click)="toggleFaq(13)">             
+                     <div class="faq-left">             
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-car reveal delay-1"></i>
+                         </div>            
+                         <h3>
+                             Do rental properties include parking?
+                         </h3>            
+                     </div>            
+                     <i class="fas"
+                        [ngClass]="openIndex==13 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>            
+                 </button>            
+                 <div class="faq-answer"
+                      *ngIf="openIndex==13">            
+                     <p>
+                         Many condominiums and serviced apartments provide one or more parking bays, while some rooms may offer parking at an additional monthly fee. Always check the listing details or ask the property owner before confirming your booking.
+                     </p>           
+                 </div>           
+             </div>
+                         
+             <!-- FAQ 13-->           
+             <div class="faq-card reveal delay-1">             
+                 <button class="faq-question"
+                         (click)="toggleFaq(14)">           
+                     <div class="faq-left">             
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-wifi reveal delay-1"></i>
+                         </div>            
+                         <h3>
+                             Are utilities and WiFi included in the monthly rental?
+                         </h3>            
+                     </div>             
+                     <i class="fas"
+                        [ngClass]="openIndex==14 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>            
+                 </button>             
+                 <div class="faq-answer"
+                      *ngIf="openIndex==14">             
+                     <p>
+                         Some room rentals include WiFi, water and electricity within the monthly rent, while others charge separately based on actual usage. The included utilities will always depend on the individual rental listing and landlord's terms.
+                     </p>         
+                 </div>             
+             </div>
+                          
+            <!-- FAQ 14 -->               
+             <div class="faq-card reveal delay-1">            
+                 <button class="faq-question"
+                         (click)="toggleFaq(15)">            
+                     <div class="faq-left">           
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-building reveal delay-1"></i>
+                         </div>            
+                         <h3>
+                             Which areas are best for renting a condominium in Kuala Lumpur?
+                         </h3>            
+                     </div>             
+                     <i class="fas"
+                        [ngClass]="openIndex==15 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>             
+                 </button>             
+                 <div class="faq-answer"
+                      *ngIf="openIndex==15">            
+                     <p>
+                         Popular condominium rental locations include KLCC, Mont Kiara, Bangsar, Bukit Bintang, Bukit Jalil, Damansara, TTDI, Petaling Jaya, Bandar Utama and Sunway. These neighbourhoods offer modern facilities, excellent public transport and convenient access to shopping malls, offices and entertainment.
+                     </p>           
+                 </div>            
+             </div>           
+             
+            <!-- FAQ 15 -->           
+             <div class="faq-card reveal delay-1">           
+                 <button class="faq-question"
+                         (click)="toggleFaq(16)">            
+                     <div class="faq-left">           
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-users reveal delay-1"></i>
+                         </div>            
+                         <h3>
+                             Are shared rooms available for rent?
+                         </h3>           
+                     </div>           
+                     <i class="fas"
+                        [ngClass]="openIndex==16 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>            
+                 </button>            
+                 <div class="faq-answer"
+                      *ngIf="openIndex==16">            
+                     <p>
+                         Yes. Shared rooms are available in many areas throughout Kuala Lumpur and are an affordable option for students, interns and working professionals looking to reduce monthly living expenses while staying close to universities and business districts.
+                     </p>           
+                 </div>          
+             </div>
+                        
+             <!-- FAQ 16 -->           
+             <div class="faq-card reveal delay-1">           
+                 <button class="faq-question"
+                         (click)="toggleFaq(17)">         
+                     <div class="faq-left">            
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-dog reveal delay-1"></i>
+                         </div>            
+                         <h3>
+                             Are pets allowed in rental properties?
+                         </h3>           
+                     </div>             
+                     <i class="fas"
+                        [ngClass]="openIndex==17 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>            
+                 </button>           
+                 <div class="faq-answer"
+                      *ngIf="openIndex==17">          
+                     <p>
+                         Pet policies differ between landlords and condominium management. Some pet-friendly rental properties allow cats or small dogs, while others do not permit pets. Always confirm the property's pet policy before signing a tenancy agreement.
+                     </p>           
+                 </div>           
+             </div>
+                         
+             <!-- FAQ 17-->              
+             <div class="faq-card reveal delay-1">            
+                 <button class="faq-question"
+                         (click)="toggleFaq(18)">            
+                     <div class="faq-left">            
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-shield-alt reveal delay-1"></i>
+                         </div>         
+                         <h3>
+                             Which areas are considered safe for renting in Kuala Lumpur?
+                         </h3>           
+                     </div>          
+                     <i class="fas"
+                        [ngClass]="openIndex==18 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>             
+                 </button>            
+                 <div class="faq-answer"
+                      *ngIf="openIndex==18">            
+                     <p>
+                         Popular neighbourhoods such as KLCC, Mont Kiara, Bangsar, TTDI, Bandar Utama, Damansara, Bukit Jalil, Sunway and Petaling Jaya are well-known for their modern residential communities, security features and convenient access to daily amenities. Prospective tenants should still visit the neighbourhood to ensure it matches their personal preferences.
+                     </p>            
+                 </div>           
+             </div>
+                         
+             <!-- FAQ 18 -->           
+             <div class="faq-card reveal delay-1">            
+                 <button class="faq-question"
+                         (click)="toggleFaq(19)">            
+                     <div class="faq-left">          
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-file-signature reveal delay-1"></i>
+                         </div>           
+                         <h3>
+                             What documents are usually required to rent a room in Kuala Lumpur?
+                         </h3>            
+                     </div>            
+                     <i class="fas"
+                        [ngClass]="openIndex==19 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>            
+                 </button>            
+                 <div class="faq-answer"
+                      *ngIf="openIndex==19">            
+                     <p>
+                         Most landlords require identification such as an NRIC or passport, together with rental deposits and a signed tenancy agreement. International tenants may also be asked to provide a valid visa, student pass or employment pass depending on the landlord's requirements.
+                     </p>
+             
+                 </div>            
+             </div>
+             
+             <!-- FAQ 19 -->            
+             <div class="faq-card reveal delay-1">           
+                 <button class="faq-question"
+                         (click)="toggleFaq(20)">            
+                     <div class="faq-left">           
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-percentage reveal delay-1"></i>
+                         </div>           
+                         <h3>
+                             Are there any agent fees when renting a room in Kuala Lumpur?
+                         </h3>            
+                     </div>            
+                     <i class="fas"
+                        [ngClass]="openIndex==20 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>           
+                 </button>           
+                 <div class="faq-answer"
+                      *ngIf="openIndex==20">  
+                      <p>           
+                         Some room rental listings are advertised directly by property owners, while others are managed by licensed real estate agents. Agent fees, if applicable, depend on the listing. Many room rentals in Kuala Lumpur are available with no agent fee, making them more affordable for tenants.
+                     </p>            
+                 </div>           
+             </div>
+                          
+             <!-- FAQ 20 -->            
+             <div class="faq-card reveal delay-1">            
+                 <button class="faq-question"
+                         (click)="toggleFaq(21)">            
+                     <div class="faq-left">           
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-bed reveal delay-1"></i>
+                         </div>           
+                         <h3>
+                             What is the difference between a master room, medium room and single room?
+                         </h3>           
+                     </div>            
+                     <i class="fas"
+                        [ngClass]="openIndex==21 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>           
+                 </button>             
+                 <div class="faq-answer"
+                      *ngIf="openIndex==21">            
+                     <p>
+                         A master room usually includes a private attached bathroom and offers the largest living space. A medium room is moderately sized and may share a bathroom, while a single room is designed for one occupant and is generally the most budget-friendly option for renters in Kuala Lumpur.
+                     </p>            
+                 </div>            
+             </div>
+                          
+             <!-- FAQ 21 -->          
+             <div class="faq-card reveal delay-1">           
+                 <button class="faq-question"
+                         (click)="toggleFaq(22)">           
+                     <div class="faq-left">           
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-map reveal delay-1"></i>
+                         </div>           
+                         <h3>
+                             Which is the best area to rent a room in Kuala Lumpur?
+                         </h3>           
+                     </div>            
+                     <i class="fas"
+                        [ngClass]="openIndex==22 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>            
+                 </button>            
+                 <div class="faq-answer"
+                      *ngIf="openIndex==22">           
+                     <p>
+                         The best location depends on your lifestyle and workplace. KLCC and Bukit Bintang are ideal for city living, Mont Kiara is popular among expatriates, Bangsar attracts young professionals, Bukit Jalil is suitable for students and families, while Petaling Jaya, Damansara and Sunway offer excellent connectivity and modern amenities.
+                     </p>            
+                 </div>
+             </div>
+                         
+            <!-- FAQ 22 -->              
+             <div class="faq-card reveal delay-1">             
+                 <button class="faq-question"
+                         (click)="toggleFaq(23)">            
+                     <div class="faq-left">           
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-university reveal delay-1"></i>
+                         </div>            
+                         <h3>
+                             Can international tenants rent properties in Malaysia?
+                         </h3>            
+                     </div>            
+                     <i class="fas"
+                        [ngClass]="openIndex==23 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>         
+                 </button>            
+                 <div class="faq-answer"
+                      *ngIf="openIndex==23">             
+                     <p>
+                         Yes. International students, expatriates and foreign professionals can rent rooms, apartments and condominiums in Malaysia by providing valid identification, passport and the required visa or employment documents, subject to the landlord's approval.
+                     </p>          
+                 </div>            
+             </div>
+                          
+            <!-- FAQ 23 -->          
+             <div class="faq-card reveal delay-1">            
+                 <button class="faq-question"
+                         (click)="toggleFaq(24)">            
+                     <div class="faq-left">           
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-bolt reveal delay-1"></i>
+                         </div>            
+                         <h3>
+                             How do I choose the right room for rent?
+                         </h3>           
+                     </div>           
+                     <i class="fas"
+                        [ngClass]="openIndex==24 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>           
+                 </button>            
+                 <div class="faq-answer"
+                      *ngIf="openIndex==24">           
+                     <p>
+                         Compare rental price, room size, furnishing, nearby MRT or LRT stations, parking, WiFi, condominium facilities, security, travel distance to work or university and neighbourhood amenities before deciding on a rental property that matches your budget and lifestyle.
+                     </p>
+             
+                 </div>           
+             </div>            
+             
+             <!-- FAQ 24-->           
+             <div class="faq-card reveal delay-1">            
+                 <button class="faq-question"
+                         (click)="toggleFaq(25)">            
+                     <div class="faq-left">          
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-city reveal delay-1"></i>
+                         </div>            
+                         <h3>
+                             Do you list condominium, apartment and serviced residence rentals?
+                         </h3>           
+                     </div>           
+                     <i class="fas"
+                        [ngClass]="openIndex==25 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>           
+                 </button>            
+                 <div class="faq-answer"
+                      *ngIf="openIndex==25">            
+                     <p>
+                         Yes. Our listings include condominiums, serviced apartments, studio units, apartments, landed houses and shared accommodation throughout Kuala Lumpur and surrounding locations, helping tenants compare different property types from a single platform.
+                     </p>          
+                 </div>             
+             </div>
+                        
+            <!-- FAQ 25 -->          
+             <div class="faq-card reveal delay-1">             
+                 <button class="faq-question"
+                         (click)="toggleFaq(26)">             
+                     <div class="faq-left">           
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-route reveal delay-1"></i>
+                         </div>            
+                         <h3>
+                             How can I search for rental properties by location?
+                         </h3>            
+                     </div>            
+                     <i class="fas"
+                        [ngClass]="openIndex==26 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>            
+                 </button>            
+                 <div class="faq-answer"
+                      *ngIf="openIndex==26">            
+                     <p>
+                         You can browse room rental listings by location, budget, room type and property type. Our location pages cover KLCC, Bukit Bintang, Bangsar, Mont Kiara, Cheras, Bukit Jalil, Kepong, Setapak, Damansara, Petaling Jaya, Sunway, Cyberjaya, Putrajaya and many more popular neighbourhoods.
+                     </p>            
+                 </div>            
+             </div>            
+             
+             <!-- FAQ 26 -->            
+             <div class="faq-card reveal delay-1">            
+                 <button class="faq-question"
+                         (click)="toggleFaq(27)">            
+                     <div class="faq-left">           
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-mobile-alt reveal delay-1"></i>
+                         </div>
+                         <h3>
+                             Can I enquire about a rental property online?
+                         </h3>            
+                     </div>             
+                     <i class="fas"
+                        [ngClass]="openIndex==27 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>             
+                 </button>            
+                 <div class="faq-answer"
+                      *ngIf="openIndex==27">           
+                     <p>
+                         Yes. You can submit an enquiry directly from the property listing to contact the landlord or authorised agent, ask questions, request additional photos and arrange a convenient viewing appointment before making your rental decision.
+                     </p>           
+                 </div>            
+             </div>
+                         
+             <!-- FAQ 27 -->             
+             <div class="faq-card reveal delay-1">           
+                 <button class="faq-question"
+                         (click)="toggleFaq(28)">         
+                     <div class="faq-left">            
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-check-circle reveal delay-1"></i>
+                         </div>            
+                         <h3>
+                             Why should I use RoomRentalKL to find rental properties?
+                         </h3>            
+                     </div>            
+                     <i class="fas"
+                        [ngClass]="openIndex==28 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>            
+                 </button>            
+                 <div class="faq-answer"
+                      *ngIf="openIndex==28">           
+                     <p>
+                         RoomRentalKL is dedicated to helping tenants discover quality room rentals, apartments and condominiums across Kuala Lumpur. We provide detailed property information, area guides, neighbourhood insights and easy-to-use search tools so you can find the ideal rental property quickly and confidently.
+                     </p>          
+                 </div>          
+             </div>            
+             
+            <!-- FAQ 28 -->          
+             <div class="faq-card reveal delay-1">           
+                 <button class="faq-question"
+                         (click)="toggleFaq(29)">           
+                     <div class="faq-left">        
+                         <div class="faq-icon reveal delay-1">
+                             <i class="fas fa-handshake reveal delay-1"></i>
+                         </div>            
+                         <h3>
+                             How do I get started with finding a room for rent in Kuala Lumpur?
+                         </h3>             
+                     </div>            
+                     <i class="fas"
+                        [ngClass]="openIndex==29 ? 'fa-chevron-up':'fa-chevron-down'">
+                     </i>           
+                 </button>           
+                 <div class="faq-answer"
+                      *ngIf="openIndex==29">           
+                     <p>
+                         Start by selecting your preferred location, such as KLCC, Bukit Bintang, Bangsar, Mont Kiara, Cheras, Bukit Jalil, Petaling Jaya or Cyberjaya. Compare rental prices, room types, nearby public transport, facilities and property features before contacting the landlord or agent to arrange a viewing and secure your new home.
+                     </p>            
+                 </div>            
+             </div>
+            </ng-container>
+
+            <div
+                class="faq-more-btn reveal delay-1"
+                *ngIf="showAllFaqs">
+                <button
+                    class="see-more-btn reveal delay-1"
+                    (click)="toggleMoreFaqs()">
+                    Show Less
+                    <i class="fas fa-chevron-up"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

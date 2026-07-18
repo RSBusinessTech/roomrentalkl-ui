@@ -28,4 +28,23 @@ export class ContactComponent implements OnInit {
       }
     });
   }
+
+openIndex: number = -1;
+
+showAllFaqs = false;
+toggleFaq(index: number): void {
+  this.openIndex =
+    this.openIndex === index
+      ? -1
+      : index;
+}
+
+toggleMoreFaqs(): void {
+  this.showAllFaqs = !this.showAllFaqs;
+  // Optional:
+  // Close any opened hidden FAQ when collapsing.
+  if (!this.showAllFaqs && this.openIndex > 9) {
+    this.openIndex = -1;
+  }
+ }
 }
