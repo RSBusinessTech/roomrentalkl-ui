@@ -10,8 +10,8 @@ import { AreasResponse } from '../models/areas-response';
 export class AreaService {
 
   // URL of Rest API to fetch area page data
-  // private url = 'http://localhost:8080/roomrentalkl/areas';
-  private url = 'https://rsbusinesstech-backend.onrender.com/roomrentalkl/areas';
+  private url = 'http://localhost:8080/roomrentalkl/areas';
+  // private url = 'https://rsbusinesstech-backend.onrender.com/roomrentalkl/areas';
 
   // local in-memory cache
   private areaCache: { [slug: string]: AreasResponse } = {};
