@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './features/home/home.component';
 import { AreasComponent } from './features/areas/areas.component';
 import { ContactComponent } from './features/contact/contact.component';
+import { RequestARoomComponent } from './features/request-a-room/request-a-room.component';
 
 
 const routes: Routes = [
@@ -31,7 +32,8 @@ const routes: Routes = [
   { path: 'room-rental-ttdi', component: AreasComponent,  data: { area: 'ttdi' }},
   { path: 'room-rental-cyberjaya', component: AreasComponent,  data: { area: 'cyberjaya' }},
   { path: 'room-rental-putrajaya', component: AreasComponent,  data: { area: 'putrajaya' }},
-  { path: "contact", component: ContactComponent }
+  { path: "contact", component: ContactComponent },
+  { path: "request-a-room", component: RequestARoomComponent },
 ];
 
 @NgModule({

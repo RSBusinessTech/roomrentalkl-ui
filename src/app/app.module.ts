@@ -23,11 +23,12 @@ import { FaqComponent } from './shared/components/faq/faq.component';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 import { RoomCardComponent } from './shared/components/room-card/room-card.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FeaturedRoomsComponent } from './shared/components/featured-rooms/featured-rooms.component';
 import { AreaGuideComponent } from './shared/components/area-guide/area-guide.component';
 import { TransitStationsComponent } from './shared/components/transit-stations/transit-stations.component';
 import { ContactComponent } from './features/contact/contact.component';
+import { RequestARoomComponent } from './features/request-a-room/request-a-room.component';
 
 @NgModule({
   declarations: [
@@ -55,12 +56,14 @@ import { ContactComponent } from './features/contact/contact.component';
     RoomCardComponent,
     TransitStationsComponent,
     ContactComponent,
+    RequestARoomComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

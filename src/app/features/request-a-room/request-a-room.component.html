@@ -1,0 +1,372 @@
+<!-- ======================================================
+     REQUEST ROOM HERO
+====================================================== -->
+<section class="request-hero">
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="breadcrumb reveal">
+            <a routerLink="/">Home</a>
+            <span>/</span>
+            <span>Request a Room</span>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="reveal delay-1">
+                    Request a Room
+                </h1>
+                <p class="reveal delay-1">
+                   Fill up the form below with your rental preferences, budget, preferred
+                   location, and move-in details. Once submitted, our experienced property
+                   advisors will carefully review your requirements and personally recommend
+                   the most suitable rooms, apartments, or condominiums that match your needs.
+                   We'll contact you as soon as we find the best available options.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ======================================================
+     REQUEST FORM
+====================================================== -->
+<section class="request-room-section">
+    <div class="container">
+        <div class="request-card">
+            <form [formGroup]="requestForm"
+                  (ngSubmit)="submitRequest()">
+                <!-- Rental Requirement -->
+                <div class="section-title reveal">
+                    <div class="icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div>
+                        <h2>Your Rental Requirements</h2>
+                        <p>
+                            Help us understand what you're looking for.
+                        </p>
+                    </div>
+                </div>
+                <div class="form-grid three">
+                    <!-- Room Type -->
+                    <div class="form-group">
+                        <label>
+                            Room Type
+                            <span>*</span>
+                        </label>
+                        <select formControlName="roomType">
+                            <option value="">
+                                Select Room Type
+                            </option>
+                            <option *ngFor="let room of roomTypes"
+                                    [value]="room">
+                                {{room}}
+                            </option>
+                        </select>
+                    </div>
+					
+                    <!-- Property -->
+                    <div class="form-group">
+                        <label>
+                            Property Type
+                            <span>*</span>
+                        </label>
+                        <select formControlName="propertyType">
+                            <option value="">
+                                Select Property Type
+                            </option>
+                            <option *ngFor="let item of propertyTypes"
+                                    [value]="item">
+                                {{item}}
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- Area -->
+                    <div class="form-group">
+                        <label>
+                            Preferred Area
+                            <span>*</span>
+                        </label>
+                        <select formControlName="area">
+                            <option value="">
+                                Select Area
+                            </option>
+                            <option *ngFor="let area of areas"
+                                    [value]="area">
+                                {{area}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-grid four">
+                    <!-- Nearby Transit -->
+                    <div class="form-group">
+                        <label>
+                            Nearby Transit
+                        </label>
+                        <select formControlName="transit">
+                            <option value="">
+                                Select MRT / LRT
+                            </option>
+                            <option *ngFor="let transit of transits"
+                                    [value]="transit">
+                                {{transit}}
+                            </option>
+                        </select>
+                    </div>
+
+                    <!-- Move In -->
+                    <div class="form-group">
+                        <label>
+                            Move-in Date
+                        </label>
+                        <input
+                                type="date"
+                                formControlName="moveInDate">
+                    </div>
+
+                    <!-- Min Budget -->
+                    <div class="form-group">
+                        <label>
+                            Minimum Budget (RM)
+                        </label>
+                        <input
+                                type="number"
+                                placeholder="500"
+                                formControlName="minBudget">
+                    </div>
+
+                    <!-- Max Budget -->
+                    <div class="form-group">
+                        <label>
+                            Maximum Budget (RM)
+                        </label>
+                        <input
+                                type="number"
+                                placeholder="1500"
+                                formControlName="maxBudget">
+                    </div>
+                </div>
+
+                <div class="form-grid four">
+                    <!-- People -->
+                    <div class="form-group">
+                        <label>
+                            Number of Occupants
+                        </label>
+                        <select formControlName="occupants">
+                            <option value="">
+                                Select
+                            </option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5+</option>
+                        </select>
+                    </div>
+
+
+                    <!-- Lease -->
+                    <div class="form-group">
+                        <label>
+                            Lease Duration
+                        </label>
+                        <select formControlName="leaseDuration">
+                            <option value="">
+                                Select
+                            </option>
+                            <option>6 Months</option>
+                            <option>12 Months</option>
+                            <option>18 Months</option>
+                            <option>24 Months</option>
+                        </select>
+                    </div>
+
+                    <!-- Furnished -->
+                    <div class="form-group">
+                        <label>
+                            Furnished
+                        </label>
+                        <select formControlName="furnished">
+                            <option>Any</option>
+                            <option>Fully Furnished</option>
+                            <option>Partially Furnished</option>
+                            <option>Unfurnished</option>
+                        </select>
+                    </div>
+
+                    <!-- Parking -->
+                    <div class="form-group">
+                        <label>
+                            Parking Required
+                        </label>
+                        <select formControlName="parking">
+                            <option>No Preference</option>
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Notes -->
+                <div class="form-group full">
+                    <label>
+                        Additional Requirements
+                    </label>
+                    <textarea
+                            rows="5"
+                            placeholder="Example: Near MRT, Pet Friendly, Female Housemates, High Floor..."
+                            formControlName="requirements">
+                    </textarea>
+                </div>
+
+                <!-- Divider -->
+                <div class="divider"></div>
+                <!-- Tenant Information -->
+                <div class="section-title reveal">
+                    <div class="icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div>
+                        <h2>
+                            Tenant Information
+                        </h2>
+                        <p>
+                            Tell us how we can contact you.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-grid three">
+                    <div class="form-group">
+                        <label>
+                            Full Name
+                            <span>*</span>
+                        </label>
+                        <input
+                                type="text"
+                                placeholder="John Smith"
+                                formControlName="fullName">
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            Gender
+                            <span>*</span>
+                        </label>
+                        <select formControlName="gender">
+                            <option value="">
+                                Select Gender
+                            </option>
+                            <option>Male</option>
+                            <option>Female</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            Nationality
+                            <span>*</span>
+                        </label>
+                        <input
+                                type="text"
+                                placeholder="Malaysian"
+                                formControlName="nationality">
+                    </div>
+                </div>
+
+                <div class="form-grid three">
+                    <div class="form-group">
+                        <label>
+                            Email Address
+                            <span>*</span>
+                        </label>
+                        <input
+                                type="email"
+                                placeholder="example@email.com"
+                                formControlName="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            Contact Number
+                            <span>*</span>
+                        </label>
+                        <input
+                                type="text"
+                                placeholder="+60 12 345 6789"
+                                formControlName="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            Occupation
+                        </label>
+                        <input
+                                type="text"
+                                placeholder="Student / Engineer / Manager"
+                                formControlName="occupation">
+                    </div>
+                </div>
+
+                <div class="form-grid two">
+                    <div class="form-group">
+                        <label>
+                            Preferred Contact Method
+                        </label>
+                        <select formControlName="contactMethod">
+                            <option>WhatsApp</option>
+                            <option>Phone Call</option>
+                            <option>Email</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            How did you hear about us?
+                        </label>
+                        <select formControlName="source">
+                            <option>Google Search</option>
+                            <option>Facebook</option>
+                            <option>Instagram</option>
+                            <option>TikTok</option>
+                            <option>Friend Referral</option>
+                            <option>Property Portal</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Terms -->
+                <div class="terms">
+                    <label>
+                        <input
+                                type="checkbox"
+                                formControlName="agree">
+                        <span>
+                            I agree to the Privacy Policy &
+                            Terms and Conditions.
+                        </span>
+                    </label>
+                </div>
+                <!-- Button -->
+                <div class="submit-area reveal">
+                    <button
+                            type="submit"
+                            class="submit-btn">
+
+                        <i class="fas fa-paper-plane"></i>
+                        Submit Request
+                    </button>
+                    <p>
+                        Our property advisor will contact you as soon as
+                        possible with suitable rental options.
+
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
