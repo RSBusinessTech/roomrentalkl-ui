@@ -2520,3 +2520,656 @@ SMALL MOBILE
     background: #FE4042;
     transform: translateY(-2px);
 }
+
+.about-rental-section{
+
+    padding:10px 0 70px;
+
+    /* background:#ffffff; */
+    
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+/*=========================
+Container
+=========================*/
+
+.container{
+
+    width:92%;
+
+    max-width:1350px;
+
+    margin:auto;
+
+}
+
+/*=========================
+Top Layout
+=========================*/
+
+.about-wrapper{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:70px;
+
+}
+
+/*=========================
+Left Content
+=========================*/
+
+.about-content{
+
+    flex:1;
+
+}
+
+.about-content h2{
+    font-size:43px;
+    line-height:1.25;
+    margin-bottom:30px;
+    color:#FE4042;
+    font-size:50px;
+    font-weight:800;
+}
+
+.about-content p{
+
+    font-size:18px;
+
+    line-height:1.95;
+
+    color:#555;
+
+    margin-bottom:28px;
+
+}
+
+.about-content strong{
+
+    color:#1f376f;
+
+}
+
+.last-text{
+
+    margin-bottom:0;
+
+}
+
+/*=========================
+Right Image
+=========================*/
+
+.about-image{
+
+    flex:0 0 430px;
+
+    text-align:right;
+
+}
+
+.about-image img{
+
+    width:100%;
+
+    max-width:430px;
+
+    opacity:.9;
+
+}
+
+/*=========================
+CTA
+=========================*/
+
+.cta-box{
+
+    margin-top:0px;
+    margin-bottom: -20px;
+
+    background:#081a49;
+
+    border-radius:22px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 45px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+}
+
+.cta-left{
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+.icon-circle{
+
+    width:92px;
+
+    height:92px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.07);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin-right:30px;
+
+}
+
+.icon-circle i{
+
+    color:#ffffff;
+
+    font-size:42px;
+
+}
+
+.cta-left h3{
+    color:#ffffff;
+    font-size:50px;
+    margin-bottom:12px;
+    font-weight:700;
+}
+
+.cta-left p{
+
+    color:#f3f3f3;
+
+    font-size:21px;
+
+    margin:0;
+
+}
+
+/*=========================
+Buttons
+=========================*/
+
+.cta-buttons{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:22px;
+
+}
+
+.cta-buttons a{
+
+    text-decoration:none;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-width:255px;
+
+    height:68px;
+
+    border-radius:12px;
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.cta-buttons i{
+
+    margin-right:12px;
+
+    font-size:20px;
+
+}
+
+.browse-btn{
+
+    background:#ff3d3d;
+
+}
+
+.whatsapp-btn{
+
+    background:#1dbf4c;
+
+}
+
+.browse-btn:hover{
+
+    background:#ea2d2d;
+
+    transform:translateY(-3px);
+
+}
+
+.whatsapp-btn:hover{
+
+    background:#18a643;
+
+    transform:translateY(-3px);
+
+}
+
+/*====================================================
+Animation
+====================================================*/
+
+.about-content,
+.about-image,
+.cta-box{
+
+    animation:fadeUp .8s ease forwards;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/*====================================================
+Large Desktop
+====================================================*/
+
+@media (max-width:1600px){
+
+    .cta-left h3{
+
+        font-size:36px;
+
+    }
+
+}
+
+/*====================================================
+Laptop
+====================================================*/
+
+@media (max-width:1366px){
+
+    .about-wrapper{
+
+        gap:50px;
+
+    }
+
+    .about-content p{
+
+        font-size:17px;
+
+        line-height:1.8;
+
+    }
+
+    .about-image{
+
+        flex:0 0 360px;
+
+    }
+
+    .cta-box{
+
+        padding:32px;
+
+    }
+
+    .cta-left h3{
+
+        font-size:31px;
+
+    }
+
+    .cta-left p{
+
+        font-size:18px;
+
+    }
+
+    .cta-buttons a{
+
+        min-width:215px;
+
+        height:60px;
+
+        font-size:17px;
+
+    }
+
+}
+
+/*====================================================
+Tablet Landscape
+====================================================*/
+
+@media (max-width:1199px){
+
+    .about-wrapper{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .about-image{
+
+        order:-1;
+
+        flex:none;
+
+        text-align:center;
+
+    }
+
+    .about-image img{
+
+        max-width:420px;
+
+    }
+
+    .cta-box{
+
+        flex-direction:column;
+
+        text-align:center;
+
+        gap:30px;
+
+    }
+
+    .cta-left{
+
+        flex-direction:column;
+
+    }
+
+    .icon-circle{
+
+        margin-right:0;
+
+        margin-bottom:22px;
+
+    }
+
+}
+
+/*====================================================
+Tablet Portrait
+====================================================*/
+
+@media (max-width:991px){
+
+    .about-rental-section{
+
+        padding:70px 0;
+
+    }
+
+    .about-content p{
+
+        font-size:16px;
+
+    }
+
+    .cta-left h3{
+
+        font-size:28px;
+
+    }
+
+    .cta-left p{
+
+        font-size:17px;
+
+    }
+
+    .cta-buttons{
+
+        width:100%;
+
+        justify-content:center;
+
+        flex-wrap:wrap;
+
+    }
+
+    .cta-buttons a{
+
+        min-width:230px;
+
+    }
+
+}
+
+/*====================================================
+Mobile
+====================================================*/
+
+@media (max-width:767px){
+
+    .container{
+
+        width:92%;
+
+    }
+
+    .about-rental-section{
+
+        padding:55px 0;
+
+    }
+
+    .about-wrapper{
+
+        gap:35px;
+
+    }
+
+    .about-content h2{
+
+        font-size:28px;
+
+        line-height:1.35;
+        margin-top: -20px;;
+
+        margin-bottom:20px;
+
+    }
+
+    .about-content p{
+
+        font-size:15px;
+
+        line-height:1.9;
+
+        margin-bottom:20px;
+
+    }
+
+    .about-image img{
+
+        max-width:300px;
+
+    }
+
+    .cta-box{
+
+        margin-top:45px;
+
+        padding:30px 22px;
+
+        border-radius:18px;
+
+    }
+
+    .icon-circle{
+
+        width:72px;
+
+        height:72px;
+
+    }
+
+    .icon-circle i{
+
+        font-size:32px;
+
+    }
+
+    .cta-left h3{
+
+        font-size:24px;
+
+        line-height:1.4;
+
+    }
+
+    .cta-left p{
+
+        font-size:15px;
+
+        line-height:1.7;
+
+    }
+
+    .cta-buttons{
+
+        width:100%;
+
+        flex-direction:column;
+
+    }
+
+    .cta-buttons a{
+
+        width:100%;
+
+        min-width:100%;
+
+        height:56px;
+
+        font-size:16px;
+
+    }
+
+}
+
+/*====================================================
+Small Mobile
+====================================================*/
+
+@media (max-width:480px){
+
+    .about-content h2{
+
+        font-size:24px;
+
+    }
+
+    .about-content p{
+
+        font-size:14px;
+
+    }
+
+    .about-image img{
+
+        max-width:250px;
+
+    }
+
+    .cta-box{
+
+        padding:25px 18px;
+
+    }
+
+    .cta-left h3{
+
+        font-size:21px;
+
+    }
+
+    .cta-left p{
+
+        font-size:14px;
+
+    }
+
+    .icon-circle{
+
+        width:65px;
+
+        height:65px;
+
+    }
+
+    .icon-circle i{
+
+        font-size:28px;
+
+    }
+
+    .cta-buttons a{
+
+        height:52px;
+
+        font-size:15px;
+
+    }
+
+}
+.about-content strong{
+    color:#002874;
+    font-weight:700;
+}
+
+.kl-red{
+    color:#FE4042; /* Red */
+}
