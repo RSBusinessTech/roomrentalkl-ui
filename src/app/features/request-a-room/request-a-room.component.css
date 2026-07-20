@@ -1070,3 +1070,21 @@ REQUEST HERO - MOBILE
 .delay-3{ transition-delay:.3s; }
 .delay-4{ transition-delay:.4s; }
 .delay-5{ transition-delay:.5s; }
+
+.error {
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+.form-group input[type="date"]{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    display:block;
+
+    -webkit-appearance:none;
+    appearance:none;
+
+    box-sizing:border-box;
+}
