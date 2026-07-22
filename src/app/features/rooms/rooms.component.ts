@@ -6,7 +6,6 @@ import {
 
 import {
   ActivatedRoute,
-  NavigationEnd,
   Router
 } from '@angular/router';
 
@@ -20,10 +19,13 @@ import {
 } from 'rxjs';
 
 import {
-  filter
-} from 'rxjs/operators';
-import { RoomSEO, ROOM_SEO } from 'src/app/shared/data/room-seo';
-import { AREAS } from 'src/app/shared/data/areas';
+  RoomSEO,
+  ROOM_SEO
+} from 'src/app/shared/data/room-seo';
+
+import {
+  AREAS
+} from 'src/app/shared/data/areas';
 
 
 @Component({
@@ -35,39 +37,58 @@ import { AREAS } from 'src/app/shared/data/areas';
 })
 export class RoomsComponent implements OnInit, OnDestroy {
 
+  // =========================================
+  // AREA DATA
+  // =========================================
+
   areas = AREAS;
+
+
+  // =========================================
+  // SEARCH FILTERS
+  // =========================================
+
   propertyType: string = '';
+
   selectedLocation: string = '';
 
+  minPrice: number | null = null;
 
-  // SEO data from room-seo.ts
+  maxPrice: number | null = null;
+
+
+  // =========================================
+  // SEO DATA
+  // =========================================
+
   roomSEO!: RoomSEO;
 
-  // Current room slug
   roomSlug!: string;
 
-  // Dynamic listings from REST API
+
+  // =========================================
+  // PROPERTY DATA
+  // =========================================
+
   properties: any[] = [];
 
-  // Loading state
   loading: boolean = true;
 
-  // API statistics
   totalRooms: number = 0;
 
   totalLocations: number = 0;
 
-  minPrice!: number;
-  maxPrice!: number;
 
-  furnishing: string = '';
+  // =========================================
+  // SUBSCRIPTIONS
+  // =========================================
 
-
-  // Subscriptions
   private routeSubscription!: Subscription;
 
-  private routerSubscription!: Subscription;
 
+  // =========================================
+  // CONSTRUCTOR
+  // =========================================
 
   constructor(
     private route: ActivatedRoute,
@@ -76,11 +97,16 @@ export class RoomsComponent implements OnInit, OnDestroy {
 
     private titleService: Title,
 
-    private metaService: Meta,
+    private metaService: Meta
 
     // private propertyService: PropertyService
+
   ) {}
 
+
+  // =========================================
+  // INIT
+  // =========================================
 
   ngOnInit(): void {
 
@@ -96,10 +122,15 @@ export class RoomsComponent implements OnInit, OnDestroy {
   }
 
 
+  // =========================================
+  // LOAD ROOM SEO PAGE
+  // =========================================
+
   loadRoomPage(): void {
 
     // Get static SEO configuration
-    this.roomSEO = ROOM_SEO[this.roomSlug];
+    this.roomSEO =
+      ROOM_SEO[this.roomSlug];
 
 
     // Safety check
@@ -110,12 +141,14 @@ export class RoomsComponent implements OnInit, OnDestroy {
         this.roomSlug
       );
 
+      this.loading = false;
+
       return;
 
     }
 
 
-    // Update SEO
+    // Update SEO metadata
     this.updateSEO();
 
 
@@ -124,6 +157,10 @@ export class RoomsComponent implements OnInit, OnDestroy {
 
   }
 
+
+  // =========================================
+  // SEO
+  // =========================================
 
   updateSEO(): void {
 
@@ -134,121 +171,218 @@ export class RoomsComponent implements OnInit, OnDestroy {
 
 
     // Meta description
-    this.metaService.updateTag(
-      {
-        name: 'description',
-        content: this.roomSEO.metaDescription
-      }
-    );
+    this.metaService.updateTag({
+      name: 'description',
+
+      content:
+        this.roomSEO.metaDescription
+    });
 
 
     // Robots
-    this.metaService.updateTag(
-      {
-        name: 'robots',
-        content: this.roomSEO.robots
-      }
-    );
+    this.metaService.updateTag({
+      name: 'robots',
+
+      content:
+        this.roomSEO.robots
+    });
 
 
     // Open Graph title
-    this.metaService.updateTag(
-      {
-        property: 'og:title',
-        content: this.roomSEO.metaTitle
-      }
-    );
+    this.metaService.updateTag({
+      property: 'og:title',
+
+      content:
+        this.roomSEO.metaTitle
+    });
 
 
     // Open Graph description
-    this.metaService.updateTag(
-      {
-        property: 'og:description',
-        content: this.roomSEO.metaDescription
-      }
-    );
+    this.metaService.updateTag({
+      property: 'og:description',
+
+      content:
+        this.roomSEO.metaDescription
+    });
 
 
     // Open Graph image
-    this.metaService.updateTag(
-      {
-        property: 'og:image',
-        content: this.roomSEO.heroImage
-      }
-    );
+    this.metaService.updateTag({
+      property: 'og:image',
+
+      content:
+        this.roomSEO.heroImage
+    });
 
 
     // Open Graph URL
-    this.metaService.updateTag(
+    this.metaService.updateTag({
+      property: 'og:url',
+
+      content:
+        this.roomSEO.canonicalUrl
+    });
+
+  }
+
+
+  // =========================================
+  // SEARCH ROOMS
+  // =========================================
+
+  onSearch(): void {
+
+    const queryParams: any = {};
+
+
+    // =====================================
+    // PROPERTY TYPE
+    // =====================================
+
+    if (this.propertyType) {
+
+      queryParams.propertyType =
+        this.propertyType;
+
+    }
+
+
+    // =====================================
+    // AREA
+    // =====================================
+
+    if (this.selectedLocation) {
+
+      queryParams.area =
+        this.selectedLocation;
+
+    }
+
+
+    // =====================================
+    // MIN PRICE
+    // =====================================
+
+    if (
+      this.minPrice !== null &&
+      this.minPrice !== undefined
+    ) {
+
+      queryParams.minPrice =
+        this.minPrice;
+
+    }
+
+
+    // =====================================
+    // MAX PRICE
+    // =====================================
+
+    if (
+      this.maxPrice !== null &&
+      this.maxPrice !== undefined
+    ) {
+
+      queryParams.maxPrice =
+        this.maxPrice;
+
+    }
+
+
+    // =====================================
+    // ROOM TYPE
+    // =====================================
+
+    // Keep the current SEO room type
+    // when searching from a room-specific page.
+
+    if (this.roomSlug) {
+
+      queryParams.roomType =
+        this.roomSlug;
+
+    }
+
+
+    // =====================================
+    // NAVIGATE
+    // =====================================
+
+    this.router.navigate(
+      ['/rooms'],
       {
-        property: 'og:url',
-        content: this.roomSEO.canonicalUrl
+        queryParams: queryParams
       }
     );
 
   }
 
 
-  // loadProperties(): void {
+  // =========================================
+  // LOAD PROPERTIES
+  // =========================================
 
-  //   this.loading = true;
+  /*
+  loadProperties(): void {
 
-
-  //   this.propertyService
-  //     .getPropertiesByRoomType(this.roomSlug)
-  //     .subscribe(
-
-  //       (response: any) => {
-
-  //         this.loading = false;
+    this.loading = true;
 
 
-  //         if (response) {
+    this.propertyService
+      .getPropertiesByRoomType(this.roomSlug)
+      .subscribe(
 
-  //           this.properties =
-  //             response.properties || [];
+        (response: any) => {
 
-
-  //           this.totalRooms =
-  //             response.totalRooms ||
-  //             this.properties.length;
+          this.loading = false;
 
 
-  //           this.totalLocations =
-  //             response.totalLocations ||
-  //             0;
+          if (response) {
 
-  //         }
-
-  //       },
+            this.properties =
+              response.properties || [];
 
 
-  //       error => {
+            this.totalRooms =
+              response.totalRooms ||
+              this.properties.length;
 
-  //         this.loading = false;
 
-  //         console.error(
-  //           'Unable to load room listings',
-  //           error
-  //         );
+            this.totalLocations =
+              response.totalLocations ||
+              0;
 
-  //       }
+          }
 
-  //     );
+        },
 
-  // }
+
+        error => {
+
+          this.loading = false;
+
+          console.error(
+            'Unable to load room listings',
+            error
+          );
+
+        }
+
+      );
+
+  }
+  */
+
+
+  // =========================================
+  // DESTROY
+  // =========================================
 
   ngOnDestroy(): void {
 
     if (this.routeSubscription) {
 
       this.routeSubscription.unsubscribe();
-
-    }
-
-    if (this.routerSubscription) {
-
-      this.routerSubscription.unsubscribe();
 
     }
 
