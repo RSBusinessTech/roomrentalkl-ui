@@ -57,12 +57,6 @@ export class RoomsComponent implements OnInit, OnDestroy {
 
   totalLocations: number = 0;
 
-
-  // Search
-  searchKeyword: string = '';
-
-  selectedLocation: string = '';
-
   minPrice!: number;
   maxPrice!: number;
 
@@ -243,20 +237,6 @@ export class RoomsComponent implements OnInit, OnDestroy {
   //     );
 
   // }
-
-
-  onSearch(): void {
-
-    console.log(
-      'Search:',
-      this.searchKeyword
-    );
-
-    // You can connect this with
-    // your REST API filter endpoint later.
-
-  }
-
 
   ngOnDestroy(): void {
 
