@@ -220,3 +220,231 @@
   </div>
 
 </section>
+
+<!-- ==========================================================
+     ROOM INFORMATION THREE COLUMN SECTION
+========================================================== -->
+
+<section
+  class="room-info-section"
+  *ngIf="roomSEO">
+
+  <div class="container">
+
+    <div class="room-info-grid">
+
+
+      <!-- ====================================================
+           COLUMN 1
+           POPULAR LOCATIONS
+      ===================================================== -->
+
+      <div class="room-info-card locations-card">
+
+        <div class="room-info-header">
+
+          <h2>
+            Popular Locations for {{ roomSEO.shortTitle }}
+          </h2>
+
+        </div>
+
+
+        <!-- LOCATIONS -->
+
+        <div
+          class="popular-locations-grid"
+          *ngIf="
+            roomSEO.popularLocations &&
+            roomSEO.popularLocations.length
+          ">
+
+          <a
+            class="location-item"
+            *ngFor="
+              let location of roomSEO.popularLocations
+            "
+            [routerLink]="location.url">
+
+            <!-- ICON -->
+
+            <div class="location-icon">
+
+              <i
+                [class]="location.icon">
+              </i>
+
+            </div>
+
+
+            <!-- NAME -->
+
+            <h3>
+              {{ location.name }}
+            </h3>
+
+
+            <!-- ROOM COUNT -->
+
+            <span>
+              {{ location.roomCount }}
+            </span>
+
+          </a>
+
+        </div>
+
+
+        <!-- VIEW ALL -->
+
+        <a
+          routerLink="/rooms-for-rent-kl"
+          class="room-info-button">
+
+          View All Locations
+
+        </a>
+
+      </div>
+
+
+
+      <!-- ====================================================
+           COLUMN 2
+           RENTAL PRICE GUIDE
+      ===================================================== -->
+
+      <div class="room-info-card price-guide-card">
+
+
+        <!-- HEADER -->
+
+        <div class="price-guide-header">
+
+          <h2>
+            {{ roomSEO.priceGuideTitle }}
+          </h2>
+
+          <p>
+            {{ roomSEO.priceGuideSubtitle }}
+          </p>
+
+        </div>
+
+
+        <!-- PRICE LIST -->
+
+        <div
+          class="rental-price-grid"
+          *ngIf="
+            roomSEO.rentalPrices &&
+            roomSEO.rentalPrices.length
+          ">
+
+          <div
+            class="rental-price-item"
+            *ngFor="
+              let price of roomSEO.rentalPrices
+            ">
+
+            <h3>
+              {{ price.location }}
+            </h3>
+
+            <div class="price-value">
+
+              RM {{ price.minPrice | number }}
+
+              <span>–</span>
+
+              RM {{ price.maxPrice | number }}
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- NOTE -->
+
+        <p class="price-guide-note">
+
+          {{ roomSEO.priceGuideNote }}
+
+        </p>
+
+      </div>
+
+
+
+      <!-- ====================================================
+           COLUMN 3
+           WHY CHOOSE
+      ===================================================== -->
+
+      <div class="room-info-card why-choose-card">
+
+
+        <!-- HEADER -->
+
+        <div class="why-choose-header">
+
+          <h2>
+            Why Choose a {{ roomSEO.shortTitle }}?
+          </h2>
+
+        </div>
+
+
+        <!-- LIST -->
+
+        <ul
+          class="why-choose-list"
+          *ngIf="
+            roomSEO.whyChooseItems &&
+            roomSEO.whyChooseItems.length
+          ">
+
+          <li
+            *ngFor="
+              let item of roomSEO.whyChooseItems
+            ">
+
+            <span class="why-choose-icon">
+
+              <i
+                [class]="item.icon">
+              </i>
+
+            </span>
+
+            <span class="why-choose-text">
+
+              {{ item.text }}
+
+            </span>
+
+          </li>
+
+        </ul>
+
+
+        <!-- EXPLORE BUTTON -->
+
+        <a
+          class="room-info-button"
+          [routerLink]="roomSEO.exploreButtonUrl">
+
+          {{ roomSEO.exploreButtonText }}
+
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>

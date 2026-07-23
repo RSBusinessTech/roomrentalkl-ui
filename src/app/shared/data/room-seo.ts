@@ -3,11 +3,19 @@
 // ============================================================
 
 
+// ============================================================
+// FAQ
+// ============================================================
+
 export interface RoomFAQ {
   question: string;
   answer: string;
 }
 
+
+// ============================================================
+// RELATED ROOM
+// ============================================================
 
 export interface RelatedRoom {
   name: string;
@@ -15,6 +23,10 @@ export interface RelatedRoom {
   url: string;
 }
 
+
+// ============================================================
+// POPULAR SEARCH
+// ============================================================
 
 export interface PopularSearch {
   label: string;
@@ -30,6 +42,39 @@ export interface RoomFeature {
   icon: string;
   title: string;
   description: string;
+}
+
+
+// ============================================================
+// POPULAR LOCATION
+// ============================================================
+
+export interface PopularLocation {
+  icon: string;
+  name: string;
+  roomCount: string;
+  url: string;
+}
+
+
+// ============================================================
+// RENTAL PRICE
+// ============================================================
+
+export interface RentalPrice {
+  location: string;
+  minPrice: number;
+  maxPrice: number;
+}
+
+
+// ============================================================
+// WHY CHOOSE ITEM
+// ============================================================
+
+export interface WhyChooseItem {
+  icon: string;
+  text: string;
 }
 
 
@@ -80,6 +125,35 @@ export interface RoomSEO {
   // ==========================================================
 
   features: RoomFeature[];
+
+
+  // ==========================================================
+  // POPULAR LOCATIONS
+  // ==========================================================
+
+  popularLocations: PopularLocation[];
+
+
+  // ==========================================================
+  // RENTAL PRICE GUIDE
+  // ==========================================================
+
+  priceGuideTitle: string;
+  priceGuideSubtitle: string;
+
+  rentalPrices: RentalPrice[];
+
+  priceGuideNote: string;
+
+
+  // ==========================================================
+  // WHY CHOOSE
+  // ==========================================================
+
+  whyChooseItems: WhyChooseItem[];
+
+  exploreButtonUrl: string;
+  exploreButtonText: string;
 
 
   // ==========================================================
@@ -135,1096 +209,2266 @@ export interface RoomSEO {
 export const ROOM_SEO: { [key: string]: RoomSEO } = {
 
 
-  // ==========================================================
-  // 1. ALL ROOMS FOR RENT KL
-  // ==========================================================
+ // ==========================================================
+// 1. ROOMS FOR RENT IN KUALA LUMPUR
+// ==========================================================
 
-  'rooms-for-rent-kl': {
+'rooms-for-rent-kl': {
+
+  slug: 'rooms-for-rent-kl',
+  url: '/rooms-for-rent-kl',
+
+  metaTitle:
+    'Rooms for Rent in Kuala Lumpur | Find Rooms in KL',
+
+  metaDescription:
+    'Find rooms for rent in Kuala Lumpur including single rooms, master rooms, shared rooms and furnished rooms in popular KL locations.',
+
+  canonicalUrl:
+    'https://anaangproperty.com/rooms-for-rent-kl',
+
+  robots:
+    'index, follow',
+
+  heroImage:
+    '/assets/images/rooms/rooms-for-rent-kl.jpg',
+
+  h1:
+    'Rooms for Rent in Kuala Lumpur',
+
+  shortTitle:
+    'Rooms for Rent in KL',
+
+  introContent:
+    'Looking for rooms for rent in Kuala Lumpur? Explore a wide range of private rooms, master rooms, single rooms, shared rooms and furnished rooms across popular areas of Kuala Lumpur.',
+
+  roomCountLabel:
+    'Rooms for Rent',
+
+  locationCountLabel:
+    'Popular KL Locations',
+
+
+  features: [
+
+    {
+      icon: 'fas fa-home',
+      title: 'Wide Room Choices',
+      description:
+        'Explore different types of rooms for rent including single rooms, master rooms and shared accommodation.'
+    },
+
+    {
+      icon: 'fas fa-map-marker-alt',
+      title: 'Popular KL Locations',
+      description:
+        'Find rental rooms in convenient Kuala Lumpur areas close to offices, universities, shopping malls and daily amenities.'
+    },
+
+    {
+      icon: 'fas fa-wallet',
+      title: 'Different Budgets',
+      description:
+        'Compare rooms across different rental budgets and find accommodation that matches your needs.'
+    },
+
+    {
+      icon: 'fas fa-subway',
+      title: 'Near Public Transport',
+      description:
+        'Discover rooms near MRT, LRT and other convenient public transportation routes.'
+    },
+
+    {
+      icon: 'fas fa-couch',
+      title: 'Furnished Options',
+      description:
+        'Choose from furnished, semi-furnished and unfurnished room rental options.'
+    },
+
+    {
+      icon: 'fas fa-search',
+      title: 'Easy Property Search',
+      description:
+        'Search and explore available rooms based on your preferred location, budget and room type.'
+    }
+
+  ],
+
+
+  popularLocations: [
+
+    {
+      icon: 'fas fa-city',
+      name: 'KLCC',
+      roomCount: '50+ Rooms',
+      url: '/room-rental-klcc'
+    },
+
+    {
+      icon: 'fas fa-shopping-bag',
+      name: 'Bukit Bintang',
+      roomCount: '45+ Rooms',
+      url: '/room-rental-bukit-bintang'
+    },
+
+    {
+      icon: 'fas fa-home',
+      name: 'Mont Kiara',
+      roomCount: '40+ Rooms',
+      url: '/room-rental-mont-kiara'
+    },
+
+    {
+      icon: 'fas fa-tree',
+      name: 'Bangsar',
+      roomCount: '40+ Rooms',
+      url: '/room-rental-bangsar'
+    },
 
-    slug: 'rooms-for-rent-kl',
-    url: '/rooms-for-rent-kl',
+    {
+      icon: 'fas fa-subway',
+      name: 'Bukit Jalil',
+      roomCount: '45+ Rooms',
+      url: '/room-rental-bukit-jalil'
+    },
 
-    metaTitle:
-      'Rooms for Rent in Kuala Lumpur | Find Rooms in KL',
+    {
+      icon: 'fas fa-map-marker-alt',
+      name: 'Cheras',
+      roomCount: '50+ Rooms',
+      url: '/room-rental-cheras'
+    }
 
-    metaDescription:
-      'Find rooms for rent in Kuala Lumpur including master rooms, medium rooms, single rooms, studios, furnished rooms and budget rooms.',
+  ],
 
-    canonicalUrl:
-      'https://anaangproperty.com/rooms-for-rent-kl',
 
-    robots:
-      'index, follow',
+  priceGuideTitle:
+    'Room Rental Price Guide in Kuala Lumpur',
 
-    heroImage:
-      '/assets/images/rooms/rooms-for-rent-kl.jpg',
+  priceGuideSubtitle:
+    'Typical monthly room rental ranges in popular KL locations',
 
-    h1:
-      'Rooms for Rent in Kuala Lumpur',
+  rentalPrices: [
 
-    shortTitle:
-      'Rooms for Rent in KL',
+    {
+      location: 'KLCC',
+      minPrice: 600,
+      maxPrice: 2000
+    },
 
-    introContent:
-      'Find the best rooms for rent in Kuala Lumpur. Explore furnished, affordable and convenient room rentals near MRT, LRT, shopping malls, universities and business hubs.',
+    {
+      location: 'Bukit Bintang',
+      minPrice: 500,
+      maxPrice: 1800
+    },
 
-    roomCountLabel:
-      'Rooms',
+    {
+      location: 'Mont Kiara',
+      minPrice: 500,
+      maxPrice: 1700
+    },
 
-    locationCountLabel:
-      'Locations',
+    {
+      location: 'Bangsar',
+      minPrice: 450,
+      maxPrice: 1600
+    },
 
+    {
+      location: 'Bukit Jalil',
+      minPrice: 350,
+      maxPrice: 1300
+    },
 
-    // ========================================================
-    // FEATURES
-    // ========================================================
+    {
+      location: 'Cheras',
+      minPrice: 300,
+      maxPrice: 1200
+    }
 
-    features: [
+  ],
 
-      {
-        icon: 'fas fa-bed',
-        title: 'More Choices',
-        description:
-          'Explore different room types, sizes and rental options across Kuala Lumpur.'
-      },
+  priceGuideNote:
+    'Room rental prices in Kuala Lumpur vary depending on location, room type, furnishing, property facilities, rental demand and proximity to public transportation.',
 
-      {
-        icon: 'fas fa-shield-alt',
-        title: 'Privacy',
-        description:
-          'Find suitable rooms with the right balance of privacy, comfort and convenience.'
-      },
 
-      {
-        icon: 'fas fa-building',
-        title: 'Better Facilities',
-        description:
-          'Access properties with facilities such as pools, gyms, security and more.'
-      },
+  whyChooseItems: [
 
-      {
-        icon: 'fas fa-map-marker-alt',
-        title: 'Prime Locations',
-        description:
-          'Choose rooms near MRT, LRT, malls, offices, universities and daily essentials.'
-      },
+    {
+      icon: 'fas fa-map-marker-alt',
+      text: 'Explore rooms in popular Kuala Lumpur locations.'
+    },
 
-      {
-        icon: 'fas fa-tags',
-        title: 'Value for Money',
-        description:
-          'Discover rental options for different budgets and lifestyle requirements.'
-      },
+    {
+      icon: 'fas fa-home',
+      text: 'Choose from single, master, shared and private rooms.'
+    },
 
-      {
-        icon: 'fas fa-wifi',
-        title: 'All Inclusive',
-        description:
-          'Many properties include utilities, WiFi, furniture and selected housekeeping options.'
-      }
+    {
+      icon: 'fas fa-wallet',
+      text: 'Find room rental options for different budgets.'
+    },
 
-    ],
+    {
+      icon: 'fas fa-subway',
+      text: 'Discover rooms near MRT, LRT and public transport.'
+    }
 
+  ],
 
-    introTitle:
-      'Find Rooms for Rent in Kuala Lumpur',
 
-    whyChooseTitle:
-      'Why Rent a Room in Kuala Lumpur?',
+  exploreButtonUrl:
+    '/rooms-for-rent-kl',
 
-    whyChooseContent: [
+  exploreButtonText:
+    'Explore Rooms for Rent',
 
-      'Access to major business districts, shopping malls and entertainment areas.',
 
-      'Convenient connectivity through MRT, LRT, monorail and public transport.',
+  introTitle:
+    'Find Rooms for Rent in Kuala Lumpur',
 
-      'A wide selection of rooms for different budgets and lifestyles.',
 
-      'Suitable for working professionals, students and long-term tenants.'
+  whyChooseTitle:
+    'Why Rent a Room in Kuala Lumpur?',
 
-    ],
 
-    rentalGuideTitle:
-      'Room Rental Guide in Kuala Lumpur',
+  whyChooseContent: [
 
-    rentalGuideContent:
-      'Room rental prices in Kuala Lumpur vary depending on location, room type, furnishing, condominium facilities and proximity to public transportation.',
+    'Wide range of room rental options across Kuala Lumpur.',
 
-    whoIsItForTitle:
-      'Who Are These Rooms Suitable For?',
+    'Suitable for students, professionals, expatriates and working tenants.',
 
-    whoIsItForContent:
-      'Room rentals in Kuala Lumpur are suitable for working professionals, students, expatriates, young professionals and tenants looking for convenient accommodation.',
+    'Different room types and rental budgets available.',
 
+    'Convenient locations near offices, universities, shopping malls and public transport.'
 
-    // ========================================================
-    // FAQ
-    // ========================================================
+  ],
 
-    faqs: [
 
-      {
-        question:
-          'Where can I find rooms for rent in Kuala Lumpur?',
+  rentalGuideTitle:
+    'Kuala Lumpur Room Rental Guide',
 
-        answer:
-          'You can explore available rooms for rent across Kuala Lumpur, including different room types, locations and rental budgets.'
-      },
 
-      {
-        question:
-          'What types of rooms are available for rent in KL?',
+  rentalGuideContent:
+    'Room rental prices in Kuala Lumpur depend on location, room type, room size, furnishing, property facilities and access to public transportation. Popular central areas may have higher rental prices, while areas further from the city centre can offer more affordable options.',
 
-        answer:
-          'Common options include master rooms, medium rooms, single rooms, studio rooms, shared rooms, furnished rooms and budget rooms.'
-      }
 
-    ],
+  whoIsItForTitle:
+    'Who Are Rooms for Rent in KL Suitable For?',
 
 
-    // ========================================================
-    // RELATED ROOMS
-    // ========================================================
+  whoIsItForContent:
+    'Rooms for rent in Kuala Lumpur are suitable for students, young professionals, expatriates, working adults and tenants who prefer flexible accommodation without renting an entire property.',
 
-    relatedRooms: [
 
-      {
-        name:
-          'Master Room Rental in KL',
+  faqs: [
 
-        slug:
-          'master-room-rental-kl',
+    {
+      question:
+        'How much does it cost to rent a room in Kuala Lumpur?',
 
-        url:
-          '/master-room-rental-kl'
-      },
+      answer:
+        'Room rental prices in Kuala Lumpur vary depending on the location, room type, furnishing and property facilities. Affordable rooms may start from a few hundred ringgit per month, while rooms in prime central locations can cost significantly more.'
+    },
 
-      {
-        name:
-          'Single Room Rental in KL',
+    {
+      question:
+        'Where can I find rooms for rent in Kuala Lumpur?',
 
-        slug:
-          'single-room-rental-kl',
+      answer:
+        'You can find rooms for rent across popular Kuala Lumpur areas including KLCC, Bukit Bintang, Mont Kiara, Bangsar, Bukit Jalil and Cheras.'
+    },
 
-        url:
-          '/single-room-rental-kl'
-      },
+    {
+      question:
+        'What types of rooms are available for rent in KL?',
 
-      {
-        name:
-          'Studio Room Rental in KL',
+      answer:
+        'Common options include single rooms, master rooms, private rooms, shared rooms, furnished rooms, semi-furnished rooms and unfurnished rooms.'
+    },
 
-        slug:
-          'studio-room-rental-kl',
+    {
+      question:
+        'Are there rooms for rent near MRT and LRT stations?',
 
-        url:
-          '/studio-room-rental-kl'
-      }
+      answer:
+        'Yes. Many room rental properties in Kuala Lumpur are located near MRT, LRT and other public transportation routes, making commuting more convenient.'
+    }
 
-    ],
+  ],
 
 
-    // ========================================================
-    // POPULAR SEARCHES
-    // ========================================================
+  relatedRooms: [
 
-    popularSearches: [
+    {
+      name:
+        'Single Room Rental in KL',
 
-      {
-        label:
-          'Master Room KLCC',
+      slug:
+        'single-room-rental-kl',
 
-        url:
-          '/room-rental-klcc'
-      },
+      url:
+        '/single-room-rental-kl'
+    },
 
-      {
-        label:
-          'Master Room Bukit Jalil',
+    {
+      name:
+        'Master Room Rental in KL',
 
-        url:
-          '/room-rental-bukit-jalil'
-      },
+      slug:
+        'master-room-rental-kl',
 
-      {
-        label:
-          'Room Near MRT',
+      url:
+        '/master-room-rental-kl'
+    },
 
-        url:
-          '/rooms-for-rent-kl'
-      },
+    {
+      name:
+        'Cheap Rooms in KL',
 
-      {
-        label:
-          'Fully Furnished Room',
+      slug:
+        'cheap-rooms-kl',
 
-        url:
-          '/furnished-rooms-kl'
-      },
+      url:
+        '/cheap-rooms-kl'
+    },
 
-      {
-        label:
-          'Room Mont Kiara',
+    {
+      name:
+        'Budget Rooms in KL',
 
-        url:
-          '/room-rental-mont-kiara'
-      }
+      slug:
+        'budget-rooms-kl',
 
-    ],
+      url:
+        '/budget-rooms-kl'
+    },
 
+    {
+      name:
+        'Shared Rooms in KL',
 
-    breadcrumbName:
-      'Rooms for Rent in Kuala Lumpur'
+      slug:
+        'shared-rooms-kl',
 
-  },
+      url:
+        '/shared-rooms-kl'
+    },
 
+    {
+      name:
+        'Furnished Rooms in KL',
 
-  // ==========================================================
-  // 2. MASTER ROOMS KL
-  // ==========================================================
+      slug:
+        'furnished-rooms-kl',
 
-  'master-room-rental-kl': {
+      url:
+        '/furnished-rooms-kl'
+    }
 
-    slug: 'master-room-rental-kl',
-    url: '/master-room-rental-kl',
+  ],
 
-    metaTitle:
-      'Master Rooms for Rent in Kuala Lumpur | Master Room Rental KL',
 
-    metaDescription:
-      'Find the best master rooms for rent in Kuala Lumpur. Fully furnished, affordable and conveniently located near MRT, LRT, shopping malls and business hubs.',
+  popularSearches: [
 
-    canonicalUrl:
-      'https://anaangproperty.com/master-room-rental-kl',
+    {
+      label:
+        'Rooms Near MRT',
 
-    robots:
-      'index, follow',
+      url:
+        '/rooms-near-mrt-kl'
+    },
 
-    heroImage:
-      '/assets/images/rooms/master-room-kl.jpg',
+    {
+      label:
+        'Rooms Near LRT',
 
-    h1:
-      'Master Rooms for Rent in Kuala Lumpur',
+      url:
+        '/rooms-near-lrt-kl'
+    },
 
-    shortTitle:
-      'Master Room Rental in KL',
+    {
+      label:
+        'Single Rooms in KL',
 
-    introContent:
-      'Find the best master rooms for rent in Kuala Lumpur. Fully furnished, affordable and located near MRT/LRT, shopping malls, universities and business hubs.',
+      url:
+        '/single-room-rental-kl'
+    },
 
-    roomCountLabel:
-      'Master Rooms',
+    {
+      label:
+        'Master Rooms in KL',
 
-    locationCountLabel:
-      'Locations',
+      url:
+        '/master-room-rental-kl'
+    },
 
+    {
+      label:
+        'Cheap Rooms in KL',
 
-    features: [
+      url:
+        '/cheap-rooms-kl'
+    },
 
-      {
-        icon: 'fas fa-bed',
-        title: 'More Space',
-        description:
-          'Enjoy extra space and a private bathroom with a comfortable master room.'
-      },
+    {
+      label:
+        'Furnished Rooms in KL',
 
-      {
-        icon: 'fas fa-shield-alt',
-        title: 'Privacy',
-        description:
-          'Perfect for those who value privacy, personal space and comfort.'
-      },
+      url:
+        '/furnished-rooms-kl'
+    }
 
-      {
-        icon: 'fas fa-building',
-        title: 'Better Facilities',
-        description:
-          'Access to condo facilities like pool, gym, security and more.'
-      },
+  ],
 
-      {
-        icon: 'fas fa-map-marker-alt',
-        title: 'Prime Locations',
-        description:
-          'Located near MRT, LRT, malls, offices and universities.'
-      },
 
-      {
-        icon: 'fas fa-tags',
-        title: 'Value for Money',
-        description:
-          'Competitive rental prices for a premium living experience.'
-      },
+  breadcrumbName:
+    'Rooms for Rent in Kuala Lumpur'
 
-      {
-        icon: 'fas fa-wifi',
-        title: 'All Inclusive',
-        description:
-          'Many master rooms include utilities, WiFi and housekeeping options.'
-      }
+},
 
-    ],
 
+// ==========================================================
+// 2. SINGLE ROOM RENTAL KL
+// ==========================================================
 
-    introTitle:
-      'Find a Master Room for Rent in Kuala Lumpur',
+'single-room-rental-kl': {
 
-    whyChooseTitle:
-      'Why Choose a Master Room?',
+  slug: 'single-room-rental-kl',
+  url: '/single-room-rental-kl',
 
-    whyChooseContent: [
+  metaTitle:
+    'Single Room for Rent in Kuala Lumpur | Private Rooms KL',
 
-      'More spacious than standard single or medium rooms.',
+  metaDescription:
+    'Find single rooms for rent in Kuala Lumpur with affordable private accommodation for students, professionals and working adults.',
 
-      'Often includes a private attached bathroom.',
+  canonicalUrl:
+    'https://anaangproperty.com/single-room-rental-kl',
 
-      'Suitable for tenants who prefer greater privacy.',
+  robots:
+    'index, follow',
 
-      'Ideal for working professionals and couples.'
+  heroImage:
+    '/assets/images/rooms/single-room-rental-kl.jpg',
 
-    ],
+  h1:
+    'Single Room for Rent in Kuala Lumpur',
 
-    rentalGuideTitle:
-      'Master Room Rental Guide in Kuala Lumpur',
+  shortTitle:
+    'Single Rooms in KL',
 
-    rentalGuideContent:
-      'Master room rental prices depend on location, property type, room size, furnishing, facilities and accessibility to MRT or LRT stations.',
+  introContent:
+    'Looking for a single room for rent in Kuala Lumpur? Explore private single rooms in convenient KL locations suitable for students, professionals and working adults.',
 
-    whoIsItForTitle:
-      'Who Should Rent a Master Room?',
+  roomCountLabel:
+    'Single Rooms',
 
-    whoIsItForContent:
-      'Master rooms are suitable for working professionals, couples and tenants who prefer a larger living space and greater privacy.',
+  locationCountLabel:
+    'Locations',
 
 
-    faqs: [
+  features: [
 
-      {
-        question:
-          'What is a master room?',
+    {
+      icon: 'fas fa-bed',
+      title: 'Private Room',
+      description:
+        'Enjoy your own private bedroom with personal space and greater privacy.'
+    },
 
-        answer:
-          'A master room is generally a larger bedroom within a shared property and may include a private attached bathroom.'
-      },
+    {
+      icon: 'fas fa-wallet',
+      title: 'Affordable Choice',
+      description:
+        'A practical accommodation option for tenants who want privacy without renting an entire property.'
+    },
 
-      {
-        question:
-          'How much is a master room for rent in KL?',
+    {
+      icon: 'fas fa-home',
+      title: 'Comfortable Living',
+      description:
+        'Find rooms in residential properties with access to shared household facilities.'
+    },
 
-        answer:
-          'The rental price varies depending on the location, property, room size, furnishing and available facilities.'
-      }
+    {
+      icon: 'fas fa-map-marker-alt',
+      title: 'Convenient Locations',
+      description:
+        'Explore single rooms near workplaces, universities, shopping areas and daily amenities.'
+    },
 
-    ],
+    {
+      icon: 'fas fa-subway',
+      title: 'Near Public Transport',
+      description:
+        'Find single rooms close to MRT, LRT and convenient transportation routes.'
+    },
 
+    {
+      icon: 'fas fa-couch',
+      title: 'Furnished Options',
+      description:
+        'Choose from furnished and semi-furnished single room rental options.'
+    }
 
-    relatedRooms: [
+  ],
 
-      {
-        name:
-          'Rooms for Rent in KL',
 
-        slug:
-          'rooms-for-rent-kl',
+  popularLocations: [
 
-        url:
-          '/rooms-for-rent-kl'
-      },
+    {
+      icon: 'fas fa-city',
+      name: 'KLCC',
+      roomCount: '35+ Rooms',
+      url: '/room-rental-klcc'
+    },
 
-      {
-        name:
-          'Medium Room Rental in KL',
+    {
+      icon: 'fas fa-shopping-bag',
+      name: 'Bukit Bintang',
+      roomCount: '35+ Rooms',
+      url: '/room-rental-bukit-bintang'
+    },
 
-        slug:
-          'medium-room-rental-kl',
+    {
+      icon: 'fas fa-home',
+      name: 'Mont Kiara',
+      roomCount: '30+ Rooms',
+      url: '/room-rental-mont-kiara'
+    },
 
-        url:
-          '/medium-room-rental-kl'
-      },
+    {
+      icon: 'fas fa-tree',
+      name: 'Bangsar',
+      roomCount: '30+ Rooms',
+      url: '/room-rental-bangsar'
+    },
 
-      {
-        name:
-          'Single Room Rental in KL',
+    {
+      icon: 'fas fa-subway',
+      name: 'Bukit Jalil',
+      roomCount: '35+ Rooms',
+      url: '/room-rental-bukit-jalil'
+    },
 
-        slug:
-          'single-room-rental-kl',
+    {
+      icon: 'fas fa-map-marker-alt',
+      name: 'Cheras',
+      roomCount: '40+ Rooms',
+      url: '/room-rental-cheras'
+    }
 
-        url:
-          '/single-room-rental-kl'
-      }
+  ],
 
-    ],
 
+  priceGuideTitle:
+    'Single Room Rental Price Guide in Kuala Lumpur',
 
-    popularSearches: [
+  priceGuideSubtitle:
+    'Typical monthly rental ranges for single rooms',
 
-      {
-        label:
-          'Master Room KLCC',
+  rentalPrices: [
 
-        url:
-          '/room-rental-klcc'
-      },
+    {
+      location: 'KLCC',
+      minPrice: 700,
+      maxPrice: 1500
+    },
 
-      {
-        label:
-          'Master Room Bukit Jalil',
+    {
+      location: 'Bukit Bintang',
+      minPrice: 600,
+      maxPrice: 1400
+    },
 
-        url:
-          '/room-rental-bukit-jalil'
-      },
+    {
+      location: 'Mont Kiara',
+      minPrice: 550,
+      maxPrice: 1300
+    },
 
-      {
-        label:
-          'Master Room Near MRT',
+    {
+      location: 'Bangsar',
+      minPrice: 500,
+      maxPrice: 1200
+    },
 
-        url:
-          '/master-room-rental-kl'
-      },
+    {
+      location: 'Bukit Jalil',
+      minPrice: 400,
+      maxPrice: 1000
+    },
 
-      {
-        label:
-          'Fully Furnished Master Room',
+    {
+      location: 'Cheras',
+      minPrice: 350,
+      maxPrice: 900
+    }
 
-        url:
-          '/furnished-rooms-kl'
-      },
+  ],
 
-      {
-        label:
-          'Master Room Mont Kiara',
+  priceGuideNote:
+    'Single room rental prices depend on location, room size, furnishing, property type, facilities and proximity to public transportation.',
 
-        url:
-          '/room-rental-mont-kiara'
-      }
 
-    ],
+  whyChooseItems: [
 
+    {
+      icon: 'fas fa-bed',
+      text: 'Enjoy your own private bedroom and personal space.'
+    },
 
-    breadcrumbName:
-      'Master Rooms for Rent in Kuala Lumpur'
+    {
+      icon: 'fas fa-wallet',
+      text: 'More affordable than renting an entire apartment or house.'
+    },
 
-  },
+    {
+      icon: 'fas fa-subway',
+      text: 'Find single rooms near MRT, LRT and convenient transport.'
+    },
 
+    {
+      icon: 'fas fa-home',
+      text: 'Access shared facilities while maintaining private living space.'
+    }
 
-  // ==========================================================
-  // 3. MEDIUM ROOMS KL
-  // ==========================================================
+  ],
 
-  'medium-room-rental-kl': {
 
-    slug: 'medium-room-rental-kl',
-    url: '/medium-room-rental-kl',
+  exploreButtonUrl:
+    '/single-room-rental-kl',
 
-    metaTitle:
-      'Medium Rooms for Rent in Kuala Lumpur | Medium Room Rental KL',
+  exploreButtonText:
+    'Explore Single Rooms',
 
-    metaDescription:
-      'Find medium rooms for rent in Kuala Lumpur with comfortable living spaces at affordable rental prices.',
 
-    canonicalUrl:
-      'https://anaangproperty.com/medium-room-rental-kl',
+  introTitle:
+    'Find a Single Room for Rent in Kuala Lumpur',
 
-    robots:
-      'index, follow',
 
-    heroImage:
-      '/assets/images/rooms/medium-room-kl.jpg',
+  whyChooseTitle:
+    'Why Rent a Single Room in KL?',
 
-    h1:
-      'Medium Rooms for Rent in Kuala Lumpur',
 
-    shortTitle:
-      'Medium Room Rental in KL',
+  whyChooseContent: [
 
-    introContent:
-      'Explore medium rooms for rent in Kuala Lumpur that offer a balance between affordability, comfort and living space.',
+    'Enjoy more privacy than sharing a bedroom.',
 
-    roomCountLabel:
-      'Medium Rooms',
+    'More affordable than renting an entire apartment.',
 
-    locationCountLabel:
-      'Locations',
+    'Suitable for students and working professionals.',
 
+    'Available in convenient locations across Kuala Lumpur.'
 
-    features: [
+  ],
 
-      {
-        icon: 'fas fa-expand-arrows-alt',
-        title: 'Comfortable Space',
-        description:
-          'Enjoy a practical room size that provides comfort for everyday living.'
-      },
 
-      {
-        icon: 'fas fa-shield-alt',
-        title: 'Personal Privacy',
-        description:
-          'A comfortable private space for relaxing, studying or working.'
-      },
+  rentalGuideTitle:
+    'Single Room Rental Guide',
 
-      {
-        icon: 'fas fa-building',
-        title: 'Great Facilities',
-        description:
-          'Choose properties with access to pools, gyms, security and shared facilities.'
-      },
 
-      {
-        icon: 'fas fa-map-marker-alt',
-        title: 'Convenient Areas',
-        description:
-          'Find medium rooms close to public transport, workplaces and universities.'
-      },
+  rentalGuideContent:
+    'Single room rental prices in Kuala Lumpur vary according to location, room size, furnishing, property facilities and accessibility to public transport. Central areas generally command higher rental prices than suburban locations.',
 
-      {
-        icon: 'fas fa-tags',
-        title: 'Affordable Choice',
-        description:
-          'A balanced option for tenants looking for space and reasonable rental prices.'
-      },
 
-      {
-        icon: 'fas fa-home',
-        title: 'Comfortable Living',
-        description:
-          'Suitable for tenants looking for a practical and comfortable lifestyle.'
-      }
+  whoIsItForTitle:
+    'Who Should Rent a Single Room?',
 
-    ],
 
+  whoIsItForContent:
+    'Single rooms are suitable for students, professionals, expatriates and working adults who want private sleeping space while sharing common facilities with other residents.',
 
-    introTitle:
-      'Find Medium Rooms for Rent in Kuala Lumpur',
 
-    whyChooseTitle:
-      'Why Choose a Medium Room?',
+  faqs: [
 
-    whyChooseContent: [
+    {
+      question:
+        'What is a single room for rent?',
 
-      'Balanced option between a master room and single room.',
+      answer:
+        'A single room is a private bedroom rented to one tenant, usually within a shared apartment, condominium or house where some facilities may be shared.'
+    },
 
-      'Suitable for tenants looking for comfortable personal space.',
+    {
+      question:
+        'How much is a single room for rent in KL?',
 
-      'Often more affordable than renting a master room.',
+      answer:
+        'The rental price of a single room in Kuala Lumpur depends on location, furnishing, room size and property facilities. Prices can range from affordable options in suburban areas to higher prices in central KL.'
+    },
 
-      'Available in many condominiums and residential properties.'
+    {
+      question:
+        'Are single rooms furnished?',
 
-    ],
+      answer:
+        'Many single rooms are furnished with basic items such as a bed and wardrobe, although the furniture provided varies by property.'
+    }
 
-    rentalGuideTitle:
-      'Medium Room Rental Guide',
+  ],
 
-    rentalGuideContent:
-      'Medium room rental prices depend on location, room size, furnishing, facilities and accessibility to public transportation.',
 
-    whoIsItForTitle:
-      'Who Are Medium Rooms Suitable For?',
+  relatedRooms: [
 
-    whoIsItForContent:
-      'Medium rooms are suitable for students, working professionals and tenants looking for a comfortable room at a reasonable rental price.',
+    {
+      name:
+        'Rooms for Rent in KL',
 
+      slug:
+        'rooms-for-rent-kl',
 
-    faqs: [
+      url:
+        '/rooms-for-rent-kl'
+    },
 
-      {
-        question:
-          'What is a medium room?',
+    {
+      name:
+        'Master Room Rental in KL',
 
-        answer:
-          'A medium room is a standard-sized bedroom that generally offers more space than a single room while being more affordable than a master room.'
-      }
+      slug:
+        'master-room-rental-kl',
 
-    ],
+      url:
+        '/master-room-rental-kl'
+    },
 
+    {
+      name:
+        'Cheap Rooms in KL',
 
-    relatedRooms: [
+      slug:
+        'cheap-rooms-kl',
 
-      {
-        name:
-          'Rooms for Rent in KL',
+      url:
+        '/cheap-rooms-kl'
+    },
 
-        slug:
-          'rooms-for-rent-kl',
+    {
+      name:
+        'Shared Rooms in KL',
 
-        url:
-          '/rooms-for-rent-kl'
-      },
+      slug:
+        'shared-rooms-kl',
 
-      {
-        name:
-          'Master Room Rental in KL',
+      url:
+        '/shared-rooms-kl'
+    }
 
-        slug:
-          'master-room-rental-kl',
+  ],
 
-        url:
-          '/master-room-rental-kl'
-      },
 
-      {
-        name:
-          'Single Room Rental in KL',
+  popularSearches: [
 
-        slug:
-          'single-room-rental-kl',
+    {
+      label:
+        'Cheap Single Room KL',
 
-        url:
-          '/single-room-rental-kl'
-      }
+      url:
+        '/cheap-rooms-kl'
+    },
 
-    ],
+    {
+      label:
+        'Single Room Near MRT',
 
+      url:
+        '/single-room-rental-kl'
+    },
 
-    popularSearches: [
+    {
+      label:
+        'Furnished Single Room KL',
 
-      {
-        label:
-          'Medium Room KLCC',
+      url:
+        '/furnished-rooms-kl'
+    }
 
-        url:
-          '/room-rental-klcc'
-      },
+  ],
 
-      {
-        label:
-          'Medium Room Near MRT',
 
-        url:
-          '/medium-room-rental-kl'
-      },
+  breadcrumbName:
+    'Single Room for Rent in Kuala Lumpur'
 
-      {
-        label:
-          'Affordable Medium Room',
+},
 
-        url:
-          '/budget-rooms-kl'
-      },
 
-      {
-        label:
-          'Furnished Medium Room',
+// ==========================================================
+// 3. MASTER ROOM RENTAL KL
+// ==========================================================
 
-        url:
-          '/furnished-rooms-kl'
-      }
+'master-room-rental-kl': {
 
-    ],
+  slug: 'master-room-rental-kl',
+  url: '/master-room-rental-kl',
 
+  metaTitle:
+    'Master Room for Rent in Kuala Lumpur | Master Rooms KL',
 
-    breadcrumbName:
-      'Medium Rooms for Rent in Kuala Lumpur'
+  metaDescription:
+    'Find master rooms for rent in Kuala Lumpur with spacious private rooms and attached bathrooms in popular KL locations.',
 
-  },
+  canonicalUrl:
+    'https://anaangproperty.com/master-room-rental-kl',
 
+  robots:
+    'index, follow',
 
-  // ==========================================================
-  // 4. SINGLE ROOMS KL
-  // ==========================================================
+  heroImage:
+    '/assets/images/rooms/master-room-rental-kl.jpg',
 
-  'single-room-rental-kl': {
+  h1:
+    'Master Room for Rent in Kuala Lumpur',
 
-    slug: 'single-room-rental-kl',
-    url: '/single-room-rental-kl',
+  shortTitle:
+    'Master Rooms in KL',
 
-    metaTitle:
-      'Single Rooms for Rent in Kuala Lumpur | Single Room Rental KL',
+  introContent:
+    'Looking for a master room for rent in Kuala Lumpur? Explore spacious private rooms with attached bathrooms and convenient facilities in popular KL locations.',
 
-    metaDescription:
-      'Find affordable single rooms for rent in Kuala Lumpur for students, professionals and tenants looking for private accommodation.',
+  roomCountLabel:
+    'Master Rooms',
 
-    canonicalUrl:
-      'https://anaangproperty.com/single-room-rental-kl',
+  locationCountLabel:
+    'Locations',
 
-    robots:
-      'index, follow',
 
-    heroImage:
-      '/assets/images/rooms/single-room-kl.jpg',
+  features: [
 
-    h1:
-      'Single Rooms for Rent in Kuala Lumpur',
+    {
+      icon: 'fas fa-bed',
+      title: 'Spacious Private Room',
+      description:
+        'Enjoy a larger private bedroom with additional space compared with standard single rooms.'
+    },
 
-    shortTitle:
-      'Single Room Rental in KL',
+    {
+      icon: 'fas fa-bath',
+      title: 'Private Bathroom',
+      description:
+        'Many master rooms include an attached private bathroom for greater convenience and privacy.'
+    },
 
-    introContent:
-      'Find affordable single rooms for rent in Kuala Lumpur. Browse available private rooms in convenient locations across KL.',
+    {
+      icon: 'fas fa-home',
+      title: 'Comfortable Living',
+      description:
+        'Enjoy a practical living arrangement with access to shared residential facilities.'
+    },
 
-    roomCountLabel:
-      'Single Rooms',
+    {
+      icon: 'fas fa-map-marker-alt',
+      title: 'Prime Locations',
+      description:
+        'Find master rooms near offices, universities, shopping malls and daily amenities.'
+    },
 
-    locationCountLabel:
-      'Locations',
+    {
+      icon: 'fas fa-subway',
+      title: 'Near MRT & LRT',
+      description:
+        'Explore master rooms with convenient access to public transportation.'
+    },
 
+    {
+      icon: 'fas fa-couch',
+      title: 'Furnished Options',
+      description:
+        'Choose from furnished and semi-furnished master room rental options.'
+    }
 
-    features: [
+  ],
 
-      {
-        icon: 'fas fa-user',
-        title: 'Your Own Space',
-        description:
-          'Enjoy your own private room designed for comfortable everyday living.'
-      },
 
-      {
-        icon: 'fas fa-lock',
-        title: 'More Privacy',
-        description:
-          'A private personal space where you can relax, study or work peacefully.'
-      },
+  popularLocations: [
 
-      {
-        icon: 'fas fa-wallet',
-        title: 'Budget Friendly',
-        description:
-          'Ideal for students and working professionals looking for affordable rentals.'
-      },
+    {
+      icon: 'fas fa-city',
+      name: 'KLCC',
+      roomCount: '30+ Rooms',
+      url: '/room-rental-klcc'
+    },
 
-      {
-        icon: 'fas fa-subway',
-        title: 'Easy Commute',
-        description:
-          'Find rooms near MRT, LRT and other convenient public transportation.'
-      },
+    {
+      icon: 'fas fa-shopping-bag',
+      name: 'Bukit Bintang',
+      roomCount: '30+ Rooms',
+      url: '/room-rental-bukit-bintang'
+    },
 
-      {
-        icon: 'fas fa-home',
-        title: 'Practical Living',
-        description:
-          'A simple and practical rental option for independent tenants.'
-      },
+    {
+      icon: 'fas fa-home',
+      name: 'Mont Kiara',
+      roomCount: '30+ Rooms',
+      url: '/room-rental-mont-kiara'
+    },
 
-      {
-        icon: 'fas fa-wifi',
-        title: 'Useful Amenities',
-        description:
-          'Many properties offer WiFi, utilities, furniture and other useful amenities.'
-      }
+    {
+      icon: 'fas fa-tree',
+      name: 'Bangsar',
+      roomCount: '25+ Rooms',
+      url: '/room-rental-bangsar'
+    },
 
-    ],
+    {
+      icon: 'fas fa-subway',
+      name: 'Bukit Jalil',
+      roomCount: '30+ Rooms',
+      url: '/room-rental-bukit-jalil'
+    },
 
+    {
+      icon: 'fas fa-map-marker-alt',
+      name: 'Cheras',
+      roomCount: '35+ Rooms',
+      url: '/room-rental-cheras'
+    }
 
-    introTitle:
-      'Find a Single Room for Rent in Kuala Lumpur',
+  ],
 
-    whyChooseTitle:
-      'Why Rent a Single Room?',
 
-    whyChooseContent: [
+  priceGuideTitle:
+    'Master Room Rental Price Guide in Kuala Lumpur',
 
-      'Affordable option for individual tenants.',
+  priceGuideSubtitle:
+    'Typical monthly rental ranges for master rooms',
 
-      'Suitable for students and working professionals.',
+  rentalPrices: [
 
-      'Lower rental cost compared with larger room types.',
+    {
+      location: 'KLCC',
+      minPrice: 1000,
+      maxPrice: 2500
+    },
 
-      'Convenient option for tenants who spend most of their time outside.'
+    {
+      location: 'Bukit Bintang',
+      minPrice: 900,
+      maxPrice: 2200
+    },
 
-    ],
+    {
+      location: 'Mont Kiara',
+      minPrice: 850,
+      maxPrice: 2000
+    },
 
-    rentalGuideTitle:
-      'Single Room Rental Guide in KL',
+    {
+      location: 'Bangsar',
+      minPrice: 800,
+      maxPrice: 1800
+    },
 
-    rentalGuideContent:
-      'Single room rental prices vary depending on location, furnishing, property type, facilities and proximity to public transportation.',
+    {
+      location: 'Bukit Jalil',
+      minPrice: 600,
+      maxPrice: 1500
+    },
 
-    whoIsItForTitle:
-      'Who Should Rent a Single Room?',
+    {
+      location: 'Cheras',
+      minPrice: 500,
+      maxPrice: 1300
+    }
 
-    whoIsItForContent:
-      'Single rooms are ideal for students, young professionals and individuals looking for affordable private accommodation in Kuala Lumpur.',
+  ],
 
+  priceGuideNote:
+    'Master room rental prices vary according to location, room size, attached bathroom, furnishing, property facilities and access to public transportation.',
 
-    faqs: [
 
-      {
-        question:
-          'Who should rent a single room in KL?',
+  whyChooseItems: [
 
-        answer:
-          'Single rooms are suitable for students, working professionals and individuals looking for affordable accommodation.'
-      }
+    {
+      icon: 'fas fa-bed',
+      text: 'Enjoy a larger private bedroom with additional living space.'
+    },
 
-    ],
+    {
+      icon: 'fas fa-bath',
+      text: 'Many master rooms include an attached private bathroom.'
+    },
 
+    {
+      icon: 'fas fa-home',
+      text: 'Enjoy private accommodation while sharing selected property facilities.'
+    },
 
-    relatedRooms: [
+    {
+      icon: 'fas fa-map-marker-alt',
+      text: 'Find master rooms in convenient KL locations.'
+    }
 
-      {
-        name:
-          'Medium Room Rental in KL',
+  ],
 
-        slug:
-          'medium-room-rental-kl',
 
-        url:
-          '/medium-room-rental-kl'
-      },
+  exploreButtonUrl:
+    '/master-room-rental-kl',
 
-      {
-        name:
-          'Master Room Rental in KL',
+  exploreButtonText:
+    'Explore Master Rooms',
 
-        slug:
-          'master-room-rental-kl',
 
-        url:
-          '/master-room-rental-kl'
-      },
+  introTitle:
+    'Find Master Rooms for Rent in Kuala Lumpur',
 
-      {
-        name:
-          'Cheap Rooms in KL',
 
-        slug:
-          'cheap-rooms-kl',
+  whyChooseTitle:
+    'Why Choose a Master Room in KL?',
 
-        url:
-          '/cheap-rooms-kl'
-      }
 
-    ],
+  whyChooseContent: [
 
+    'More spacious than many standard single rooms.',
 
-    popularSearches: [
+    'Potential access to a private attached bathroom.',
 
-      {
-        label:
-          'Single Room KLCC',
+    'Suitable for professionals and tenants who value privacy.',
 
-        url:
-          '/room-rental-klcc'
-      },
+    'Available in popular residential areas across Kuala Lumpur.'
 
-      {
-        label:
-          'Single Room Near MRT',
+  ],
 
-        url:
-          '/single-room-rental-kl'
-      },
 
-      {
-        label:
-          'Cheap Single Room',
+  rentalGuideTitle:
+    'Master Room Rental Guide',
 
-        url:
-          '/cheap-rooms-kl'
-      },
 
-      {
-        label:
-          'Furnished Single Room',
+  rentalGuideContent:
+    'Master room rental prices in Kuala Lumpur depend on location, room size, private bathroom availability, furnishing, property facilities and transport accessibility. Master rooms generally cost more than standard single rooms due to their additional space and facilities.',
 
-        url:
-          '/furnished-rooms-kl'
-      }
 
-    ],
+  whoIsItForTitle:
+    'Who Are Master Rooms Suitable For?',
 
 
-    breadcrumbName:
-      'Single Rooms for Rent in Kuala Lumpur'
+  whoIsItForContent:
+    'Master rooms are suitable for professionals, expatriates, couples and tenants who prefer a more spacious private room and greater privacy.',
 
-  },
 
+  faqs: [
 
-  // ==========================================================
-  // 5. STUDIO ROOMS KL
-  // ==========================================================
+    {
+      question:
+        'What is a master room?',
 
-  'studio-room-rental-kl': {
+      answer:
+        'A master room is typically a larger private bedroom that may include an attached private bathroom and additional space compared with a standard room.'
+    },
 
-    slug: 'studio-room-rental-kl',
-    url: '/studio-room-rental-kl',
+    {
+      question:
+        'Are master rooms more expensive than single rooms?',
 
-    metaTitle:
-      'Studio Rooms for Rent in Kuala Lumpur | Studio Room Rental KL',
+      answer:
+        'Master rooms are generally more expensive than standard single rooms because they often offer more space and may include a private attached bathroom.'
+    },
 
-    metaDescription:
-      'Find studio rooms for rent in Kuala Lumpur with private living spaces and convenient facilities.',
+    {
+      question:
+        'Where can I find master rooms in Kuala Lumpur?',
 
-    canonicalUrl:
-      'https://anaangproperty.com/studio-room-rental-kl',
+      answer:
+        'Master rooms can be found in many Kuala Lumpur areas including KLCC, Bukit Bintang, Mont Kiara, Bangsar, Bukit Jalil and Cheras.'
+    }
 
-    robots:
-      'index, follow',
+  ],
 
-    heroImage:
-      '/assets/images/rooms/studio-room-kl.jpg',
 
-    h1:
-      'Studio Rooms for Rent in Kuala Lumpur',
+  relatedRooms: [
 
-    shortTitle:
-      'Studio Room Rental in KL',
+    {
+      name:
+        'Single Room Rental in KL',
 
-    introContent:
-      'Explore studio rooms for rent in Kuala Lumpur for tenants who prefer private and self-contained living spaces.',
+      slug:
+        'single-room-rental-kl',
 
-    roomCountLabel:
-      'Studio Rooms',
+      url:
+        '/single-room-rental-kl'
+    },
 
-    locationCountLabel:
-      'Locations',
+    {
+      name:
+        'Rooms for Rent in KL',
 
+      slug:
+        'rooms-for-rent-kl',
 
-    features: [
+      url:
+        '/rooms-for-rent-kl'
+    },
 
-      {
-        icon: 'fas fa-home',
-        title: 'Private Living',
-        description:
-          'Enjoy a self-contained living environment with greater privacy.'
-      },
+    {
+      name:
+        'Furnished Rooms in KL',
 
-      {
-        icon: 'fas fa-shield-alt',
-        title: 'Complete Privacy',
-        description:
-          'Ideal for tenants who prefer their own private living environment.'
-      },
+      slug:
+        'furnished-rooms-kl',
 
-      {
-        icon: 'fas fa-couch',
-        title: 'Furnished Options',
-        description:
-          'Find furnished studio spaces ready for comfortable move-in.'
-      },
+      url:
+        '/furnished-rooms-kl'
+    },
 
-      {
-        icon: 'fas fa-map-marker-alt',
-        title: 'Prime Locations',
-        description:
-          'Choose studio rooms close to transport, offices, malls and city attractions.'
-      },
+    {
+      name:
+        'Cheap Rooms in KL',
 
-      {
-        icon: 'fas fa-tags',
-        title: 'Flexible Budgets',
-        description:
-          'Explore studio options across different rental price ranges.'
-      },
+      slug:
+        'cheap-rooms-kl',
 
-      {
-        icon: 'fas fa-wifi',
-        title: 'Modern Amenities',
-        description:
-          'Selected studios offer WiFi, utilities and modern building facilities.'
-      }
+      url:
+        '/cheap-rooms-kl'
+    }
 
-    ],
+  ],
 
 
-    introTitle:
-      'Find Studio Rooms for Rent in Kuala Lumpur',
+  popularSearches: [
 
-    whyChooseTitle:
-      'Why Choose a Studio Room?',
+    {
+      label:
+        'Master Room Near MRT',
 
-    whyChooseContent: [
+      url:
+        '/master-room-rental-kl'
+    },
 
-      'Greater privacy compared with shared room arrangements.',
+    {
+      label:
+        'Furnished Master Room KL',
 
-      'Suitable for tenants who prefer independent living.',
+      url:
+        '/furnished-rooms-kl'
+    },
 
-      'Convenient option for working professionals.',
+    {
+      label:
+        'Master Room with Private Bathroom',
 
-      'Often located in properties with modern facilities.'
+      url:
+        '/master-room-rental-kl'
+    }
 
-    ],
+  ],
 
-    rentalGuideTitle:
-      'Studio Room Rental Guide',
 
-    rentalGuideContent:
-      'Studio rental prices vary according to location, property facilities, unit size, furnishing and accessibility.',
+  breadcrumbName:
+    'Master Room for Rent in Kuala Lumpur'
 
-    whoIsItForTitle:
-      'Who Are Studio Rooms Suitable For?',
+},
 
-    whoIsItForContent:
-      'Studio rooms are suitable for professionals, couples and tenants who prefer greater privacy and an independent living environment.',
 
+// ==========================================================
+// 4. PRIVATE ROOMS KL
+// ==========================================================
 
-    faqs: [
+'private-rooms-kl': {
 
-      {
-        question:
-          'What is a studio room?',
+  slug: 'private-rooms-kl',
+  url: '/private-rooms-kl',
 
-        answer:
-          'A studio room generally combines living and sleeping areas into one compact private space.'
-      }
+  metaTitle:
+    'Private Rooms for Rent in Kuala Lumpur | Private Room KL',
 
-    ],
+  metaDescription:
+    'Find private rooms for rent in Kuala Lumpur with personal bedrooms and convenient accommodation options for students and professionals.',
 
+  canonicalUrl:
+    'https://anaangproperty.com/private-rooms-kl',
 
-    relatedRooms: [
+  robots:
+    'index, follow',
 
-      {
-        name:
-          'Rooms for Rent in KL',
+  heroImage:
+    '/assets/images/rooms/private-rooms-kl.jpg',
 
-        slug:
-          'rooms-for-rent-kl',
+  h1:
+    'Private Rooms for Rent in Kuala Lumpur',
 
-        url:
-          '/rooms-for-rent-kl'
-      },
+  shortTitle:
+    'Private Rooms in KL',
 
-      {
-        name:
-          'Master Room Rental in KL',
+  introContent:
+    'Find private rooms for rent in Kuala Lumpur and enjoy your own personal bedroom while sharing selected facilities in a house, apartment or condominium.',
 
-        slug:
-          'master-room-rental-kl',
+  roomCountLabel:
+    'Private Rooms',
 
-        url:
-          '/master-room-rental-kl'
-      }
+  locationCountLabel:
+    'Locations',
 
-    ],
 
+  features: [
 
-    popularSearches: [
+    {
+      icon: 'fas fa-lock',
+      title: 'More Privacy',
+      description:
+        'Enjoy your own private bedroom and personal living space.'
+    },
 
-      {
-        label:
-          'Studio Room KLCC',
+    {
+      icon: 'fas fa-home',
+      title: 'Comfortable Accommodation',
+      description:
+        'Find practical private rooms in houses, apartments and condominiums.'
+    },
 
-        url:
-          '/room-rental-klcc'
-      },
+    {
+      icon: 'fas fa-wallet',
+      title: 'Flexible Budgets',
+      description:
+        'Explore private room options across different rental price ranges.'
+    },
 
-      {
-        label:
-          'Studio Room Near MRT',
+    {
+      icon: 'fas fa-map-marker-alt',
+      title: 'Popular Locations',
+      description:
+        'Choose private rooms in convenient areas around Kuala Lumpur.'
+    },
 
-        url:
-          '/studio-room-rental-kl'
-      },
+    {
+      icon: 'fas fa-subway',
+      title: 'Near Transport',
+      description:
+        'Find private rooms close to MRT, LRT and other public transportation.'
+    },
 
-      {
-        label:
-          'Furnished Studio Room',
+    {
+      icon: 'fas fa-couch',
+      title: 'Furnished Options',
+      description:
+        'Explore furnished, semi-furnished and other private room options.'
+    }
 
-        url:
-          '/furnished-rooms-kl'
-      }
+  ],
 
-    ],
 
+  popularLocations: [
 
-    breadcrumbName:
-      'Studio Rooms for Rent in Kuala Lumpur'
+    {
+      icon: 'fas fa-city',
+      name: 'KLCC',
+      roomCount: '35+ Rooms',
+      url: '/room-rental-klcc'
+    },
 
-  },
+    {
+      icon: 'fas fa-shopping-bag',
+      name: 'Bukit Bintang',
+      roomCount: '35+ Rooms',
+      url: '/room-rental-bukit-bintang'
+    },
 
+    {
+      icon: 'fas fa-home',
+      name: 'Mont Kiara',
+      roomCount: '30+ Rooms',
+      url: '/room-rental-mont-kiara'
+    },
 
-  // ==========================================================
+    {
+      icon: 'fas fa-tree',
+      name: 'Bangsar',
+      roomCount: '30+ Rooms',
+      url: '/room-rental-bangsar'
+    },
+
+    {
+      icon: 'fas fa-subway',
+      name: 'Bukit Jalil',
+      roomCount: '35+ Rooms',
+      url: '/room-rental-bukit-jalil'
+    },
+
+    {
+      icon: 'fas fa-map-marker-alt',
+      name: 'Cheras',
+      roomCount: '40+ Rooms',
+      url: '/room-rental-cheras'
+    }
+
+  ],
+
+
+  priceGuideTitle:
+    'Private Room Rental Price Guide',
+
+
+  priceGuideSubtitle:
+    'Typical monthly rental ranges for private rooms in Kuala Lumpur',
+
+
+  rentalPrices: [
+
+    {
+      location: 'KLCC',
+      minPrice: 700,
+      maxPrice: 1800
+    },
+
+    {
+      location: 'Bukit Bintang',
+      minPrice: 600,
+      maxPrice: 1600
+    },
+
+    {
+      location: 'Mont Kiara',
+      minPrice: 550,
+      maxPrice: 1500
+    },
+
+    {
+      location: 'Bangsar',
+      minPrice: 500,
+      maxPrice: 1400
+    },
+
+    {
+      location: 'Bukit Jalil',
+      minPrice: 400,
+      maxPrice: 1100
+    },
+
+    {
+      location: 'Cheras',
+      minPrice: 350,
+      maxPrice: 1000
+    }
+
+  ],
+
+
+  priceGuideNote:
+    'Private room rental prices depend on location, room size, furnishing, property type, facilities and accessibility to public transport.',
+
+
+  whyChooseItems: [
+
+    {
+      icon: 'fas fa-lock',
+      text: 'Enjoy your own private bedroom and personal space.'
+    },
+
+    {
+      icon: 'fas fa-home',
+      text: 'Share selected facilities while maintaining bedroom privacy.'
+    },
+
+    {
+      icon: 'fas fa-wallet',
+      text: 'More affordable than renting an entire property.'
+    },
+
+    {
+      icon: 'fas fa-subway',
+      text: 'Find private rooms near convenient public transportation.'
+    }
+
+  ],
+
+
+  exploreButtonUrl:
+    '/private-rooms-kl',
+
+  exploreButtonText:
+    'Explore Private Rooms',
+
+
+  introTitle:
+    'Find Private Rooms for Rent in Kuala Lumpur',
+
+
+  whyChooseTitle:
+    'Why Rent a Private Room in KL?',
+
+
+  whyChooseContent: [
+
+    'Enjoy greater privacy than shared bedroom accommodation.',
+
+    'More affordable than renting an entire apartment or house.',
+
+    'Suitable for students, professionals and expatriates.',
+
+    'Available in convenient KL locations near transport and amenities.'
+
+  ],
+
+
+  rentalGuideTitle:
+    'Private Room Rental Guide',
+
+
+  rentalGuideContent:
+    'Private room rental prices vary depending on location, room size, furnishing, property facilities and transport accessibility. Tenants should compare rental prices, included utilities and house rules before choosing a room.',
+
+
+  whoIsItForTitle:
+    'Who Are Private Rooms Suitable For?',
+
+
+  whoIsItForContent:
+    'Private rooms are suitable for tenants who want their own bedroom but do not need to rent an entire property. They are popular among students, professionals and expatriates.',
+
+
+  faqs: [
+
+    {
+      question:
+        'What is a private room for rent?',
+
+      answer:
+        'A private room is a bedroom occupied by one tenant, while some facilities such as the kitchen or living area may be shared with other residents.'
+    },
+
+    {
+      question:
+        'Is a private room cheaper than renting an apartment?',
+
+      answer:
+        'In most cases, renting a private room is more affordable than renting an entire apartment because tenants share selected property facilities and costs.'
+    },
+
+    {
+      question:
+        'Can I find furnished private rooms in KL?',
+
+      answer:
+        'Yes. Many private rooms in Kuala Lumpur are available with furniture such as beds, wardrobes and tables, although the exact furnishings vary by property.'
+    }
+
+  ],
+
+
+  relatedRooms: [
+
+    {
+      name:
+        'Single Room Rental in KL',
+
+      slug:
+        'single-room-rental-kl',
+
+      url:
+        '/single-room-rental-kl'
+    },
+
+    {
+      name:
+        'Master Room Rental in KL',
+
+      slug:
+        'master-room-rental-kl',
+
+      url:
+        '/master-room-rental-kl'
+    },
+
+    {
+      name:
+        'Shared Rooms in KL',
+
+      slug:
+        'shared-rooms-kl',
+
+      url:
+        '/shared-rooms-kl'
+    },
+
+    {
+      name:
+        'Furnished Rooms in KL',
+
+      slug:
+        'furnished-rooms-kl',
+
+      url:
+        '/furnished-rooms-kl'
+    }
+
+  ],
+
+
+  popularSearches: [
+
+    {
+      label:
+        'Private Room Near MRT',
+
+      url:
+        '/private-rooms-kl'
+    },
+
+    {
+      label:
+        'Private Furnished Room KL',
+
+      url:
+        '/furnished-rooms-kl'
+    },
+
+    {
+      label:
+        'Affordable Private Room',
+
+      url:
+        '/cheap-rooms-kl'
+    }
+
+  ],
+
+
+  breadcrumbName:
+    'Private Rooms for Rent in Kuala Lumpur'
+
+},
+
+
+// ==========================================================
+// 5. ROOM RENTAL NEAR MRT KL
+// ==========================================================
+
+'rooms-near-mrt-kl': {
+
+  slug: 'rooms-near-mrt-kl',
+  url: '/rooms-near-mrt-kl',
+
+  metaTitle:
+    'Rooms for Rent Near MRT Kuala Lumpur | MRT Rooms KL',
+
+  metaDescription:
+    'Find rooms for rent near MRT stations in Kuala Lumpur with convenient access to public transport, workplaces, universities and city areas.',
+
+  canonicalUrl:
+    'https://anaangproperty.com/rooms-near-mrt-kl',
+
+  robots:
+    'index, follow',
+
+  heroImage:
+    '/assets/images/rooms/rooms-near-mrt-kl.jpg',
+
+  h1:
+    'Rooms for Rent Near MRT in Kuala Lumpur',
+
+  shortTitle:
+    'Rooms Near MRT KL',
+
+  introContent:
+    'Looking for rooms for rent near MRT stations in Kuala Lumpur? Explore convenient room rental options with easy access to public transportation and popular KL destinations.',
+
+  roomCountLabel:
+    'Rooms Near MRT',
+
+  locationCountLabel:
+    'MRT Locations',
+
+
+  features: [
+
+    {
+      icon: 'fas fa-subway',
+      title: 'Near MRT Stations',
+      description:
+        'Find rental rooms within convenient reach of MRT stations across Kuala Lumpur.'
+    },
+
+    {
+      icon: 'fas fa-route',
+      title: 'Easy Commuting',
+      description:
+        'Reduce commuting time with convenient access to Kuala Lumpur public transport.'
+    },
+
+    {
+      icon: 'fas fa-briefcase',
+      title: 'Near Workplaces',
+      description:
+        'Explore rooms suitable for professionals working in central KL and surrounding business areas.'
+    },
+
+    {
+      icon: 'fas fa-university',
+      title: 'Near Universities',
+      description:
+        'Find convenient accommodation options for students studying in Kuala Lumpur.'
+    },
+
+    {
+      icon: 'fas fa-wallet',
+      title: 'Different Budgets',
+      description:
+        'Explore rooms near MRT stations across a range of rental budgets.'
+    },
+
+    {
+      icon: 'fas fa-map-marker-alt',
+      title: 'Convenient Locations',
+      description:
+        'Choose accommodation near shops, restaurants, offices and daily amenities.'
+    }
+
+  ],
+
+
+  popularLocations: [
+
+    {
+      icon: 'fas fa-city',
+      name: 'KLCC',
+      roomCount: '50+ Rooms',
+      url: '/room-rental-klcc'
+    },
+
+    {
+      icon: 'fas fa-shopping-bag',
+      name: 'Bukit Bintang',
+      roomCount: '45+ Rooms',
+      url: '/room-rental-bukit-bintang'
+    },
+
+    {
+      icon: 'fas fa-home',
+      name: 'Mont Kiara',
+      roomCount: '40+ Rooms',
+      url: '/room-rental-mont-kiara'
+    },
+
+    {
+      icon: 'fas fa-tree',
+      name: 'Bangsar',
+      roomCount: '40+ Rooms',
+      url: '/room-rental-bangsar'
+    },
+
+    {
+      icon: 'fas fa-subway',
+      name: 'Bukit Jalil',
+      roomCount: '45+ Rooms',
+      url: '/room-rental-bukit-jalil'
+    },
+
+    {
+      icon: 'fas fa-map-marker-alt',
+      name: 'Cheras',
+      roomCount: '50+ Rooms',
+      url: '/room-rental-cheras'
+    }
+
+  ],
+
+
+  priceGuideTitle:
+    'Room Rental Price Guide Near MRT Kuala Lumpur',
+
+
+  priceGuideSubtitle:
+    'Typical monthly rental ranges for rooms near popular KL locations',
+
+
+  rentalPrices: [
+
+    {
+      location: 'KLCC',
+      minPrice: 700,
+      maxPrice: 2000
+    },
+
+    {
+      location: 'Bukit Bintang',
+      minPrice: 600,
+      maxPrice: 1800
+    },
+
+    {
+      location: 'Mont Kiara',
+      minPrice: 550,
+      maxPrice: 1700
+    },
+
+    {
+      location: 'Bangsar',
+      minPrice: 500,
+      maxPrice: 1600
+    },
+
+    {
+      location: 'Bukit Jalil',
+      minPrice: 400,
+      maxPrice: 1300
+    },
+
+    {
+      location: 'Cheras',
+      minPrice: 350,
+      maxPrice: 1200
+    }
+
+  ],
+
+
+  priceGuideNote:
+    'Room rental prices near MRT stations vary according to distance from the station, location, room type, furnishing and property facilities.',
+
+
+  whyChooseItems: [
+
+    {
+      icon: 'fas fa-subway',
+      text: 'Enjoy convenient access to MRT stations and public transport.'
+    },
+
+    {
+      icon: 'fas fa-clock',
+      text: 'Potentially reduce daily commuting time.'
+    },
+
+    {
+      icon: 'fas fa-briefcase',
+      text: 'Convenient for professionals working in Kuala Lumpur.'
+    },
+
+    {
+      icon: 'fas fa-university',
+      text: 'Useful accommodation option for students and university tenants.'
+    }
+
+  ],
+
+
+  exploreButtonUrl:
+    '/rooms-near-mrt-kl',
+
+  exploreButtonText:
+    'Explore Rooms Near MRT',
+
+
+  introTitle:
+    'Find Rooms for Rent Near MRT Stations in Kuala Lumpur',
+
+
+  whyChooseTitle:
+    'Why Rent a Room Near MRT in KL?',
+
+
+  whyChooseContent: [
+
+    'Convenient access to public transportation.',
+
+    'Potentially shorter daily commuting time.',
+
+    'Suitable for professionals and students.',
+
+    'Easy access to workplaces, universities and city attractions.'
+
+  ],
+
+
+  rentalGuideTitle:
+    'Room Rental Near MRT Guide',
+
+
+  rentalGuideContent:
+    'Rooms near MRT stations can be convenient for tenants who rely on public transportation. Rental prices may vary depending on the station, walking distance, property type, room size and facilities.',
+
+
+  whoIsItForTitle:
+    'Who Should Rent a Room Near MRT?',
+
+
+  whoIsItForContent:
+    'Rooms near MRT stations are suitable for students, professionals, expatriates and tenants who prefer convenient public transportation for their daily commute.',
+
+
+  faqs: [
+
+    {
+      question:
+        'Where can I find rooms for rent near MRT in KL?',
+
+      answer:
+        'Rooms near MRT stations can be found in various Kuala Lumpur neighbourhoods. Popular areas include KLCC, Bukit Bintang, Cheras, Bukit Jalil and other locations connected to the MRT network.'
+    },
+
+    {
+      question:
+        'Are rooms near MRT more expensive?',
+
+      answer:
+        'Rental prices may be higher for properties located very close to MRT stations, but affordable options can still be found depending on the area, room type and property.'
+    },
+
+    {
+      question:
+        'Is renting near MRT good for working professionals?',
+
+      answer:
+        'Yes. Renting near an MRT station can provide convenient access to business districts, offices and other parts of Kuala Lumpur without relying entirely on private vehicles.'
+    }
+
+  ],
+
+
+  relatedRooms: [
+
+    {
+      name:
+        'Rooms for Rent in KL',
+
+      slug:
+        'rooms-for-rent-kl',
+
+      url:
+        '/rooms-for-rent-kl'
+    },
+
+    {
+      name:
+        'Cheap Rooms in KL',
+
+      slug:
+        'cheap-rooms-kl',
+
+      url:
+        '/cheap-rooms-kl'
+    },
+
+    {
+      name:
+        'Single Room Rental in KL',
+
+      slug:
+        'single-room-rental-kl',
+
+      url:
+        '/single-room-rental-kl'
+    },
+
+    {
+      name:
+        'Furnished Rooms in KL',
+
+      slug:
+        'furnished-rooms-kl',
+
+      url:
+        '/furnished-rooms-kl'
+    }
+
+  ],
+
+
+  popularSearches: [
+
+    {
+      label:
+        'Cheap Rooms Near MRT',
+
+      url:
+        '/cheap-rooms-kl'
+    },
+
+    {
+      label:
+        'Single Room Near MRT',
+
+      url:
+        '/single-room-rental-kl'
+    },
+
+    {
+      label:
+        'Furnished Room Near MRT',
+
+      url:
+        '/furnished-rooms-kl'
+    }
+
+  ],
+
+
+  breadcrumbName:
+    'Rooms for Rent Near MRT in Kuala Lumpur'
+
+},
+
+
+// ==========================================================
+// 6. ROOM RENTAL NEAR LRT KL
+// ==========================================================
+
+'rooms-near-lrt-kl': {
+
+  slug: 'rooms-near-lrt-kl',
+  url: '/rooms-near-lrt-kl',
+
+  metaTitle:
+    'Rooms for Rent Near LRT Kuala Lumpur | LRT Rooms KL',
+
+  metaDescription:
+    'Find rooms for rent near LRT stations in Kuala Lumpur with convenient public transport access for students, professionals and working tenants.',
+
+  canonicalUrl:
+    'https://anaangproperty.com/rooms-near-lrt-kl',
+
+  robots:
+    'index, follow',
+
+  heroImage:
+    '/assets/images/rooms/rooms-near-lrt-kl.jpg',
+
+  h1:
+    'Rooms for Rent Near LRT in Kuala Lumpur',
+
+  shortTitle:
+    'Rooms Near LRT KL',
+
+  introContent:
+    'Explore rooms for rent near LRT stations in Kuala Lumpur and find convenient accommodation for commuting to work, university and popular areas across the city.',
+
+  roomCountLabel:
+    'Rooms Near LRT',
+
+  locationCountLabel:
+    'LRT Locations',
+
+
+  features: [
+
+    {
+      icon: 'fas fa-subway',
+      title: 'Near LRT Stations',
+      description:
+        'Find rooms with convenient access to LRT stations and public transportation.'
+    },
+
+    {
+      icon: 'fas fa-route',
+      title: 'Convenient Commute',
+      description:
+        'Make daily travel easier with accommodation near Kuala Lumpur transit routes.'
+    },
+
+    {
+      icon: 'fas fa-briefcase',
+      title: 'Ideal for Professionals',
+      description:
+        'Find rooms suitable for working tenants commuting to offices and business areas.'
+    },
+
+    {
+      icon: 'fas fa-university',
+      title: 'Student Friendly',
+      description:
+        'Explore convenient room rental options for students and young adults.'
+    },
+
+    {
+      icon: 'fas fa-wallet',
+      title: 'Affordable Options',
+      description:
+        'Compare rooms near LRT stations across different rental budgets.'
+    },
+
+    {
+      icon: 'fas fa-map-marker-alt',
+      title: 'Convenient Neighbourhoods',
+      description:
+        'Stay close to shops, restaurants, workplaces and essential daily amenities.'
+    }
+
+  ],
+
+
+  popularLocations: [
+
+    {
+      icon: 'fas fa-city',
+      name: 'KLCC',
+      roomCount: '45+ Rooms',
+      url: '/room-rental-klcc'
+    },
+
+    {
+      icon: 'fas fa-shopping-bag',
+      name: 'Bukit Bintang',
+      roomCount: '40+ Rooms',
+      url: '/room-rental-bukit-bintang'
+    },
+
+    {
+      icon: 'fas fa-home',
+      name: 'Mont Kiara',
+      roomCount: '35+ Rooms',
+      url: '/room-rental-mont-kiara'
+    },
+
+    {
+      icon: 'fas fa-tree',
+      name: 'Bangsar',
+      roomCount: '35+ Rooms',
+      url: '/room-rental-bangsar'
+    },
+
+    {
+      icon: 'fas fa-subway',
+      name: 'Bukit Jalil',
+      roomCount: '40+ Rooms',
+      url: '/room-rental-bukit-jalil'
+    },
+
+    {
+      icon: 'fas fa-map-marker-alt',
+      name: 'Cheras',
+      roomCount: '45+ Rooms',
+      url: '/room-rental-cheras'
+    }
+
+  ],
+
+
+  priceGuideTitle:
+    'Room Rental Price Guide Near LRT Kuala Lumpur',
+
+
+  priceGuideSubtitle:
+    'Typical monthly rental ranges for rooms near popular LRT-connected areas',
+
+
+  rentalPrices: [
+
+    {
+      location: 'KLCC',
+      minPrice: 650,
+      maxPrice: 1900
+    },
+
+    {
+      location: 'Bukit Bintang',
+      minPrice: 550,
+      maxPrice: 1700
+    },
+
+    {
+      location: 'Mont Kiara',
+      minPrice: 500,
+      maxPrice: 1600
+    },
+
+    {
+      location: 'Bangsar',
+      minPrice: 450,
+      maxPrice: 1500
+    },
+
+    {
+      location: 'Bukit Jalil',
+      minPrice: 350,
+      maxPrice: 1200
+    },
+
+    {
+      location: 'Cheras',
+      minPrice: 300,
+      maxPrice: 1100
+    }
+
+  ],
+
+
+  priceGuideNote:
+    'Room rental prices near LRT stations vary depending on location, walking distance to the station, room type, furnishing and property facilities.',
+
+
+  whyChooseItems: [
+
+    {
+      icon: 'fas fa-subway',
+      text: 'Enjoy convenient access to LRT stations and public transport.'
+    },
+
+    {
+      icon: 'fas fa-clock',
+      text: 'Make daily commuting more convenient.'
+    },
+
+    {
+      icon: 'fas fa-briefcase',
+      text: 'Suitable for professionals working across Kuala Lumpur.'
+    },
+
+    {
+      icon: 'fas fa-university',
+      text: 'Convenient accommodation option for students and young adults.'
+    }
+
+  ],
+
+
+  exploreButtonUrl:
+    '/rooms-near-lrt-kl',
+
+  exploreButtonText:
+    'Explore Rooms Near LRT',
+
+
+  introTitle:
+    'Find Rooms for Rent Near LRT Stations in Kuala Lumpur',
+
+
+  whyChooseTitle:
+    'Why Rent a Room Near LRT in KL?',
+
+
+  whyChooseContent: [
+
+    'Convenient access to public transportation.',
+
+    'Potentially reduce daily commuting time.',
+
+    'Suitable for students and working professionals.',
+
+    'Easy access to workplaces, shopping areas and daily amenities.'
+
+  ],
+
+
+  rentalGuideTitle:
+    'Room Rental Near LRT Guide',
+
+
+  rentalGuideContent:
+    'Renting a room near an LRT station can make daily commuting more convenient. Rental prices vary depending on the neighbourhood, distance from the station, property type, room size and available facilities.',
+
+
+  whoIsItForTitle:
+    'Who Should Rent a Room Near LRT?',
+
+
+  whoIsItForContent:
+    'Rooms near LRT stations are suitable for students, professionals, expatriates and tenants who prefer convenient public transportation for daily travel.',
+
+
+  faqs: [
+
+    {
+      question:
+        'Where can I find rooms for rent near LRT in KL?',
+
+      answer:
+        'Rooms near LRT stations are available across various Kuala Lumpur neighbourhoods. Availability depends on the specific station, location and property.'
+    },
+
+    {
+      question:
+        'Are LRT-connected rooms suitable for students?',
+
+      answer:
+        'Yes. Rooms near LRT stations can be convenient for students who need affordable accommodation with access to public transportation.'
+    },
+
+    {
+      question:
+        'Can I find affordable rooms near LRT stations?',
+
+      answer:
+        'Yes. Affordable rooms may be available near different LRT-connected areas depending on the room type, property and distance from the station.'
+    }
+
+  ],
+
+
+  relatedRooms: [
+
+    {
+      name:
+        'Rooms for Rent in KL',
+
+      slug:
+        'rooms-for-rent-kl',
+
+      url:
+        '/rooms-for-rent-kl'
+    },
+
+    {
+      name:
+        'Cheap Rooms in KL',
+
+      slug:
+        'cheap-rooms-kl',
+
+      url:
+        '/cheap-rooms-kl'
+    },
+
+    {
+      name:
+        'Budget Rooms in KL',
+
+      slug:
+        'budget-rooms-kl',
+
+      url:
+        '/budget-rooms-kl'
+    },
+
+    {
+      name:
+        'Furnished Rooms in KL',
+
+      slug:
+        'furnished-rooms-kl',
+
+      url:
+        '/furnished-rooms-kl'
+    }
+
+  ],
+
+
+  popularSearches: [
+
+    {
+      label:
+        'Cheap Rooms Near LRT',
+
+      url:
+        '/cheap-rooms-kl'
+    },
+
+    {
+      label:
+        'Single Room Near LRT',
+
+      url:
+        '/single-room-rental-kl'
+    },
+
+    {
+      label:
+        'Furnished Room Near LRT',
+
+      url:
+        '/furnished-rooms-kl'
+    }
+
+  ],
+
+
+  breadcrumbName:
+    'Rooms for Rent Near LRT in Kuala Lumpur'
+
+},
+
+
+    // ==========================================================
   // 6. CHEAP ROOMS KL
   // ==========================================================
 
@@ -1234,10 +2478,10 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
     url: '/cheap-rooms-kl',
 
     metaTitle:
-      'Cheap Rooms for Rent in Kuala Lumpur | Affordable Rooms',
+      'Cheap Rooms for Rent in Kuala Lumpur | Rooms Under RM500',
 
     metaDescription:
-      'Find cheap and affordable rooms for rent in Kuala Lumpur for students, professionals and budget-conscious tenants.',
+      'Looking for cheap rooms for rent in Kuala Lumpur? Find affordable room rentals in KL for students, professionals and tenants seeking low monthly rental costs.',
 
     canonicalUrl:
       'https://anaangproperty.com/cheap-rooms-kl',
@@ -1255,101 +2499,247 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
       'Cheap Rooms in KL',
 
     introContent:
-      'Looking for cheap rooms for rent in Kuala Lumpur? Explore affordable room rental options across KL and find accommodation that fits your budget.',
+      'Looking for cheap rooms for rent in Kuala Lumpur? Explore affordable room rental options across KL and surrounding areas, including rooms suitable for students, working professionals and tenants searching for lower monthly accommodation costs. Compare room types, locations, rental prices and access to public transport to find a cheap room that matches your budget and lifestyle.',
 
     roomCountLabel:
       'Cheap Rooms',
 
     locationCountLabel:
-      'Locations',
+      'KL Locations',
 
 
     features: [
 
       {
         icon: 'fas fa-money-bill-wave',
-        title: 'Low Rental',
+        title: 'Affordable Rental',
         description:
-          'Find affordable rooms that help you manage your monthly rental budget.'
+          'Discover cheap room rental options designed for tenants who want to keep monthly accommodation costs manageable.'
       },
 
       {
         icon: 'fas fa-wallet',
-        title: 'Save More',
+        title: 'Budget Friendly',
         description:
-          'Reduce your monthly living expenses with cost-effective rental options.'
+          'Explore lower-cost rooms that can help students and working tenants manage their monthly living expenses.'
       },
 
       {
         icon: 'fas fa-search',
-        title: 'More Choices',
+        title: 'Compare More Options',
         description:
-          'Explore affordable room options across different areas of Kuala Lumpur.'
+          'Search affordable rooms across different Kuala Lumpur locations and compare rental options based on your needs.'
       },
 
       {
         icon: 'fas fa-subway',
-        title: 'Near Transit',
+        title: 'Near MRT & LRT',
         description:
-          'Find budget rooms near MRT, LRT and convenient transportation routes.'
+          'Find affordable room rentals with convenient access to MRT, LRT and other public transportation routes.'
       },
 
       {
-        icon: 'fas fa-home',
-        title: 'Practical Homes',
+        icon: 'fas fa-graduation-cap',
+        title: 'Student Friendly',
         description:
-          'Choose practical living spaces suitable for students and working tenants.'
+          'Explore practical and affordable accommodation options suitable for students studying in Kuala Lumpur.'
       },
 
       {
         icon: 'fas fa-check-circle',
         title: 'Good Value',
         description:
-          'Find rooms that balance affordability, location and essential amenities.'
+          'Find rooms that offer a practical balance between monthly rental cost, location, facilities and convenience.'
       }
 
     ],
+
+
+    popularLocations: [
+
+      {
+        icon: 'fas fa-city',
+        name: 'KLCC',
+        roomCount: '30+ Rooms',
+        url: '/room-rental-klcc'
+      },
+
+      {
+        icon: 'fas fa-shopping-bag',
+        name: 'Bukit Bintang',
+        roomCount: '30+ Rooms',
+        url: '/room-rental-bukit-bintang'
+      },
+
+      {
+        icon: 'fas fa-home',
+        name: 'Mont Kiara',
+        roomCount: '25+ Rooms',
+        url: '/room-rental-mont-kiara'
+      },
+
+      {
+        icon: 'fas fa-tree',
+        name: 'Bangsar',
+        roomCount: '25+ Rooms',
+        url: '/room-rental-bangsar'
+      },
+
+      {
+        icon: 'fas fa-subway',
+        name: 'Bukit Jalil',
+        roomCount: '30+ Rooms',
+        url: '/room-rental-bukit-jalil'
+      },
+
+      {
+        icon: 'fas fa-map-marker-alt',
+        name: 'Cheras',
+        roomCount: '35+ Rooms',
+        url: '/room-rental-cheras'
+      }
+
+    ],
+
+
+    priceGuideTitle:
+      'Cheap Room Rental Price Guide in Kuala Lumpur',
+
+    priceGuideSubtitle:
+      'Estimated monthly rental ranges for affordable rooms in popular KL areas',
+
+    rentalPrices: [
+
+      {
+        location: 'KLCC',
+        minPrice: 600,
+        maxPrice: 1200
+      },
+
+      {
+        location: 'Bukit Bintang',
+        minPrice: 500,
+        maxPrice: 1100
+      },
+
+      {
+        location: 'Mont Kiara',
+        minPrice: 500,
+        maxPrice: 1000
+      },
+
+      {
+        location: 'Bangsar',
+        minPrice: 450,
+        maxPrice: 950
+      },
+
+      {
+        location: 'Bukit Jalil',
+        minPrice: 350,
+        maxPrice: 800
+      },
+
+      {
+        location: 'Cheras',
+        minPrice: 300,
+        maxPrice: 750
+      }
+
+    ],
+
+    priceGuideNote:
+      'Cheap room rental prices in Kuala Lumpur vary according to location, room type, furnishing, property facilities, room size and access to public transportation. Rental prices shown are indicative and may change based on individual property listings.',
+
+
+    whyChooseItems: [
+
+      {
+        icon: 'fas fa-wallet',
+        text: 'Find lower-cost accommodation options to manage monthly rental expenses.'
+      },
+
+      {
+        icon: 'fas fa-search',
+        text: 'Explore affordable rooms across popular Kuala Lumpur neighbourhoods.'
+      },
+
+      {
+        icon: 'fas fa-subway',
+        text: 'Search for cheaper rooms with convenient access to MRT and LRT stations.'
+      },
+
+      {
+        icon: 'fas fa-check-circle',
+        text: 'Compare affordability, location, facilities and everyday convenience before renting.'
+      }
+
+    ],
+
+    exploreButtonUrl:
+      '/cheap-rooms-kl',
+
+    exploreButtonText:
+      'Explore Cheap Rooms in KL',
 
 
     introTitle:
       'Find Cheap Rooms for Rent in Kuala Lumpur',
 
     whyChooseTitle:
-      'Why Look for Cheap Rooms in KL?',
+      'Why Look for Cheap Rooms in Kuala Lumpur?',
 
     whyChooseContent: [
 
-      'Lower monthly rental costs.',
+      'Lower monthly rental costs for tenants on a limited accommodation budget.',
 
-      'Suitable for students and budget-conscious tenants.',
+      'Suitable for students, interns and young working professionals.',
 
-      'Options available in different KL locations.',
+      'Affordable room options available across different Kuala Lumpur locations.',
 
-      'Potential access to public transportation and nearby amenities.'
+      'Potential access to MRT, LRT, buses, universities, offices and everyday amenities.',
+
+      'A practical choice for tenants who prioritise rental affordability.'
 
     ],
 
     rentalGuideTitle:
-      'Affordable Room Rental Guide',
+      'Cheap Room Rental Guide for Kuala Lumpur',
 
     rentalGuideContent:
-      'Cheap room rental prices depend on location, room type, furnishing, property facilities and accessibility to public transportation.',
+      'The cost of renting a cheap room in Kuala Lumpur depends on several factors, including the neighbourhood, room type, furnishing, property facilities, room size and proximity to public transportation. Tenants looking for the lowest rental prices may consider locations further from the city centre or compare rooms near convenient public transport routes.',
 
     whoIsItForTitle:
       'Who Are Cheap Rooms Suitable For?',
 
     whoIsItForContent:
-      'Affordable rooms are suitable for students, young professionals and tenants who want to manage their monthly accommodation expenses.',
+      'Cheap rooms are suitable for students, interns, young professionals, first-time renters and budget-conscious tenants who want to reduce their monthly accommodation expenses while still having access to essential facilities and convenient locations.',
 
 
     faqs: [
 
       {
         question:
-          'Where can I find cheap rooms in KL?',
+          'Where can I find cheap rooms for rent in Kuala Lumpur?',
 
         answer:
-          'Affordable rooms can be found in different areas of Kuala Lumpur depending on your budget and preferred location.'
+          'Cheap rooms can be found across different Kuala Lumpur neighbourhoods, with rental prices varying by location, room type and facilities. Areas such as Cheras and Bukit Jalil may offer more affordable options, while central locations may have higher rental prices.'
+      },
+
+      {
+        question:
+          'How much does a cheap room cost in KL?',
+
+        answer:
+          'The monthly rental price of a cheap room in Kuala Lumpur varies depending on location, room type, furnishing and facilities. Affordable options may start from a few hundred ringgit per month, while rooms in central KL locations can cost more.'
+      },
+
+      {
+        question:
+          'Can I find a cheap room near MRT or LRT?',
+
+        answer:
+          'Yes. Affordable rooms may be available near MRT and LRT stations in different parts of Kuala Lumpur. Searching by location and transport access can help you find a room that balances rental cost and convenience.'
       }
 
     ],
@@ -1370,6 +2760,17 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
 
       {
         name:
+          'Shared Rooms in KL',
+
+        slug:
+          'shared-rooms-kl',
+
+        url:
+          '/shared-rooms-kl'
+      },
+
+      {
+        name:
           'Single Room Rental in KL',
 
         slug:
@@ -1381,19 +2782,27 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
 
       {
         name:
-          'Shared Rooms in KL',
+          'Rooms for Rent in KL',
 
         slug:
-          'shared-rooms-kl',
+          'rooms-for-rent-kl',
 
         url:
-          '/shared-rooms-kl'
+          '/rooms-for-rent-kl'
       }
 
     ],
 
 
     popularSearches: [
+
+      {
+        label:
+          'Cheap Rooms Under RM500',
+
+        url:
+          '/cheap-rooms-kl'
+      },
 
       {
         label:
@@ -1405,18 +2814,26 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
 
       {
         label:
-          'Cheap Rooms KLCC',
+          'Affordable Rooms in KL',
 
         url:
-          '/room-rental-klcc'
+          '/budget-rooms-kl'
       },
 
       {
         label:
-          'Budget Rooms',
+          'Cheap Rooms in Bukit Jalil',
 
         url:
-          '/budget-rooms-kl'
+          '/room-rental-bukit-jalil'
+      },
+
+      {
+        label:
+          'Cheap Rooms in Cheras',
+
+        url:
+          '/room-rental-cheras'
       }
 
     ],
@@ -1438,10 +2855,10 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
     url: '/budget-rooms-kl',
 
     metaTitle:
-      'Budget Rooms for Rent in Kuala Lumpur | Affordable Rentals',
+      'Budget Rooms for Rent in Kuala Lumpur | Affordable Rooms',
 
     metaDescription:
-      'Explore budget rooms for rent in Kuala Lumpur with affordable accommodation options for students, professionals and tenants.',
+      'Explore budget rooms for rent in Kuala Lumpur with affordable and comfortable accommodation for students, professionals and tenants looking for good rental value.',
 
     canonicalUrl:
       'https://anaangproperty.com/budget-rooms-kl',
@@ -1459,13 +2876,13 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
       'Budget Rooms in KL',
 
     introContent:
-      'Explore budget-friendly rooms for rent in Kuala Lumpur and find affordable accommodation that balances rental cost, location and convenience.',
+      'Explore budget rooms for rent in Kuala Lumpur and discover affordable accommodation that offers a practical balance between monthly rental cost, location, comfort and convenience. Compare budget-friendly rooms in popular KL areas and find suitable options for students, professionals and tenants looking for good value accommodation.',
 
     roomCountLabel:
       'Budget Rooms',
 
     locationCountLabel:
-      'Locations',
+      'KL Locations',
 
 
     features: [
@@ -1474,86 +2891,232 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
         icon: 'fas fa-wallet',
         title: 'Budget Friendly',
         description:
-          'Explore rental rooms designed for tenants with practical budgets.'
+          'Explore rooms that provide practical accommodation options for tenants managing a monthly rental budget.'
       },
 
       {
         icon: 'fas fa-home',
         title: 'Comfortable Living',
         description:
-          'Find comfortable spaces without exceeding your monthly rental budget.'
+          'Find practical rooms that balance affordable rent with essential comfort and everyday living needs.'
       },
 
       {
         icon: 'fas fa-building',
         title: 'Useful Facilities',
         description:
-          'Selected properties provide access to essential shared facilities.'
+          'Discover properties with access to essential facilities that can make daily living more convenient.'
       },
 
       {
         icon: 'fas fa-map-marker-alt',
-        title: 'Good Locations',
+        title: 'Convenient Locations',
         description:
-          'Choose budget rooms in convenient areas around Kuala Lumpur.'
+          'Choose budget rooms in different Kuala Lumpur areas based on your workplace, university and lifestyle.'
       },
 
       {
         icon: 'fas fa-tags',
-        title: 'Fair Prices',
+        title: 'Good Rental Value',
         description:
-          'Compare rental options and find rooms offering excellent value.'
+          'Compare available rental options to find rooms that provide good value for your monthly budget.'
       },
 
       {
         icon: 'fas fa-wifi',
         title: 'Essential Amenities',
         description:
-          'Many rooms offer furniture, WiFi, utilities and other conveniences.'
+          'Many budget-friendly properties may include furniture, WiFi, utilities or selected residential facilities.'
       }
 
     ],
 
 
+    popularLocations: [
+
+      {
+        icon: 'fas fa-city',
+        name: 'KLCC',
+        roomCount: '35+ Rooms',
+        url: '/room-rental-klcc'
+      },
+
+      {
+        icon: 'fas fa-shopping-bag',
+        name: 'Bukit Bintang',
+        roomCount: '30+ Rooms',
+        url: '/room-rental-bukit-bintang'
+      },
+
+      {
+        icon: 'fas fa-home',
+        name: 'Mont Kiara',
+        roomCount: '30+ Rooms',
+        url: '/room-rental-mont-kiara'
+      },
+
+      {
+        icon: 'fas fa-tree',
+        name: 'Bangsar',
+        roomCount: '25+ Rooms',
+        url: '/room-rental-bangsar'
+      },
+
+      {
+        icon: 'fas fa-subway',
+        name: 'Bukit Jalil',
+        roomCount: '35+ Rooms',
+        url: '/room-rental-bukit-jalil'
+      },
+
+      {
+        icon: 'fas fa-map-marker-alt',
+        name: 'Cheras',
+        roomCount: '40+ Rooms',
+        url: '/room-rental-cheras'
+      }
+
+    ],
+
+
+    priceGuideTitle:
+      'Budget Room Rental Price Guide in Kuala Lumpur',
+
+    priceGuideSubtitle:
+      'Estimated monthly rental ranges for budget-friendly rooms in popular KL areas',
+
+    rentalPrices: [
+
+      {
+        location: 'KLCC',
+        minPrice: 650,
+        maxPrice: 1300
+      },
+
+      {
+        location: 'Bukit Bintang',
+        minPrice: 550,
+        maxPrice: 1200
+      },
+
+      {
+        location: 'Mont Kiara',
+        minPrice: 500,
+        maxPrice: 1100
+      },
+
+      {
+        location: 'Bangsar',
+        minPrice: 450,
+        maxPrice: 1000
+      },
+
+      {
+        location: 'Bukit Jalil',
+        minPrice: 400,
+        maxPrice: 900
+      },
+
+      {
+        location: 'Cheras',
+        minPrice: 350,
+        maxPrice: 850
+      }
+
+    ],
+
+    priceGuideNote:
+      'Budget room rental prices in Kuala Lumpur depend on neighbourhood, room type, furnishing, property facilities, room size and accessibility. Actual rental prices may vary between individual properties and listings.',
+
+
+    whyChooseItems: [
+
+      {
+        icon: 'fas fa-wallet',
+        text: 'Keep monthly accommodation costs within a practical budget.'
+      },
+
+      {
+        icon: 'fas fa-home',
+        text: 'Find comfortable rooms without prioritising luxury features.'
+      },
+
+      {
+        icon: 'fas fa-map-marker-alt',
+        text: 'Choose from budget-friendly rental options across different KL areas.'
+      },
+
+      {
+        icon: 'fas fa-tags',
+        text: 'Compare rental prices and find accommodation offering good overall value.'
+      }
+
+    ],
+
+    exploreButtonUrl:
+      '/budget-rooms-kl',
+
+    exploreButtonText:
+      'Explore Budget Rooms in KL',
+
+
     introTitle:
-      'Find Budget Rooms for Rent in Kuala Lumpur',
+      'Find Affordable Budget Rooms for Rent in Kuala Lumpur',
 
     whyChooseTitle:
-      'Why Choose a Budget Room?',
+      'Why Choose a Budget Room in Kuala Lumpur?',
 
     whyChooseContent: [
 
-      'Manage monthly accommodation expenses.',
+      'Manage monthly accommodation expenses while maintaining practical living standards.',
 
-      'Suitable for students and working professionals.',
+      'Suitable for students, interns, young professionals and working tenants.',
 
-      'Options available across different locations.',
+      'Explore budget accommodation options across different Kuala Lumpur neighbourhoods.',
 
-      'Practical choice for tenants prioritising affordability.'
+      'Choose a location based on rental price, transport access and proximity to work or study.',
+
+      'Compare different room types and facilities before deciding where to rent.'
 
     ],
 
     rentalGuideTitle:
-      'Budget Room Rental Guide',
+      'Budget Room Rental Guide for KL',
 
     rentalGuideContent:
-      'Budget room rental prices depend on location, room type, furnishing, property facilities and access to public transportation.',
+      'Budget rooms focus on achieving a practical balance between rental price and everyday convenience. When comparing budget rooms in Kuala Lumpur, consider the total monthly cost, furnishing, utilities, WiFi, security, property facilities and distance to MRT or LRT stations rather than looking only at the advertised rental price.',
 
     whoIsItForTitle:
       'Who Should Consider a Budget Room?',
 
     whoIsItForContent:
-      'Budget rooms are suitable for students, young professionals and tenants looking for practical accommodation at a reasonable rental price.',
+      'Budget rooms are suitable for students, young professionals, interns, single tenants and working individuals who want practical accommodation while keeping their monthly rental expenses under control.',
 
 
     faqs: [
 
       {
         question:
-          'What is a budget room?',
+          'What is the difference between a cheap room and a budget room?',
 
         answer:
-          'A budget room is an affordable room rental option designed for tenants who prioritise lower monthly rental costs.'
+          'A cheap room generally focuses on achieving the lowest possible monthly rental cost, while a budget room focuses on overall value by balancing affordability with location, comfort, facilities and convenience.'
+      },
+
+      {
+        question:
+          'Are budget rooms in Kuala Lumpur furnished?',
+
+        answer:
+          'Some budget rooms are fully furnished, while others may be semi-furnished or unfurnished. Check the individual property listing to confirm the furniture and amenities included.'
+      },
+
+      {
+        question:
+          'Where can I find affordable budget rooms in KL?',
+
+        answer:
+          'Budget rooms are available in different areas of Kuala Lumpur. Rental prices can vary significantly between central locations and neighbourhoods further from the city centre.'
       }
 
     ],
@@ -1574,6 +3137,17 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
 
       {
         name:
+          'Shared Rooms in KL',
+
+        slug:
+          'shared-rooms-kl',
+
+        url:
+          '/shared-rooms-kl'
+      },
+
+      {
+        name:
           'Single Room Rental in KL',
 
         slug:
@@ -1585,13 +3159,13 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
 
       {
         name:
-          'Shared Rooms in KL',
+          'Furnished Rooms in KL',
 
         slug:
-          'shared-rooms-kl',
+          'furnished-rooms-kl',
 
         url:
-          '/shared-rooms-kl'
+          '/furnished-rooms-kl'
       }
 
     ],
@@ -1609,10 +3183,26 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
 
       {
         label:
-          'Affordable Rooms KL',
+          'Affordable Rooms in KL',
 
         url:
           '/cheap-rooms-kl'
+      },
+
+      {
+        label:
+          'Budget Rooms in Bukit Jalil',
+
+        url:
+          '/room-rental-bukit-jalil'
+      },
+
+      {
+        label:
+          'Budget Rooms in Cheras',
+
+        url:
+          '/room-rental-cheras'
       }
 
     ],
@@ -1634,10 +3224,10 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
     url: '/shared-rooms-kl',
 
     metaTitle:
-      'Shared Rooms for Rent in Kuala Lumpur | Shared Room KL',
+      'Shared Rooms for Rent in Kuala Lumpur | Affordable Shared Rooms',
 
     metaDescription:
-      'Find shared rooms for rent in Kuala Lumpur with affordable accommodation options for students and working professionals.',
+      'Find shared rooms for rent in Kuala Lumpur with affordable accommodation for students, young professionals and tenants looking to reduce monthly rental costs.',
 
     canonicalUrl:
       'https://anaangproperty.com/shared-rooms-kl',
@@ -1655,13 +3245,13 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
       'Shared Rooms in KL',
 
     introContent:
-      'Looking for an affordable shared room in Kuala Lumpur? Explore shared accommodation options that can help reduce rental costs.',
+      'Looking for shared rooms for rent in Kuala Lumpur? Explore shared accommodation options that can help reduce monthly rental costs while providing access to convenient locations and essential residential facilities. Shared rooms can be a practical choice for students, interns and young professionals who are comfortable sharing their bedroom and living environment.',
 
     roomCountLabel:
       'Shared Rooms',
 
     locationCountLabel:
-      'Locations',
+      'KL Locations',
 
 
     features: [
@@ -1670,86 +3260,232 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
         icon: 'fas fa-users',
         title: 'Shared Living',
         description:
-          'Share a comfortable living environment with suitable roommates.'
+          'Share a bedroom or accommodation with suitable occupants and enjoy a more affordable rental arrangement.'
       },
 
       {
         icon: 'fas fa-wallet',
-        title: 'Lower Cost',
+        title: 'Lower Rental Cost',
         description:
-          'Sharing accommodation can help reduce monthly rental expenses.'
+          'Sharing a room can help reduce monthly accommodation expenses compared with renting a private room.'
       },
 
       {
         icon: 'fas fa-home',
         title: 'Shared Facilities',
         description:
-          'Enjoy access to common living areas and shared household facilities.'
+          'Access common living spaces and shared household facilities depending on the property arrangement.'
       },
 
       {
         icon: 'fas fa-map-marker-alt',
-        title: 'Great Locations',
+        title: 'Convenient Locations',
         description:
-          'Find shared rooms near transport, workplaces and universities.'
+          'Find shared accommodation near workplaces, universities, shopping areas and public transport.'
       },
 
       {
         icon: 'fas fa-hand-holding-usd',
         title: 'Cost Effective',
         description:
-          'An economical option for students and working professionals.'
+          'A practical accommodation option for tenants who prioritise affordability and shared living.'
       },
 
       {
         icon: 'fas fa-wifi',
-        title: 'Convenient Living',
+        title: 'Everyday Convenience',
         description:
-          'Many shared properties include WiFi, furniture and selected utilities.'
+          'Selected shared properties may provide furniture, WiFi, utilities and essential residential facilities.'
       }
 
     ],
+
+
+    popularLocations: [
+
+      {
+        icon: 'fas fa-city',
+        name: 'KLCC',
+        roomCount: '30+ Rooms',
+        url: '/room-rental-klcc'
+      },
+
+      {
+        icon: 'fas fa-shopping-bag',
+        name: 'Bukit Bintang',
+        roomCount: '30+ Rooms',
+        url: '/room-rental-bukit-bintang'
+      },
+
+      {
+        icon: 'fas fa-home',
+        name: 'Mont Kiara',
+        roomCount: '25+ Rooms',
+        url: '/room-rental-mont-kiara'
+      },
+
+      {
+        icon: 'fas fa-tree',
+        name: 'Bangsar',
+        roomCount: '25+ Rooms',
+        url: '/room-rental-bangsar'
+      },
+
+      {
+        icon: 'fas fa-subway',
+        name: 'Bukit Jalil',
+        roomCount: '30+ Rooms',
+        url: '/room-rental-bukit-jalil'
+      },
+
+      {
+        icon: 'fas fa-map-marker-alt',
+        name: 'Cheras',
+        roomCount: '35+ Rooms',
+        url: '/room-rental-cheras'
+      }
+
+    ],
+
+
+    priceGuideTitle:
+      'Shared Room Rental Price Guide in Kuala Lumpur',
+
+    priceGuideSubtitle:
+      'Estimated monthly rental ranges for shared accommodation in popular KL areas',
+
+    rentalPrices: [
+
+      {
+        location: 'KLCC',
+        minPrice: 400,
+        maxPrice: 900
+      },
+
+      {
+        location: 'Bukit Bintang',
+        minPrice: 350,
+        maxPrice: 850
+      },
+
+      {
+        location: 'Mont Kiara',
+        minPrice: 350,
+        maxPrice: 800
+      },
+
+      {
+        location: 'Bangsar',
+        minPrice: 300,
+        maxPrice: 750
+      },
+
+      {
+        location: 'Bukit Jalil',
+        minPrice: 250,
+        maxPrice: 650
+      },
+
+      {
+        location: 'Cheras',
+        minPrice: 250,
+        maxPrice: 600
+      }
+
+    ],
+
+    priceGuideNote:
+      'Shared room rental prices vary according to location, number of occupants, property type, room arrangement, furnishing, facilities and transport accessibility. Actual prices depend on individual property listings.',
+
+
+    whyChooseItems: [
+
+      {
+        icon: 'fas fa-wallet',
+        text: 'Potentially reduce monthly rental costs by sharing accommodation.'
+      },
+
+      {
+        icon: 'fas fa-users',
+        text: 'Share living expenses and selected household facilities with other occupants.'
+      },
+
+      {
+        icon: 'fas fa-home',
+        text: 'Access common residential facilities depending on the property.'
+      },
+
+      {
+        icon: 'fas fa-subway',
+        text: 'Search for shared rooms near MRT, LRT and other convenient transport routes.'
+      }
+
+    ],
+
+    exploreButtonUrl:
+      '/shared-rooms-kl',
+
+    exploreButtonText:
+      'Explore Shared Rooms in KL',
 
 
     introTitle:
       'Find Shared Rooms for Rent in Kuala Lumpur',
 
     whyChooseTitle:
-      'Why Choose Shared Accommodation?',
+      'Why Choose a Shared Room in Kuala Lumpur?',
 
     whyChooseContent: [
 
-      'Potentially lower rental costs.',
+      'Potentially lower monthly rental costs compared with private room accommodation.',
 
-      'Suitable for students and budget-conscious tenants.',
+      'Suitable for students, interns and young professionals on a limited budget.',
 
-      'Opportunity to share living expenses.',
+      'Opportunity to share selected household expenses and facilities.',
 
-      'Access to facilities in shared residential properties.'
+      'Access to accommodation in convenient KL locations at a potentially lower cost.',
+
+      'A practical option for tenants who are comfortable with shared bedroom arrangements.'
 
     ],
 
     rentalGuideTitle:
-      'Shared Room Rental Guide',
+      'Shared Room Rental Guide for Kuala Lumpur',
 
     rentalGuideContent:
-      'Shared room rental prices depend on the property, location, number of occupants, room arrangement and facilities.',
+      'Shared room rental prices depend on the location, number of occupants, bedroom arrangement, property type, furnishing and facilities provided. Before renting a shared room, tenants should confirm the number of occupants, privacy arrangements, house rules, included utilities and any additional rental charges.',
 
     whoIsItForTitle:
       'Who Are Shared Rooms Suitable For?',
 
     whoIsItForContent:
-      'Shared rooms are suitable for students, young professionals and tenants who prioritise affordability.',
+      'Shared rooms are suitable for students, interns, young professionals and budget-conscious tenants who are comfortable sharing a bedroom or living environment and want to reduce monthly accommodation expenses.',
 
 
     faqs: [
 
       {
         question:
-          'What is a shared room?',
+          'What is a shared room in Kuala Lumpur?',
 
         answer:
-          'A shared room is a bedroom shared by two or more occupants, usually at a lower rental cost than a private room.'
+          'A shared room is a bedroom occupied by two or more tenants, usually allowing each tenant to pay a lower monthly rental compared with renting a private room.'
+      },
+
+      {
+        question:
+          'Are shared rooms cheaper than private rooms?',
+
+        answer:
+          'Shared rooms are often more affordable than private rooms because rental costs may be divided between occupants. The actual price depends on location, property type, facilities and the number of people sharing.'
+      },
+
+      {
+        question:
+          'Can students rent shared rooms in KL?',
+
+        answer:
+          'Yes. Shared rooms can be a practical option for students who want to reduce accommodation costs and live near universities, colleges or public transportation.'
       }
 
     ],
@@ -1788,6 +3524,17 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
 
         url:
           '/single-room-rental-kl'
+      },
+
+      {
+        name:
+          'Furnished Rooms in KL',
+
+        slug:
+          'furnished-rooms-kl',
+
+        url:
+          '/furnished-rooms-kl'
       }
 
     ],
@@ -1805,10 +3552,26 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
 
       {
         label:
-          'Affordable Shared Room',
+          'Affordable Shared Room KL',
 
         url:
-          '/budget-rooms-kl'
+          '/shared-rooms-kl'
+      },
+
+      {
+        label:
+          'Cheap Shared Rooms',
+
+        url:
+          '/cheap-rooms-kl'
+      },
+
+      {
+        label:
+          'Shared Rooms in Bukit Jalil',
+
+        url:
+          '/room-rental-bukit-jalil'
       }
 
     ],
@@ -1830,10 +3593,10 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
     url: '/furnished-rooms-kl',
 
     metaTitle:
-      'Furnished Rooms for Rent in Kuala Lumpur | Move-In Ready',
+      'Furnished Rooms for Rent in Kuala Lumpur | Move-In Ready Rooms',
 
     metaDescription:
-      'Find furnished rooms for rent in Kuala Lumpur with convenient move-in ready accommodation for professionals and students.',
+      'Find fully furnished rooms for rent in Kuala Lumpur with move-in ready accommodation near MRT, LRT, offices, universities and popular KL areas.',
 
     canonicalUrl:
       'https://anaangproperty.com/furnished-rooms-kl',
@@ -1851,13 +3614,13 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
       'Furnished Rooms in KL',
 
     introContent:
-      'Find furnished rooms for rent in Kuala Lumpur that offer convenient move-in ready accommodation without the need to purchase major furniture items.',
+      'Find furnished rooms for rent in Kuala Lumpur with convenient move-in ready accommodation for students, working professionals and expatriates. Explore furnished room options in popular KL areas and compare location, rental price, furniture, facilities and access to MRT or LRT before choosing your next home.',
 
     roomCountLabel:
       'Furnished Rooms',
 
     locationCountLabel:
-      'Locations',
+      'KL Locations',
 
 
     features: [
@@ -1866,76 +3629,206 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
         icon: 'fas fa-couch',
         title: 'Fully Furnished',
         description:
-          'Move into a room equipped with essential furniture and household items.'
+          'Move into a room with essential furniture provided, depending on the individual property listing.'
       },
 
       {
         icon: 'fas fa-suitcase',
         title: 'Move In Easily',
         description:
-          'Reduce the hassle of buying and transporting large furniture items.'
+          'Reduce the hassle of buying, transporting and setting up large furniture when moving to Kuala Lumpur.'
       },
 
       {
         icon: 'fas fa-home',
-        title: 'Ready to Live',
+        title: 'Move-In Ready',
         description:
-          'Enjoy a convenient living space prepared for everyday needs.'
+          'Choose convenient accommodation that is prepared for everyday living and a faster move-in process.'
       },
 
       {
         icon: 'fas fa-map-marker-alt',
-        title: 'Prime Locations',
+        title: 'Popular KL Areas',
         description:
-          'Find furnished rooms near transport, offices, malls and universities.'
+          'Find furnished rooms near offices, universities, shopping centres and public transportation.'
       },
 
       {
         icon: 'fas fa-tags',
-        title: 'Great Value',
+        title: 'Compare Value',
         description:
-          'Compare furnished rooms and find options that match your budget.'
+          'Compare furnished room rental prices and facilities to find an option that suits your budget.'
       },
 
       {
         icon: 'fas fa-wifi',
-        title: 'Modern Comfort',
+        title: 'Modern Convenience',
         description:
-          'Selected properties offer WiFi, utilities and convenient facilities.'
+          'Selected properties may include WiFi, utilities, furniture and convenient residential facilities.'
       }
 
     ],
+
+
+    popularLocations: [
+
+      {
+        icon: 'fas fa-city',
+        name: 'KLCC',
+        roomCount: '50+ Rooms',
+        url: '/room-rental-klcc'
+      },
+
+      {
+        icon: 'fas fa-shopping-bag',
+        name: 'Bukit Bintang',
+        roomCount: '45+ Rooms',
+        url: '/room-rental-bukit-bintang'
+      },
+
+      {
+        icon: 'fas fa-home',
+        name: 'Mont Kiara',
+        roomCount: '45+ Rooms',
+        url: '/room-rental-mont-kiara'
+      },
+
+      {
+        icon: 'fas fa-tree',
+        name: 'Bangsar',
+        roomCount: '40+ Rooms',
+        url: '/room-rental-bangsar'
+      },
+
+      {
+        icon: 'fas fa-subway',
+        name: 'Bukit Jalil',
+        roomCount: '40+ Rooms',
+        url: '/room-rental-bukit-jalil'
+      },
+
+      {
+        icon: 'fas fa-map-marker-alt',
+        name: 'Cheras',
+        roomCount: '35+ Rooms',
+        url: '/room-rental-cheras'
+      }
+
+    ],
+
+
+    priceGuideTitle:
+      'Furnished Room Rental Price Guide in Kuala Lumpur',
+
+    priceGuideSubtitle:
+      'Estimated monthly rental ranges for furnished rooms in popular KL areas',
+
+    rentalPrices: [
+
+      {
+        location: 'KLCC',
+        minPrice: 800,
+        maxPrice: 2000
+      },
+
+      {
+        location: 'Bukit Bintang',
+        minPrice: 700,
+        maxPrice: 1800
+      },
+
+      {
+        location: 'Mont Kiara',
+        minPrice: 700,
+        maxPrice: 1700
+      },
+
+      {
+        location: 'Bangsar',
+        minPrice: 650,
+        maxPrice: 1600
+      },
+
+      {
+        location: 'Bukit Jalil',
+        minPrice: 500,
+        maxPrice: 1300
+      },
+
+      {
+        location: 'Cheras',
+        minPrice: 450,
+        maxPrice: 1200
+      }
+
+    ],
+
+    priceGuideNote:
+      'Furnished room rental prices in Kuala Lumpur depend on location, room size, furniture provided, property facilities, building amenities and rental demand. Actual prices vary between individual properties.',
+
+
+    whyChooseItems: [
+
+      {
+        icon: 'fas fa-couch',
+        text: 'Move into accommodation with essential furniture already provided.'
+      },
+
+      {
+        icon: 'fas fa-suitcase',
+        text: 'Reduce the hassle of purchasing and transporting large furniture items.'
+      },
+
+      {
+        icon: 'fas fa-home',
+        text: 'Enjoy a convenient move-in ready room for everyday living.'
+      },
+
+      {
+        icon: 'fas fa-map-marker-alt',
+        text: 'Choose furnished rooms in convenient Kuala Lumpur locations.'
+      }
+
+    ],
+
+    exploreButtonUrl:
+      '/furnished-rooms-kl',
+
+    exploreButtonText:
+      'Explore Furnished Rooms in KL',
 
 
     introTitle:
       'Find Furnished Rooms for Rent in Kuala Lumpur',
 
     whyChooseTitle:
-      'Why Rent a Furnished Room?',
+      'Why Rent a Furnished Room in Kuala Lumpur?',
 
     whyChooseContent: [
 
-      'Convenient move-in option.',
+      'Move into a room without immediately purchasing major furniture.',
 
-      'No need to purchase major furniture immediately.',
+      'Convenient option for professionals, students and expatriates relocating to KL.',
 
-      'Suitable for expatriates and working professionals.',
+      'Reduce the time and effort required to furnish a new room.',
 
-      'Practical for tenants looking for convenient accommodation.'
+      'Choose from furnished rooms near workplaces, universities and public transport.',
+
+      'Compare furniture, facilities and rental prices before making a decision.'
 
     ],
 
     rentalGuideTitle:
-      'Furnished Room Rental Guide',
+      'Furnished Room Rental Guide for Kuala Lumpur',
 
     rentalGuideContent:
-      'Furnished room rental prices depend on room type, location, furniture provided, property facilities and accessibility.',
+      'Furnished room rental prices vary depending on the location, room type, furniture provided, property facilities and accessibility. Before renting, check exactly which furniture is included, whether utilities and WiFi are included, and whether the advertised rental price has additional charges.',
 
     whoIsItForTitle:
       'Who Are Furnished Rooms Suitable For?',
 
     whoIsItForContent:
-      'Furnished rooms are suitable for professionals, students, expatriates and tenants who prefer convenient move-in ready accommodation.',
+      'Furnished rooms are suitable for working professionals, students, expatriates, interns and tenants who prefer convenient move-in ready accommodation without the need to purchase major furniture immediately.',
 
 
     faqs: [
@@ -1945,7 +3838,23 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
           'What is included in a furnished room?',
 
         answer:
-          'Furnished rooms may include a bed, wardrobe, table and other basic furniture. The exact items included depend on each property listing.'
+          'A furnished room may include items such as a bed, mattress, wardrobe, table and chair. The exact furniture and amenities provided vary by property, so tenants should check the individual listing before renting.'
+      },
+
+      {
+        question:
+          'Are furnished rooms more expensive in Kuala Lumpur?',
+
+        answer:
+          'Furnished rooms may have higher rental prices than comparable unfurnished rooms because furniture and convenience are included. However, the overall value depends on the location, property facilities and items provided.'
+      },
+
+      {
+        question:
+          'Can expatriates rent furnished rooms in KL?',
+
+        answer:
+          'Yes. Furnished rooms can be a convenient option for expatriates and international tenants who are moving to Kuala Lumpur and prefer accommodation that is ready for immediate occupancy.'
       }
 
     ],
@@ -1984,6 +3893,17 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
 
         url:
           '/rooms-for-rent-kl'
+      },
+
+      {
+        name:
+          'Master Room Rental in KL',
+
+        slug:
+          'master-room-rental-kl',
+
+        url:
+          '/master-room-rental-kl'
       }
 
     ],
@@ -2013,6 +3933,22 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
 
         url:
           '/master-room-rental-kl'
+      },
+
+      {
+        label:
+          'Furnished Room in Bukit Bintang',
+
+        url:
+          '/room-rental-bukit-bintang'
+      },
+
+      {
+        label:
+          'Furnished Room in Mont Kiara',
+
+        url:
+          '/room-rental-mont-kiara'
       }
 
     ],
@@ -2034,10 +3970,10 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
     url: '/semi-furnished-rooms-kl',
 
     metaTitle:
-      'Semi-Furnished Rooms for Rent in Kuala Lumpur',
+      'Semi-Furnished Rooms for Rent in Kuala Lumpur | KL Rooms',
 
     metaDescription:
-      'Find semi-furnished rooms for rent in Kuala Lumpur with essential furniture and practical accommodation options.',
+      'Find semi-furnished rooms for rent in Kuala Lumpur with essential furniture, flexible accommodation and practical rental options for students and professionals.',
 
     canonicalUrl:
       'https://anaangproperty.com/semi-furnished-rooms-kl',
@@ -2055,13 +3991,13 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
       'Semi-Furnished Rooms in KL',
 
     introContent:
-      'Explore semi-furnished rooms for rent in Kuala Lumpur for tenants looking for a balance between convenience and flexibility.',
+      'Explore semi-furnished rooms for rent in Kuala Lumpur for tenants who want a balance between move-in convenience and the freedom to personalise their living space. Find rooms with selected furniture and fixtures in convenient KL locations near workplaces, universities, shopping areas and public transportation.',
 
     roomCountLabel:
       'Semi-Furnished Rooms',
 
     locationCountLabel:
-      'Locations',
+      'KL Locations',
 
 
     features: [
@@ -2070,76 +4006,206 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
         icon: 'fas fa-couch',
         title: 'Essential Furniture',
         description:
-          'Enjoy a room with selected furniture already provided by the property.'
+          'Move into a room with selected furniture or fixtures already provided by the property.'
       },
 
       {
         icon: 'fas fa-sliders-h',
-        title: 'More Flexibility',
+        title: 'Flexible Setup',
         description:
-          'Add your own furniture and personalize your living environment.'
+          'Bring your own furniture and belongings to create a living space that suits your preferences.'
       },
 
       {
         icon: 'fas fa-wallet',
-        title: 'Cost Effective',
+        title: 'Practical Value',
         description:
-          'A practical balance between furnished convenience and rental cost.'
+          'Enjoy a balance between furnished convenience and potentially lower rental costs.'
       },
 
       {
         icon: 'fas fa-map-marker-alt',
         title: 'Convenient Locations',
         description:
-          'Find semi-furnished rooms close to public transport and daily essentials.'
+          'Find semi-furnished rooms close to public transport, workplaces, universities and daily amenities.'
       },
 
       {
         icon: 'fas fa-home',
-        title: 'Comfortable Space',
+        title: 'Comfortable Living',
         description:
-          'Enjoy a practical room suitable for students and working professionals.'
+          'Choose practical rooms suitable for students, professionals and longer-term tenants.'
       },
 
       {
         icon: 'fas fa-check-circle',
-        title: 'Practical Choice',
+        title: 'Balanced Choice',
         description:
-          'Ideal for tenants who want convenience while keeping flexibility.'
+          'A flexible accommodation option for tenants who want some furniture without a fully furnished setup.'
       }
 
     ],
+
+
+    popularLocations: [
+
+      {
+        icon: 'fas fa-city',
+        name: 'KLCC',
+        roomCount: '35+ Rooms',
+        url: '/room-rental-klcc'
+      },
+
+      {
+        icon: 'fas fa-shopping-bag',
+        name: 'Bukit Bintang',
+        roomCount: '30+ Rooms',
+        url: '/room-rental-bukit-bintang'
+      },
+
+      {
+        icon: 'fas fa-home',
+        name: 'Mont Kiara',
+        roomCount: '30+ Rooms',
+        url: '/room-rental-mont-kiara'
+      },
+
+      {
+        icon: 'fas fa-tree',
+        name: 'Bangsar',
+        roomCount: '25+ Rooms',
+        url: '/room-rental-bangsar'
+      },
+
+      {
+        icon: 'fas fa-subway',
+        name: 'Bukit Jalil',
+        roomCount: '30+ Rooms',
+        url: '/room-rental-bukit-jalil'
+      },
+
+      {
+        icon: 'fas fa-map-marker-alt',
+        name: 'Cheras',
+        roomCount: '30+ Rooms',
+        url: '/room-rental-cheras'
+      }
+
+    ],
+
+
+    priceGuideTitle:
+      'Semi-Furnished Room Rental Price Guide in Kuala Lumpur',
+
+    priceGuideSubtitle:
+      'Estimated monthly rental ranges for semi-furnished rooms in popular KL areas',
+
+    rentalPrices: [
+
+      {
+        location: 'KLCC',
+        minPrice: 700,
+        maxPrice: 1700
+      },
+
+      {
+        location: 'Bukit Bintang',
+        minPrice: 600,
+        maxPrice: 1500
+      },
+
+      {
+        location: 'Mont Kiara',
+        minPrice: 600,
+        maxPrice: 1400
+      },
+
+      {
+        location: 'Bangsar',
+        minPrice: 550,
+        maxPrice: 1300
+      },
+
+      {
+        location: 'Bukit Jalil',
+        minPrice: 450,
+        maxPrice: 1100
+      },
+
+      {
+        location: 'Cheras',
+        minPrice: 400,
+        maxPrice: 1000
+      }
+
+    ],
+
+    priceGuideNote:
+      'Semi-furnished room rental prices depend on location, room type, furniture provided, property facilities, room size and accessibility. The exact definition of semi-furnished may differ between properties.',
+
+
+    whyChooseItems: [
+
+      {
+        icon: 'fas fa-balance-scale',
+        text: 'Balance between the convenience of furnished accommodation and the flexibility of your own setup.'
+      },
+
+      {
+        icon: 'fas fa-wallet',
+        text: 'Potentially lower rental costs than comparable fully furnished rooms.'
+      },
+
+      {
+        icon: 'fas fa-sliders-h',
+        text: 'Add your preferred furniture and personalise your living space.'
+      },
+
+      {
+        icon: 'fas fa-home',
+        text: 'A practical option for tenants planning medium or longer-term accommodation.'
+      }
+
+    ],
+
+    exploreButtonUrl:
+      '/semi-furnished-rooms-kl',
+
+    exploreButtonText:
+      'Explore Semi-Furnished Rooms',
 
 
     introTitle:
       'Find Semi-Furnished Rooms for Rent in Kuala Lumpur',
 
     whyChooseTitle:
-      'Why Choose a Semi-Furnished Room?',
+      'Why Choose a Semi-Furnished Room in KL?',
 
     whyChooseContent: [
 
-      'Balance between furnished and unfurnished accommodation.',
+      'Enjoy some essential furniture while retaining flexibility over your living setup.',
 
-      'Potentially lower rental costs than fully furnished rooms.',
+      'Potentially reduce rental costs compared with fully furnished accommodation.',
 
-      'Allows tenants to bring their preferred furniture.',
+      'Bring your own furniture and belongings to personalise your room.',
 
-      'Suitable for longer-term tenants.'
+      'Suitable for tenants planning to stay for a longer period.',
+
+      'A practical middle option between furnished and unfurnished room rentals.'
 
     ],
 
     rentalGuideTitle:
-      'Semi-Furnished Room Rental Guide',
+      'Semi-Furnished Room Rental Guide for Kuala Lumpur',
 
     rentalGuideContent:
-      'Rental prices depend on location, room type, furniture provided, property facilities and access to public transport.',
+      'The meaning of semi-furnished can vary between properties. Some rooms may include a bed and wardrobe, while others may provide only selected fixtures. Always confirm the furniture included, utility arrangements, WiFi availability and additional charges before signing a rental agreement.',
 
     whoIsItForTitle:
       'Who Are Semi-Furnished Rooms Suitable For?',
 
     whoIsItForContent:
-      'Semi-furnished rooms are suitable for tenants who want some essential furniture but also prefer flexibility to bring their own belongings.',
+      'Semi-furnished rooms are suitable for students, working professionals and longer-term tenants who want essential furniture provided but also prefer the flexibility to bring their own belongings and personalise their living environment.',
 
 
     faqs: [
@@ -2149,7 +4215,23 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
           'What is a semi-furnished room?',
 
         answer:
-          'A semi-furnished room provides some basic furniture or fixtures, but the exact items included vary between properties.'
+          'A semi-furnished room provides some furniture, fixtures or essential items, but usually does not include everything found in a fully furnished room. The exact items included vary by property.'
+      },
+
+      {
+        question:
+          'Is a semi-furnished room cheaper than a furnished room?',
+
+        answer:
+          'A semi-furnished room may have a lower rental price than a comparable fully furnished room, although the actual price depends on the location, property, furniture provided and facilities.'
+      },
+
+      {
+        question:
+          'What furniture is usually included in a semi-furnished room?',
+
+        answer:
+          'The furniture provided varies between properties. Some semi-furnished rooms may include a bed, wardrobe or selected fixtures. Always check the individual listing for the exact inventory.'
       }
 
     ],
@@ -2177,6 +4259,17 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
 
         url:
           '/unfurnished-rooms-kl'
+      },
+
+      {
+        name:
+          'Budget Rooms in KL',
+
+        slug:
+          'budget-rooms-kl',
+
+        url:
+          '/budget-rooms-kl'
       }
 
     ],
@@ -2194,10 +4287,26 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
 
       {
         label:
+          'Semi-Furnished Room Near MRT',
+
+        url:
+          '/semi-furnished-rooms-kl'
+      },
+
+      {
+        label:
           'Affordable Semi-Furnished Room',
 
         url:
           '/budget-rooms-kl'
+      },
+
+      {
+        label:
+          'Semi-Furnished Room in Bukit Jalil',
+
+        url:
+          '/room-rental-bukit-jalil'
       }
 
     ],
@@ -2219,10 +4328,10 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
     url: '/unfurnished-rooms-kl',
 
     metaTitle:
-      'Unfurnished Rooms for Rent in Kuala Lumpur | KL Rooms',
+      'Unfurnished Rooms for Rent in Kuala Lumpur | Affordable KL Rooms',
 
     metaDescription:
-      'Find unfurnished rooms for rent in Kuala Lumpur for tenants who prefer flexible accommodation and the freedom to arrange their own furniture.',
+      'Find unfurnished rooms for rent in Kuala Lumpur for tenants who want to bring their own furniture and personalise their living space.',
 
     canonicalUrl:
       'https://anaangproperty.com/unfurnished-rooms-kl',
@@ -2240,91 +4349,221 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
       'Unfurnished Rooms in KL',
 
     introContent:
-      'Explore unfurnished rooms for rent in Kuala Lumpur for tenants who prefer to arrange their own furniture and personal belongings.',
+      'Explore unfurnished rooms for rent in Kuala Lumpur for tenants who prefer to bring their own furniture and create a personalised living environment. Unfurnished accommodation can be a practical choice for longer-term tenants who already own furniture or want greater flexibility over how their room is arranged.',
 
     roomCountLabel:
       'Unfurnished Rooms',
 
     locationCountLabel:
-      'Locations',
+      'KL Locations',
 
 
     features: [
 
       {
         icon: 'fas fa-ruler-combined',
-        title: 'Your Own Style',
+        title: 'Your Own Setup',
         description:
-          'Design and arrange your room according to your personal preferences.'
+          'Arrange your room according to your furniture, lifestyle and personal preferences.'
       },
 
       {
         icon: 'fas fa-palette',
-        title: 'Personalize',
+        title: 'Personalise Your Space',
         description:
-          'Create a living environment that reflects your own lifestyle and taste.'
+          'Create a living environment that reflects your individual style and everyday needs.'
       },
 
       {
         icon: 'fas fa-wallet',
-        title: 'Lower Rental',
+        title: 'Potentially Lower Rent',
         description:
-          'Unfurnished options may offer more affordable monthly rental prices.'
+          'Unfurnished accommodation may offer lower rental costs than comparable furnished options.'
       },
 
       {
         icon: 'fas fa-map-marker-alt',
-        title: 'Great Locations',
+        title: 'KL Locations',
         description:
-          'Explore unfurnished rooms in convenient areas around Kuala Lumpur.'
+          'Explore unfurnished room options in different Kuala Lumpur neighbourhoods and residential areas.'
       },
 
       {
         icon: 'fas fa-box-open',
-        title: 'Bring Your Own',
+        title: 'Bring Your Furniture',
         description:
-          'Choose your preferred furniture and create your ideal living setup.'
+          'Choose your preferred furniture and create a room setup that works for your lifestyle.'
       },
 
       {
         icon: 'fas fa-home',
-        title: 'Flexible Living',
+        title: 'Long-Term Flexibility',
         description:
-          'A suitable choice for tenants who already own furniture and essentials.'
+          'A practical choice for tenants who already own furniture or plan to stay for a longer period.'
       }
 
     ],
+
+
+    popularLocations: [
+
+      {
+        icon: 'fas fa-city',
+        name: 'KLCC',
+        roomCount: '25+ Rooms',
+        url: '/room-rental-klcc'
+      },
+
+      {
+        icon: 'fas fa-shopping-bag',
+        name: 'Bukit Bintang',
+        roomCount: '25+ Rooms',
+        url: '/room-rental-bukit-bintang'
+      },
+
+      {
+        icon: 'fas fa-home',
+        name: 'Mont Kiara',
+        roomCount: '20+ Rooms',
+        url: '/room-rental-mont-kiara'
+      },
+
+      {
+        icon: 'fas fa-tree',
+        name: 'Bangsar',
+        roomCount: '20+ Rooms',
+        url: '/room-rental-bangsar'
+      },
+
+      {
+        icon: 'fas fa-subway',
+        name: 'Bukit Jalil',
+        roomCount: '25+ Rooms',
+        url: '/room-rental-bukit-jalil'
+      },
+
+      {
+        icon: 'fas fa-map-marker-alt',
+        name: 'Cheras',
+        roomCount: '30+ Rooms',
+        url: '/room-rental-cheras'
+      }
+
+    ],
+
+
+    priceGuideTitle:
+      'Unfurnished Room Rental Price Guide in Kuala Lumpur',
+
+    priceGuideSubtitle:
+      'Estimated monthly rental ranges for unfurnished rooms in popular KL areas',
+
+    rentalPrices: [
+
+      {
+        location: 'KLCC',
+        minPrice: 600,
+        maxPrice: 1400
+      },
+
+      {
+        location: 'Bukit Bintang',
+        minPrice: 500,
+        maxPrice: 1200
+      },
+
+      {
+        location: 'Mont Kiara',
+        minPrice: 500,
+        maxPrice: 1100
+      },
+
+      {
+        location: 'Bangsar',
+        minPrice: 450,
+        maxPrice: 1000
+      },
+
+      {
+        location: 'Bukit Jalil',
+        minPrice: 350,
+        maxPrice: 850
+      },
+
+      {
+        location: 'Cheras',
+        minPrice: 300,
+        maxPrice: 800
+      }
+
+    ],
+
+    priceGuideNote:
+      'Unfurnished room rental prices may be lower than furnished alternatives, but actual prices depend on location, room size, property type, facilities, building amenities and rental demand.',
+
+
+    whyChooseItems: [
+
+      {
+        icon: 'fas fa-ruler-combined',
+        text: 'Arrange and furnish your room according to your own preferences.'
+      },
+
+      {
+        icon: 'fas fa-palette',
+        text: 'Create a personalised living environment that suits your lifestyle.'
+      },
+
+      {
+        icon: 'fas fa-wallet',
+        text: 'Potentially reduce monthly rental costs compared with furnished accommodation.'
+      },
+
+      {
+        icon: 'fas fa-box-open',
+        text: 'Ideal for tenants who already own furniture or plan to furnish their own room.'
+      }
+
+    ],
+
+    exploreButtonUrl:
+      '/unfurnished-rooms-kl',
+
+    exploreButtonText:
+      'Explore Unfurnished Rooms',
 
 
     introTitle:
       'Find Unfurnished Rooms for Rent in Kuala Lumpur',
 
     whyChooseTitle:
-      'Why Choose an Unfurnished Room?',
+      'Why Choose an Unfurnished Room in KL?',
 
     whyChooseContent: [
 
-      'Freedom to furnish the room according to your preferences.',
+      'Freedom to furnish and arrange your room according to your preferences.',
 
-      'Suitable for tenants bringing their own furniture.',
+      'Suitable for tenants who already own furniture and household items.',
 
-      'Potentially lower rental costs depending on the property.',
+      'Potentially lower monthly rental costs compared with fully furnished rooms.',
 
-      'Practical for longer-term accommodation.'
+      'Greater flexibility to create a personalised living environment.',
+
+      'Practical for tenants planning longer-term accommodation in Kuala Lumpur.'
 
     ],
 
     rentalGuideTitle:
-      'Unfurnished Room Rental Guide',
+      'Unfurnished Room Rental Guide for Kuala Lumpur',
 
     rentalGuideContent:
-      'Unfurnished room rental prices depend on location, room size, property type, facilities and proximity to public transportation.',
+      'Unfurnished room rental prices depend on the location, room size, property type, facilities and access to public transportation. Before renting, tenants should consider the cost of moving or purchasing furniture, utility charges, building facilities and the overall monthly cost of living in addition to the advertised room rental.',
 
     whoIsItForTitle:
       'Who Are Unfurnished Rooms Suitable For?',
 
     whoIsItForContent:
-      'Unfurnished rooms are suitable for tenants who already have furniture or prefer to customise their living space.',
+      'Unfurnished rooms are suitable for tenants who already own furniture, prefer to customise their living environment or plan to rent for a longer period. They can also appeal to tenants who want greater flexibility over their furniture and room arrangement.',
 
 
     faqs: [
@@ -2334,7 +4573,23 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
           'What is an unfurnished room?',
 
         answer:
-          'An unfurnished room generally comes without most loose furniture, allowing tenants to arrange the room according to their preferences.'
+          'An unfurnished room generally comes without most loose furniture, allowing tenants to bring their own furniture and arrange the room according to their preferences. The exact condition varies between properties.'
+      },
+
+      {
+        question:
+          'Are unfurnished rooms cheaper to rent in Kuala Lumpur?',
+
+        answer:
+          'Unfurnished rooms may have lower monthly rental prices than comparable furnished rooms because furniture is not provided. However, the actual rental price depends on location, room size, property type and facilities.'
+      },
+
+      {
+        question:
+          'Who should rent an unfurnished room?',
+
+        answer:
+          'Unfurnished rooms are suitable for tenants who already own furniture, plan to stay longer or prefer to personalise their accommodation instead of using furniture supplied by the landlord.'
       }
 
     ],
@@ -2373,6 +4628,17 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
 
         url:
           '/rooms-for-rent-kl'
+      },
+
+      {
+        name:
+          'Budget Rooms in KL',
+
+        slug:
+          'budget-rooms-kl',
+
+        url:
+          '/budget-rooms-kl'
       }
 
     ],
@@ -2394,6 +4660,30 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
 
         url:
           '/budget-rooms-kl'
+      },
+
+      {
+        label:
+          'Unfurnished Room Near MRT',
+
+        url:
+          '/unfurnished-rooms-kl'
+      },
+
+      {
+        label:
+          'Unfurnished Room in Bukit Jalil',
+
+        url:
+          '/room-rental-bukit-jalil'
+      },
+
+      {
+        label:
+          'Unfurnished Room in Cheras',
+
+        url:
+          '/room-rental-cheras'
       }
 
     ],
