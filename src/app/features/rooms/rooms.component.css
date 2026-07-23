@@ -221,7 +221,6 @@
   z-index: 5;
 }
 
-
 /* =========================================
    SEARCH BOX - DESKTOP
 ========================================= */
@@ -842,6 +841,32 @@
 ========================================= */
 
 @media (max-width: 768px) {
+
+    
+  /* IMPORTANT: ONLY PRICE GROUP ON MOBILE */
+  .price-group {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .price-group .search-field {
+    /* override ONLY inside price group */
+    flex: 1;
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 10px 12px;
+  }
+
+  .price-group input {
+    height: 42px;
+    font-size: 10px;
+  }
+
+   .price-group input::placeholder{
+    font-size:7px;
+  }
 
   .section-heading {
     margin-bottom: 30px;
