@@ -157,7 +157,7 @@
           />
         </div>
         </div>
-        
+
         <!-- SEARCH BUTTON -->
         <button
           class="search-button"
@@ -183,4 +183,40 @@
       </div>
     </div>
   </section>
+
+
+<section
+  class="room-features-section"
+  *ngIf="roomSEO.features && roomSEO.features.length > 0">
+
+  <div class="container">
+
+    <div class="room-features-grid">
+
+      <div
+        class="room-feature-item"
+        *ngFor="let feature of roomSEO.features">
+
+        <div class="room-feature-icon">
+          <i [class]="feature.icon"></i>
+        </div>
+
+        <div class="room-feature-content">
+
+          <h3>
+            {{ feature.title }}
+          </h3>
+
+          <p>
+            {{ feature.description }}
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
