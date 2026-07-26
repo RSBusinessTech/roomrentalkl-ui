@@ -190,7 +190,6 @@
      LATEST RENTAL ROOMS SECTION
 ========================================================== -->
 <section class="latest-rental-section">
-  <!-- <div class="container"> -->
     <div class="latest-rental-header">
       <div>
         <h2>
@@ -207,13 +206,10 @@
         View All Rooms →
       </a>
     </div>
-    <!-- <div class="latest-rental-wrapper"> -->
       <app-rental-properties
         [rooms]="latestRooms"
         [roomSlug]="roomSlug">
       </app-rental-properties>
-    <!-- </div> -->
-  <!-- </div> -->
 </section>
 
 <section class="room-features-section" *ngIf="roomSEO.features && roomSEO.features.length > 0">
