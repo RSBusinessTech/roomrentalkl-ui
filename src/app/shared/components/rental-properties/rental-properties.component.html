@@ -1,4 +1,16 @@
 <section class="featured">
+  <!-- HEADER -->
+  <!-- <div class="featured-header" >
+    <h2>
+       Recently Added Rooms
+    </h2>
+    <a
+      class="view-all"
+      (click)="viewAll()">
+      View All Rooms →
+    </a>
+  </div> -->
+
   <!-- ROOMS GRID -->
   <div class="rooms-grid">
    <div class="room-card" [ngClass]="'theme-' + (i % 5)" *ngFor="let room of rooms; let i = index" (click)="openRoom()">
@@ -147,7 +159,7 @@
         <div class="action-row">
           <button
             class="details-btn"
-            (click)="openRoom(room.slug); $event.stopPropagation()">
+            (click)="openRoom(); $event.stopPropagation()">
             View Details
           </button>
 
