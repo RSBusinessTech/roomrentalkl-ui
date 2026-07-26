@@ -251,7 +251,7 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
     '/assets/images/hero.jpg',
 
   h1:
-    'Rooms for Rent in Kuala Lumpur',
+    'All Rooms for Rent in Kuala Lumpur',
 
   shortTitle:
     'Rooms for Rent in KL',
