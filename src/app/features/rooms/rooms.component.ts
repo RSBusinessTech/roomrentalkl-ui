@@ -1,7 +1,8 @@
 import {
   Component,
   OnInit,
-  OnDestroy
+  OnDestroy,
+  HostListener
 } from '@angular/core';
 
 import {
@@ -26,6 +27,8 @@ import {
 import {
   AREAS
 } from 'src/app/shared/data/areas';
+import { RentalPropertiesService } from 'src/app/services/rental-properties.service';
+import { Room } from 'src/app/models/room';
 
 
 @Component({
@@ -50,6 +53,20 @@ export class RoomsComponent implements OnInit, OnDestroy {
   maxPrice: number | null = null;
 
   // =========================================
+  // MOBILE VIEW
+  // =========================================
+  isMobile: boolean = window.innerWidth <= 768;
+
+  // =========================================
+// RESPONSIVE HERO IMAGE
+// =========================================
+@HostListener('window:resize', ['$event'])
+onResize(event: any): void {
+  this.isMobile = event.target.innerWidth <= 768;
+}
+  
+
+  // =========================================
   // SEO DATA
   // =========================================
   roomSEO!: RoomSEO;
@@ -62,6 +79,8 @@ export class RoomsComponent implements OnInit, OnDestroy {
   loading: boolean = true;
   totalRooms: number = 0;
   totalLocations: number = 0;
+  latestRooms: Room[] = [];
+  
 
   // =========================================
   // SUBSCRIPTIONS
@@ -76,8 +95,8 @@ export class RoomsComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private router: Router,
     private titleService: Title,
-    private metaService: Meta
-    // private propertyService: PropertyService
+    private metaService: Meta,
+    private rentalPropertiesService: RentalPropertiesService
 
   ) {}
 
@@ -85,15 +104,45 @@ export class RoomsComponent implements OnInit, OnDestroy {
   // =========================================
   // INIT
   // =========================================
-  ngOnInit(): void {
-    this.routeSubscription =
-      this.route.data.subscribe(data => {
-        this.roomSlug = data['room'];
-        this.loadRoomPage();
-      });
+ngOnInit(): void {
 
-  }
+    this.roomSlug = this.route.snapshot.data['room'];
 
+    this.loadRoomPage();
+
+    this.rentalPropertiesService
+  .getRentalProperties(this.roomSlug)
+  .subscribe({
+
+next: (response) => {
+
+  console.log('Rental API:', response);
+
+  this.latestRooms = response.latestRooms;
+
+  console.log(
+    'Rooms count:',
+    this.latestRooms.length
+  );
+
+  this.loading = false;
+
+},
+
+    error: (error) => {
+
+      console.error(
+        'Unable to load rental properties',
+        error
+      );
+
+      this.loading = false;
+
+    }
+
+  });
+
+}
   // =========================================
   // LOAD ROOM SEO PAGE
   // =========================================
@@ -321,4 +370,6 @@ export class RoomsComponent implements OnInit, OnDestroy {
       ? this.roomSEO.faqs
       : this.roomSEO.faqs.slice(0, 5);
   }
+
+  
 }

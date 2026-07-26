@@ -118,6 +118,7 @@ export interface RoomSEO {
   // ==========================================================
 
   heroImage: string;
+  heroMobileImage: string;
   h1: string;
   shortTitle: string;
   introContent: string;
@@ -249,6 +250,10 @@ export const ROOM_SEO: { [key: string]: RoomSEO } = {
 
   heroImage:
     '/assets/images/hero.jpg',
+
+    
+  heroMobileImage:
+    '/assets/images/hero-mobile.jpg',
 
   h1:
     'All Rooms for Rent in Kuala Lumpur',
@@ -722,6 +727,9 @@ faqs: [
 
   heroImage:
     '/assets/images/hero.jpg',
+    
+  heroMobileImage:
+    '/assets/images/hero-mobile.jpg',  
 
   h1:
     'Single Room for Rent in Kuala Lumpur',
@@ -1146,6 +1154,9 @@ faqs: [
 
   heroImage:
     '/assets/images/hero.jpg',
+
+  heroMobileImage:
+    '/assets/images/hero-mobile.jpg',  
 
   h1:
     'Studio Room for Rent in Kuala Lumpur',
@@ -1599,6 +1610,9 @@ faqs: [
   heroImage:
     '/assets/images/hero.jpg',
 
+  heroMobileImage:
+    '/assets/images/hero-mobile.jpg',  
+
   h1:
     'Medium Room for Rent in Kuala Lumpur',
 
@@ -2051,6 +2065,9 @@ includedFeatures: [
   heroImage:
    '/assets/images/hero.jpg',
 
+  heroMobileImage:
+    '/assets/images/hero-mobile.jpg',  
+
   h1:
     'Master Room for Rent in Kuala Lumpur',
 
@@ -2476,6 +2493,9 @@ faqs: [
 
     heroImage:
       '/assets/images/hero.jpg',
+
+    heroMobileImage:
+    '/assets/images/hero-mobile.jpg',   
 
     h1:
       'Cheap Rooms for Rent in Kuala Lumpur',
@@ -2912,6 +2932,9 @@ faqs: [
     heroImage:
       '/assets/images/hero.jpg',
 
+    heroMobileImage:
+    '/assets/images/hero-mobile.jpg',   
+
     h1:
       'Budget Rooms for Rent in Kuala Lumpur',
 
@@ -3340,6 +3363,9 @@ faqs: [
     heroImage:
      '/assets/images/hero.jpg',
 
+    heroMobileImage:
+    '/assets/images/hero-mobile.jpg',  
+
     h1:
       'Shared Rooms for Rent in Kuala Lumpur',
 
@@ -3767,6 +3793,9 @@ faqs: [
 
     heroImage:
       '/assets/images/hero.jpg',
+
+    heroMobileImage:
+    '/assets/images/hero-mobile.jpg',   
 
     h1:
       'Furnished Rooms for Rent in Kuala Lumpur',
@@ -4199,6 +4228,9 @@ faqs: [
     heroImage:
       '/assets/images/hero.jpg',
 
+    heroMobileImage:
+    '/assets/images/hero-mobile.jpg',   
+
     h1:
       'Semi-Furnished Rooms for Rent in Kuala Lumpur',
 
@@ -4611,6 +4643,9 @@ faqs: [
 
     heroImage:
       '/assets/images/hero.jpg',
+
+    heroMobileImage:
+    '/assets/images/hero-mobile.jpg',   
 
     h1:
       'Unfurnished Rooms for Rent in Kuala Lumpur',

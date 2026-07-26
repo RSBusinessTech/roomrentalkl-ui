@@ -11,7 +11,7 @@
 .rooms-page {
   width: 100%;
   min-height: 100vh;
-  background: url('/assets/images/hero.jpg') center center / cover no-repeat;
+  /* background: url('/assets/images/hero.jpg') center center / cover no-repeat; */
   /* padding:0px 0 0px; */
 }
 
@@ -36,10 +36,8 @@
 
   display: flex;
   align-items: center;
-
   overflow: hidden;
 
-  
 }
 
 
@@ -588,7 +586,6 @@
 
   .search-section {
     margin-top: 0px;
-
     padding: 15px 0;
   }
 
@@ -3125,7 +3122,6 @@ padding-bottom:24px;
 }
 
 @media (max-width: 768px) {
-
   .newsletter-right input {
     height: 60px !important;
     min-height: 40px !important;
@@ -3133,5 +3129,134 @@ padding-bottom:24px;
     font-size: 16px;
     box-sizing: border-box;
   }
+
+}
+
+/* ==========================================================
+   LATEST RENTAL ROOMS SECTION
+========================================================== */
+.latest-rental-section {
+  padding: 50px 0;
+  background:
+    linear-gradient(
+      180deg,
+      #f8fafc 0%,
+      #ffffff 100%
+    );
+}
+.latest-rental-header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+  margin-bottom:40px;
+}
+
+.latest-rental-header h2 {
+  margin:0;
+  line-height:1.2;
+  color:#FE4042;
+  font-size:50px;
+  font-weight:800;
+}
+
+.latest-rental-header p {
+  margin-top:12px;
+  margin-bottom:0;
+  color:#64748b;
+  font-size:16px;
+}
+
+.latest-view-all {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 26px;
+  border-radius:30px;
+  background:#002874;
+  color:white;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:700;
+  transition:.3s;
+  white-space:nowrap;
+}
+.latest-view-all:hover {
+  background:#FE4042;
+  transform:translateY(-2px);
+}
+.latest-rental-wrapper {
+ width:100%;
+}
+
+/* ==========================================================
+   RESPONSIVE TABLET
+========================================================== */
+
+@media(max-width:992px){
+.latest-rental-section {
+  padding:55px 0;
+}
+.latest-rental-header {
+  flex-direction:column;
+  align-items:flex-start;
+}
+
+.latest-rental-header h2 {
+  font-size:34px;
+}
+
+.latest-view-all {
+  padding:11px 22px;
+}
+}
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+
+@media(max-width:768px){
+.latest-rental-section {
+  padding:45px 0;
+}
+.latest-rental-header {
+  margin-bottom:30px;
+}
+.latest-rental-header h2 {
+
+  font-size:28px;
+
+}
+.latest-rental-header p {
+
+  font-size:14px;
+
+}
+.latest-view-all {
+
+  width:100%;
+}
+}
+
+@media(max-width:480px){
+.latest-rental-header h2 {
+  font-size:24px;
+}
+.latest-rental-section {
+  padding:35px 0;
+}
+}
+
+.room-hero{
+    background-image:url('/assets/images/hero-desktop.webp');
+}
+
+@media (max-width:768px){
+
+    .room-hero{
+        background-image:url('/assets/images/hero-mobile.webp');
+        background-position:center;
+    }
 
 }

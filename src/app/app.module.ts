@@ -29,6 +29,7 @@ import { AreaGuideComponent } from './shared/components/area-guide/area-guide.co
 import { TransitStationsComponent } from './shared/components/transit-stations/transit-stations.component';
 import { ContactComponent } from './features/contact/contact.component';
 import { RequestARoomComponent } from './features/request-a-room/request-a-room.component';
+import { RentalPropertiesComponent } from './shared/components/rental-properties/rental-properties.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { RequestARoomComponent } from './features/request-a-room/request-a-room.
     TransitStationsComponent,
     ContactComponent,
     RequestARoomComponent,
+    RentalPropertiesComponent,
   ],
   imports: [
     BrowserModule,

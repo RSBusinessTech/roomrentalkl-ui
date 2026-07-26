@@ -2,188 +2,219 @@
   <!-- =========================================
        HERO SECTION
   ========================================== -->
-  <section class="room-hero" [style.backgroundImage]=" 'url(' + roomSEO.heroImage + ')'">
-    <!-- Overlay -->
-    <div class="hero-overlay"></div>
-    <div class="container">
-      <!-- BREADCRUMB -->
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a routerLink="/home">
-          Home
-        </a>
-        <span>›</span>
-        <a routerLink="/rooms-for-rent-kl">
-          Rooms
-        </a>
-        <span>›</span>
-        <span class="current">
-          {{ roomSEO.breadcrumbName }}
-        </span>
-      </nav>
+  <div class="hero-wrapper" [ngStyle]="{'background-image': isMobile? 'url(' + roomSEO.heroMobileImage + ')' : 'url(' + roomSEO.heroImage + ')'}">
+   <section class="room-hero">
+     <!-- Overlay -->
+     <div class="hero-overlay"></div>
+     <div class="container">
+       <!-- BREADCRUMB -->
+       <nav class="breadcrumb" aria-label="Breadcrumb">
+         <a routerLink="/home">
+           Home
+         </a>
+         <span>›</span>
+         <a routerLink="/rooms-for-rent-kl">
+           Rooms
+         </a>
+         <span>›</span>
+         <span class="current">
+           {{ roomSEO.breadcrumbName }}
+         </span>
+       </nav>
+   
+       <!-- HERO CONTENT -->
+       <div class="hero-content">
+         <h1>
+           {{ roomSEO.h1 }}
+         </h1>
+         <p class="hero-description">
+           {{ roomSEO.introContent }}
+         </p>
+ 		
+         <!-- STATS -->
+         <div class="hero-stats">
+           <!-- Rooms -->
+           <div class="stat-card">
+             <div class="stat-icon">
+               <i class="fas fa-home"></i>
+             </div>
+             <div class="stat-content">
+               <strong>
+                 {{ totalRooms }}+
+               </strong>
+               <span>
+                 {{ roomSEO.roomCountLabel }}
+               </span>
+             </div>
+           </div>
+   
+           <!-- Locations -->
+           <div class="stat-card">
+             <div class="stat-icon">
+               <i class="fas fa-map-marker-alt"></i>
+             </div>
+             <div class="stat-content">
+               <strong>
+                 {{ totalLocations }}+
+               </strong>
+               <span>
+                 {{ roomSEO.locationCountLabel }}
+               </span>
+             </div>
+           </div>
+   
+           <!-- Updated -->
+           <div class="stat-card">
+             <div class="stat-icon">
+               <i class="fas fa-sync-alt"></i>
+             </div>
+             <div class="stat-content">
+   
+               <strong>
+                 Updated Daily
+               </strong>
+   
+               <span>
+                 New Listings
+               </span>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </section>
+   
+   <!-- =========================================
+        SEARCH SECTION
+   ========================================== -->
+   <section class="search-section" >
+     <div class="container">
+       <div class="search-box">
+         <!-- PROPERTY TYPE -->
+         <div class="search-field">
+           <select
+             [(ngModel)]="propertyType">
+             <option value="">
+               All Property Types
+             </option>
+             <option value="Condo Rooms">
+               Condo Rooms
+             </option>
+             <option value="Apartment Rooms">
+               Apartment Rooms
+             </option>
+             <option value="Landed House Rooms">
+               Landed House Rooms
+             </option>
+             <option value="Co-Living Rooms">
+               Co-Living Rooms
+             </option>
+             <option value="Service Residence Rooms">
+               Service Residence Rooms
+             </option>
+             <option value="SOHO Units Rooms">
+               SOHO Units Rooms
+             </option>
+             <option value="Serviced Apartments Room">
+               Serviced Apartments Room
+             </option>
+             <option value="Studio Units Rooms">
+               Studio Units Rooms
+             </option>
+           </select>
+         </div>
+         <!-- AREA -->
+         <div class="search-field">
+           <select
+             [(ngModel)]="selectedLocation">
+             <option value="">
+               All Areas
+             </option>
+             <option
+               *ngFor="let area of areas"
+               [value]="area.name">
+               {{ area.name }}
+             </option>
+           </select>
+         </div>
+   
+         <div class="price-group">
+         <!-- MIN PRICE -->
+         <div class="search-field price-field">
+          <span class="currency-badge">RM</span>
+           <input
+             type="number"
+             [(ngModel)]="minPrice"
+             placeholder="Min Price"
+           />       
+         </div>
+         <!-- MAX PRICE -->
+         <div class="search-field price-field">
+          <span class="currency-badge">RM</span>
+           <input
+             type="number"
+             [(ngModel)]="maxPrice"
+             placeholder="Max Price"
+           />
+         </div>
+         </div>
+   
+         <!-- SEARCH BUTTON -->
+         <button
+           class="search-button"
+           (click)="onSearch()">
+           <i class="fas fa-search"></i>
+           Search Rooms
+         </button>
+       </div>
+   
+       <!-- =====================================
+            POPULAR SEARCHES
+       ====================================== -->
+       <div
+         class="popular-searches"
+         *ngIf="roomSEO.popularSearches && roomSEO.popularSearches.length">
+         <strong>
+           Popular Searches:
+         </strong>
+         <a
+           *ngFor="let search of roomSEO.popularSearches" [routerLink]="search.url">
+           {{ search.label }}
+         </a>
+       </div>
+     </div>
+   </section>
+</div>
 
-      <!-- HERO CONTENT -->
-      <div class="hero-content">
-        <h1>
-          {{ roomSEO.h1 }}
-        </h1>
-        <p class="hero-description">
-          {{ roomSEO.introContent }}
+<!-- ==========================================================
+     LATEST RENTAL ROOMS SECTION
+========================================================== -->
+<section class="latest-rental-section">
+  <div class="container">
+    <div class="latest-rental-header">
+      <div>
+        <h2>
+          Latest {{ roomSEO.shortTitle }} Available
+        </h2>
+
+        <p>
+          Explore newly added rental rooms with verified listings.
         </p>
-		
-        <!-- STATS -->
-        <div class="hero-stats">
-          <!-- Rooms -->
-          <div class="stat-card">
-            <div class="stat-icon">
-              <i class="fas fa-home"></i>
-            </div>
-            <div class="stat-content">
-              <strong>
-                {{ totalRooms }}+
-              </strong>
-              <span>
-                {{ roomSEO.roomCountLabel }}
-              </span>
-            </div>
-          </div>
-
-          <!-- Locations -->
-          <div class="stat-card">
-            <div class="stat-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <div class="stat-content">
-              <strong>
-                {{ totalLocations }}+
-              </strong>
-              <span>
-                {{ roomSEO.locationCountLabel }}
-              </span>
-            </div>
-          </div>
-
-          <!-- Updated -->
-          <div class="stat-card">
-            <div class="stat-icon">
-              <i class="fas fa-sync-alt"></i>
-            </div>
-            <div class="stat-content">
-
-              <strong>
-                Updated Daily
-              </strong>
-
-              <span>
-                New Listings
-              </span>
-            </div>
-          </div>
-        </div>
       </div>
+      <a 
+        class="latest-view-all"
+        routerLink="/rooms-for-rent-kl">
+        View All Rooms →
+      </a>
     </div>
-  </section>
-
-  <!-- =========================================
-       SEARCH SECTION
-  ========================================== -->
-  <section class="search-section">
-    <div class="container">
-      <div class="search-box">
-        <!-- PROPERTY TYPE -->
-        <div class="search-field">
-          <select
-            [(ngModel)]="propertyType">
-            <option value="">
-              All Property Types
-            </option>
-            <option value="Condo Rooms">
-              Condo Rooms
-            </option>
-            <option value="Apartment Rooms">
-              Apartment Rooms
-            </option>
-            <option value="Landed House Rooms">
-              Landed House Rooms
-            </option>
-            <option value="Co-Living Rooms">
-              Co-Living Rooms
-            </option>
-            <option value="Service Residence Rooms">
-              Service Residence Rooms
-            </option>
-            <option value="SOHO Units Rooms">
-              SOHO Units Rooms
-            </option>
-            <option value="Serviced Apartments Room">
-              Serviced Apartments Room
-            </option>
-            <option value="Studio Units Rooms">
-              Studio Units Rooms
-            </option>
-          </select>
-        </div>
-        <!-- AREA -->
-        <div class="search-field">
-          <select
-            [(ngModel)]="selectedLocation">
-            <option value="">
-              All Areas
-            </option>
-            <option
-              *ngFor="let area of areas"
-              [value]="area.name">
-              {{ area.name }}
-            </option>
-          </select>
-        </div>
-
-        <div class="price-group">
-        <!-- MIN PRICE -->
-        <div class="search-field price-field">
-         <span class="currency-badge">RM</span>
-          <input
-            type="number"
-            [(ngModel)]="minPrice"
-            placeholder="Min Price"
-          />       
-        </div>
-        <!-- MAX PRICE -->
-        <div class="search-field price-field">
-         <span class="currency-badge">RM</span>
-          <input
-            type="number"
-            [(ngModel)]="maxPrice"
-            placeholder="Max Price"
-          />
-        </div>
-        </div>
-
-        <!-- SEARCH BUTTON -->
-        <button
-          class="search-button"
-          (click)="onSearch()">
-          <i class="fas fa-search"></i>
-          Search Rooms
-        </button>
-      </div>
-
-      <!-- =====================================
-           POPULAR SEARCHES
-      ====================================== -->
-      <div
-        class="popular-searches"
-        *ngIf="roomSEO.popularSearches && roomSEO.popularSearches.length">
-        <strong>
-          Popular Searches:
-        </strong>
-        <a
-          *ngFor="let search of roomSEO.popularSearches" [routerLink]="search.url">
-          {{ search.label }}
-        </a>
-      </div>
+    <div class="latest-rental-wrapper">
+      <app-rental-properties
+        [rooms]="latestRooms"
+        [roomSlug]="roomSlug">
+      </app-rental-properties>
     </div>
-  </section>
-
+  </div>
+</section>
 
 <section class="room-features-section" *ngIf="roomSEO.features && roomSEO.features.length > 0">
   <div class="container">
@@ -238,11 +269,9 @@
             </span>
           </a>
         </div>
-
         <!-- VIEW ALL -->
         <a routerLink="/rooms-for-rent-kl" class="room-info-button">
           View All Locations
-
         </a>
       </div>
 
@@ -270,16 +299,13 @@
             </div>
           </div>
         </div>
-
         <!-- NOTE -->
         <p class="price-guide-note">
           {{ roomSEO.priceGuideNote }}
         </p>
       </div>
 
-
       <!-- COLUMN 3:WHY CHOOSE -->
-
       <div class="room-info-card why-choose-card">
         <!-- HEADER -->
         <div class="why-choose-header">
@@ -358,11 +384,10 @@
       </div>
      </div>
      </div>
-   </div>
-   
+   </div> 
    <!-- NEWSLETTER -->
    <div class="newsletter-box">
-    <div class="newsletter-left">
+    <div class=" newsletter-left">
      <div class="newsletter-icon">
        <i class="far fa-envelope-open"></i>
      </div>
