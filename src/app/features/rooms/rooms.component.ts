@@ -58,14 +58,13 @@ export class RoomsComponent implements OnInit, OnDestroy {
   isMobile: boolean = window.innerWidth <= 768;
 
   // =========================================
-// RESPONSIVE HERO IMAGE
-// =========================================
-@HostListener('window:resize', ['$event'])
-onResize(event: any): void {
-  this.isMobile = event.target.innerWidth <= 768;
-}
+  // RESPONSIVE HERO IMAGE
+  // =========================================
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any): void {
+    this.isMobile = event.target.innerWidth <= 768;
+  }
   
-
   // =========================================
   // SEO DATA
   // =========================================
@@ -81,12 +80,10 @@ onResize(event: any): void {
   totalLocations: number = 0;
   latestRooms: Room[] = [];
   
-
   // =========================================
   // SUBSCRIPTIONS
   // =========================================
   private routeSubscription!: Subscription;
-
 
   // =========================================
   // CONSTRUCTOR
@@ -100,49 +97,34 @@ onResize(event: any): void {
 
   ) {}
 
-
   // =========================================
   // INIT
   // =========================================
-ngOnInit(): void {
-
+  ngOnInit(): void {
     this.roomSlug = this.route.snapshot.data['room'];
-
     this.loadRoomPage();
-
     this.rentalPropertiesService
-  .getRentalProperties(this.roomSlug)
-  .subscribe({
-
-next: (response) => {
-
-  console.log('Rental API:', response);
-
-  this.latestRooms = response.latestRooms;
-
-  console.log(
+    .getRentalProperties(this.roomSlug)
+    .subscribe({
+    next: (response) => {
+    console.log('Rental API:', response);
+    this.latestRooms = response.latestRooms;
+    console.log(
     'Rooms count:',
     this.latestRooms.length
-  );
-
-  this.loading = false;
-
-},
-
+    );
+     this.loading = false;
+   },
     error: (error) => {
-
-      console.error(
+     console.error(
         'Unable to load rental properties',
         error
       );
-
       this.loading = false;
-
     }
-
   });
+ }
 
-}
   // =========================================
   // LOAD ROOM SEO PAGE
   // =========================================
@@ -165,7 +147,6 @@ next: (response) => {
     // Load dynamic listings
     // this.loadProperties();
   }
-
 
   // =========================================
   // SEO
@@ -286,61 +267,6 @@ next: (response) => {
   }
 
   // =========================================
-  // LOAD PROPERTIES
-  // =========================================
-
-  /*
-  loadProperties(): void {
-
-    this.loading = true;
-
-
-    this.propertyService
-      .getPropertiesByRoomType(this.roomSlug)
-      .subscribe(
-
-        (response: any) => {
-
-          this.loading = false;
-
-
-          if (response) {
-
-            this.properties =
-              response.properties || [];
-
-
-            this.totalRooms =
-              response.totalRooms ||
-              this.properties.length;
-
-
-            this.totalLocations =
-              response.totalLocations ||
-              0;
-
-          }
-
-        },
-
-
-        error => {
-
-          this.loading = false;
-
-          console.error(
-            'Unable to load room listings',
-            error
-          );
-
-        }
-
-      );
-
-  }
-  */
-
-  // =========================================
   // DESTROY
   // =========================================
   ngOnDestroy(): void {
@@ -370,6 +296,5 @@ next: (response) => {
       ? this.roomSEO.faqs
       : this.roomSEO.faqs.slice(0, 5);
   }
-
   
 }

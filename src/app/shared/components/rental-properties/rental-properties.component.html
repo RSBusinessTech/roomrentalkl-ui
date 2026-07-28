@@ -11,9 +11,11 @@
     </a>
   </div> -->
 
+  
+
   <!-- ROOMS GRID -->
   <div class="rooms-grid">
-   <div class="room-card" [ngClass]="'theme-' + (i % 5)" *ngFor="let room of rooms; let i = index" (click)="openRoom()">
+   <div class="room-card"  [ngClass]="'theme-' + (i % 3)" *ngFor="let room of paginatedRooms; let i = index" (click)="openRoom()">
      <!-- CONTENT -->
       <div class="card-content">
         <!-- AGENT -->
@@ -185,6 +187,51 @@
       </div>
     </div>
   </div>
+
+<!-- ========================================= -->
+<!-- PAGINATION -->
+<!-- ========================================= -->
+
+<div
+  class="pagination-wrapper"
+  *ngIf="totalPages > 1">
+
+  <button
+    class="page-btn"
+    [disabled]="currentPage===1"
+    (click)="previousPage()">
+
+    ← Previous
+
+  </button>
+
+  <button
+    *ngFor="let page of visiblePages"
+    class="page-number"
+    [class.active]="page===currentPage"
+    (click)="goToPage(page)"
+    [disabled]="page===0">
+
+    <ng-container *ngIf="page!==0">
+      {{page}}
+    </ng-container>
+
+    <ng-container *ngIf="page===0">
+      ...
+    </ng-container>
+
+  </button>
+
+  <button
+    class="page-btn"
+    [disabled]="currentPage===totalPages"
+    (click)="nextPage()">
+
+    Next →
+
+  </button>
+
+</div>
 
   <!-- ===================================== -->
   <!-- FULLSCREEN GALLERY -->
