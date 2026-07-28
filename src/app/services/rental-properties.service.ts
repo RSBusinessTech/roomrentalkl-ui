@@ -13,10 +13,10 @@ export class RentalPropertiesService {
 
 
   // API URL
-  private url = 'http://localhost:8080/roomrentalkl/rooms';
+  // private url = 'http://localhost:8080/roomrentalkl/rooms';
 
   // Production
-  // private url = 'https://rsbusinesstech-backend.onrender.com/roomrentalkl/rooms';
+  private url = 'https://rsbusinesstech-backend.onrender.com/roomrentalkl/rooms';
 
 
   // In-memory cache
