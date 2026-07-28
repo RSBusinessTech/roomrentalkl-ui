@@ -60,7 +60,7 @@ setItemsPerPage() {
 
     // Mobile
 
-    this.itemsPerPage = 4;
+    this.itemsPerPage = 6;
 
   }
 
@@ -68,7 +68,7 @@ setItemsPerPage() {
 
     // Tablet
 
-    this.itemsPerPage = 6;
+    this.itemsPerPage = 8;
 
   }
 
@@ -76,7 +76,7 @@ setItemsPerPage() {
 
     // Desktop
 
-    this.itemsPerPage = 9;
+    this.itemsPerPage = 15;
 
   }
 
