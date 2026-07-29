@@ -11,8 +11,6 @@
     </a>
   </div> -->
 
-  
-
   <!-- ROOMS GRID -->
   <div class="rooms-grid">
    <div class="room-card"  [ngClass]="'theme-' + (i % 3)" *ngFor="let room of paginatedRooms; let i = index" (click)="openRoom()">
@@ -64,8 +62,7 @@
           (click)="nextImage(room, $event)">
           ❯
         </button>
-        <!-- DOTS -->
-		
+        <!-- DOTS -->		
         <div
           class="image-dots"
           *ngIf="room.images && room.images.length > 1">
@@ -74,7 +71,6 @@
             [class.active]="i === (room.currentImageIndex || 0)">
           </span>
         </div>
-
         <!-- PRICE -->
         <div class="price-bar">
           <div class="price">
@@ -86,18 +82,15 @@
           </div>
         </div>
        </div>
-
         <!-- TITLE -->
         <h3 class="property-title">
           {{ room.title }}
         </h3>
-
         <!-- ADDRESS -->
         <div class="address">
           <i class="fas fa-map-marker-alt"></i>
           {{ room.address }}
         </div>
-
         <!-- MRT -->
         <div
           class="mrt-distance"
@@ -110,7 +103,6 @@
             from {{ room.mrtStationName }}
           </span>
         </div>
-
         <!-- LISTED DATE -->
         <div class="listing-meta">
           <div class="listing-date">
@@ -128,35 +120,29 @@
             {{ room.updatedDate | date:'MMM dd' }}
           </div>
         </div>
-
         <!-- FEATURES -->
         <div class="features-row">
           <div class="feature feature-inline">
             <i class="fas fa-bed"></i>
             <small>{{ room.bedrooms || 0 }}</small>
           </div>
-
           <div class="feature">
             <i class="fas fa-bath"></i>
             <small>{{ room.bathrooms || 0 }}</small>
           </div>
-
            <div class="feature">
             <i class="fas fa-car"></i>
             <small>{{ room.carparks || 0 }}</small>
           </div>
-
           <div class="feature">
             <i class="fas fa-couch"></i>
             <small>{{ room.furnished }}</small>
           </div>
-
            <div class="feature">
             <i class="fas fa-ruler-combined"></i>
             <small>{{ room.sqft || 0 }}Sqft</small>
           </div>
         </div>
-
         <!-- ACTIONS -->
         <div class="action-row">
           <button
@@ -164,19 +150,16 @@
             (click)="openRoom(); $event.stopPropagation()">
             View Details
           </button>
-
           <button
             class="icon-btn"
             (click)="share(room, $event)">
             <i class="fas fa-share-alt"></i>
           </button>
-
           <button
             class="icon-btn"
             (click)="call(room, $event)">
             <i class="fas fa-phone"></i>
           </button>
-
            <button
             class="whatsapp-btn"
             (click)="whatsapp(room, $event)">
@@ -188,65 +171,35 @@
     </div>
   </div>
 
-<!-- ========================================= -->
-<!-- PAGINATION -->
-<!-- ========================================= -->
-
-<div
-  class="pagination-wrapper"
-  *ngIf="totalPages > 1">
-
-  <button
-    class="page-btn"
-    [disabled]="currentPage===1"
-    (click)="previousPage()">
-
-    ← Previous
-
-  </button>
-
-  <button
-    *ngFor="let page of visiblePages"
-    class="page-number"
-    [class.active]="page===currentPage"
-    (click)="goToPage(page)"
-    [disabled]="page===0">
-
-    <ng-container *ngIf="page!==0">
-      {{page}}
-    </ng-container>
-
-    <ng-container *ngIf="page===0">
-      ...
-    </ng-container>
-
-  </button>
-
-  <button
-    class="page-btn"
-    [disabled]="currentPage===totalPages"
-    (click)="nextPage()">
-
-    Next →
-
-  </button>
-
-</div>
-
+  <!-- ========================================= -->
+  <!-- PAGINATION -->
+  <!-- ========================================= -->
+  <div class="pagination-wrapper" *ngIf="totalPages > 1">
+    <button class="page-btn" [disabled]="currentPage===1" (click)="previousPage()">
+      ← Previous
+    </button>
+    <button *ngFor="let page of visiblePages" class="page-number" [class.active]="page===currentPage"(click)="goToPage(page)" [disabled]="page===0">
+      <ng-container *ngIf="page!==0">
+        {{page}}
+      </ng-container>
+      <ng-container *ngIf="page===0">
+        ...
+      </ng-container>
+    </button>
+    <button class="page-btn" [disabled]="currentPage===totalPages" (click)="nextPage()">
+      Next →
+    </button>
+  </div>
   <!-- ===================================== -->
   <!-- FULLSCREEN GALLERY -->
   <!-- ===================================== -->
-  <div
-    class="gallery-modal"
-    *ngIf="showGallery"
-    (click)="closeGallery()">
+  <div class="gallery-modal" *ngIf="showGallery" (click)="closeGallery()">
     <!-- CLOSE -->
     <button
       class="gallery-close"
       (click)="closeGallery(); $event.stopPropagation()">
       ✕
     </button>
-
     <!-- PREVIOUS -->
     <button
       *ngIf="galleryImages.length > 1"
@@ -254,11 +207,8 @@
       (click)="galleryPrev($event)">
       ❮
     </button>
-
     <!-- IMAGE -->
-    <div
-      class="gallery-content"
-      (click)="$event.stopPropagation()">
+    <div class="gallery-content" (click)="$event.stopPropagation()">
       <img
         [src]="selectedImage"
         class="gallery-image">
@@ -266,7 +216,6 @@
         {{ galleryIndex + 1 }} / {{ galleryImages.length }}
       </div>
     </div>
-
     <!-- NEXT -->
     <button
       *ngIf="galleryImages.length > 1"
@@ -274,7 +223,6 @@
       (click)="galleryNext($event)">
       ❯
     </button>
-
     <!-- THUMBNAILS -->
     <div
       class="gallery-thumbnails"
