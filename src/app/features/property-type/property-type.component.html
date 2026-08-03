@@ -1,1 +1,354 @@
-<p>property-type works!</p>
+<section class="property-page" *ngIf="propertySEO">
+
+  <!-- HERO SECTION -->
+  <div class="hero-wrapper" [ngStyle]="{'background-image': isMobile ? 'url(' + propertySEO.heroMobileImage + ')' : 'url(' + propertySEO.heroImage + ')'}">
+    <section class="property-hero">
+      <!-- Overlay -->
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <!-- BREADCRUMB -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a routerLink="/home">
+            Home
+          </a>
+          <span></span>
+          <span>
+            Property Types
+          </span>
+          <span>›</span>
+          <span class="current">
+            {{ propertySEO.breadcrumbName }}
+          </span>
+        </nav>
+        <!-- HERO CONTENT -->
+        <div class="hero-content">
+          <h1>
+            {{ propertySEO.h1 }}
+          </h1>
+          <p class="hero-description">
+            {{ propertySEO.introContent }}
+          </p>
+          <!-- STATS -->
+          <div class="hero-stats">
+            <!-- Properties -->
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-building"></i>
+              </div>
+              <div class="stat-content">
+                <strong>
+                  {{ totalProperties }}+
+                </strong>
+                <span>
+                  {{ propertySEO.propertyCountLabel }}
+                </span>
+              </div>
+            </div>
+            <!-- Locations -->
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+
+              <div class="stat-content">
+                <strong>
+                  {{ totalLocations }}+
+                </strong>
+                <span>
+                  {{ propertySEO.locationCountLabel }}
+                </span>
+              </div>
+            </div>
+            <!-- Updated -->
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-sync-alt"></i>
+              </div>
+              <div class="stat-content">
+                <strong>
+                  Updated Daily
+                </strong>
+                <span>
+                  New Listings
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEARCH SECTION -->
+    <section class="search-section">
+      <div class="container">
+        <div class="search-box">
+          <!-- PROPERTY TYPE -->
+          <div class="search-field">
+            <select [(ngModel)]="propertyType">
+              <option value="">
+                All Property Types
+              </option>
+              <option value="Condo Rooms">
+                Condo Rooms
+              </option>
+              <option value="Apartment Rooms">
+                Apartment Rooms
+              </option>
+              <option value="Landed House Rooms">
+                Landed House Rooms
+              </option>
+              <option value="Co-Living Rooms">
+                Co-Living Rooms
+              </option>
+              <option value="Service Residence Rooms">
+                Service Residence Rooms
+              </option>
+              <option value="SOHO Units Rooms">
+                SOHO Units Rooms
+              </option>
+              <option value="Serviced Apartments Room">
+                Serviced Apartments Room
+              </option>
+              <option value="Studio Units Rooms">
+                Studio Units Rooms
+              </option>
+            </select>
+          </div>
+          <!-- AREA -->
+          <div class="search-field">
+            <select [(ngModel)]="selectedLocation">
+              <option value="">
+                All Areas
+              </option>
+              <option *ngFor="let area of areas" [value]="area.name">
+                {{ area.name }}
+              </option>
+            </select>
+          </div>
+          <!-- PRICE -->
+          <div class="price-group">
+            <!-- MIN -->
+            <div class="search-field price-field">
+              <span class="currency-badge">
+                RM
+              </span>
+              <input type="number" [(ngModel)]="minPrice" placeholder="Min Price"/>
+            </div>
+            <!-- MAX -->
+            <div class="search-field price-field">
+              <span class="currency-badge">
+                RM
+              </span>
+              <input type="number" [(ngModel)]="maxPrice" placeholder="Max Price"/>
+            </div>
+          </div>
+          <!-- SEARCH BUTTON -->
+          <button class="search-button"
+            (click)="onSearch()">
+            <i class="fas fa-search"></i>
+            Search Properties
+          </button>
+        </div>
+        <!-- POPULAR SEARCHES -->
+        <div class="popular-searches" *ngIf="propertySEO.popularSearches && propertySEO.popularSearches.length">
+          <strong>
+            Popular Searches:
+          </strong>
+          <a *ngFor="let search of propertySEO.popularSearches"
+            [routerLink]="search.url">
+            {{ search.label }}
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- LATEST RENTAL PROPERTIES SECTION -->
+  <section class="latest-rental-section">
+    <div class="latest-rental-header">
+      <div>
+        <h2>
+          Latest {{ propertySEO.shortTitle }} Available
+        </h2>
+        <p>
+          Explore newly added rental properties with verified listings.
+        </p>
+      </div>
+    </div>
+    <app-rental-properties [rooms]="latestRooms" roomSlug]="propertySlug"></app-rental-properties>
+  </section>
+
+  <!-- PROPERTY FEATURES SECTION -->
+  <section class="property-features-section" *ngIf="propertySEO.features && propertySEO.features.length > 0">
+    <div class="container">
+      <div class="property-features-grid">
+        <div class="property-feature-item" *ngFor="let feature of propertySEO.features">
+          <div class="property-feature-icon">
+            <i [class]="feature.icon"></i>
+          </div>
+          <div class="property-feature-content">
+            <h3>
+              {{ feature.title }}
+            </h3>
+            <p>
+              {{ feature.description }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPERTY INFORMATION THREE COLUMN SECTION -->
+  <section class="property-info-section" *ngIf="propertySEO">
+   <div class="container">
+    <div class="property-info-grid">
+     <!-- COLUMN 1:POPULAR LOCATIONS -->
+     <div class="property-info-card locations-card">
+       <div class="property-info-header">
+        <h2>
+        Popular Locations for 
+        {{ propertySEO.shortTitle }}
+        </h2>
+       </div>
+       <div class="popular-locations-grid" *ngIf="propertySEO.popularLocations && propertySEO.popularLocations.length">
+        <a class="location-item" *ngFor="let location of propertySEO.popularLocations" [routerLink]="location.url">
+         <div class="location-icon">
+          <i [class]="location.icon"></i>
+         </div>
+         <h3>
+         {{ location.name }}
+         </h3>
+        <span>{{ location.listingCount }}</span>
+        </a>
+       </div>
+       <a routerLink="/rooms-for-rent-kl" class="property-info-button">
+         View All Locations
+       </a>
+     </div>
+     <!-- COLUMN 2:RENTAL PRICE GUIDE -->
+     <div class="property-info-card price-guide-card">
+      <div class="price-guide-header">
+       <h2>
+       {{ propertySEO.priceGuideTitle }}
+       </h2>
+       <p>
+       {{ propertySEO.priceGuideSubtitle }}
+       </p>
+     </div>
+     <div class="rental-price-grid" *ngIf="propertySEO.rentalPrices && propertySEO.rentalPrices.length">
+      <div class="rental-price-item" *ngFor="let price of propertySEO.rentalPrices">
+       <h3>
+        {{ price.location }}
+       </h3>
+       <div class="price-value">
+        RM {{ price.minPrice | number }}
+        <span>–</span>
+        RM {{ price.maxPrice | number }}
+       </div>
+      </div>
+     </div>
+     <p class="price-guide-note">
+       {{ propertySEO.priceGuideNote }}
+     </p>
+     </div>   
+     <!-- COLUMN 3:WHY CHOOSE -->
+     <div class="property-info-card why-choose-card">
+      <div class="why-choose-header">
+       <h2>
+       Why Choose 
+       {{ propertySEO.shortTitle }}?
+       </h2>
+      </div>
+      <ul class="why-choose-list" *ngIf="propertySEO.whyChooseItems && propertySEO.whyChooseItems.length">
+       <li *ngFor="let item of propertySEO.whyChooseItems">
+       <span class="why-choose-icon">
+         <i [class]="item.icon"></i>
+       </span>
+       <span class="why-choose-text">
+       {{ item.text }}
+       </span>
+       </li>
+      </ul>
+      <a class="property-info-button" [routerLink]="propertySEO.exploreButtonUrl">
+      {{ propertySEO.exploreButtonText }}
+      </a>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- FAQ + INCLUDED SECTION -->
+  <section class="faq-section" *ngIf="propertySEO">
+   <div class="container">
+    <div class="faq-wrapper">
+       <!-- LEFT CARD : FAQ -->
+       <div class="faq-card">
+        <div class="card-header">
+         <h2>
+          Frequently Asked Questions
+         </h2>
+         <a href="javascript:void(0)" (click)="showAllFAQs = !showAllFAQs"> {{ showAllFAQs ? 'Show Less FAQs' : 'View All FAQs' }} </a>
+        </div>
+        <div class="faq-item" *ngFor="let faq of displayedFAQs; let i=index">
+         <button type="button" class="faq-question" (click)="toggleFAQ(i)">
+          <span>
+          {{ faq.question }}
+          </span>
+          <i class="fas" [class.fa-chevron-down]="openedFAQ !== i" [class.fa-chevron-up]="openedFAQ === i"></i>
+         </button>
+         <div class="faq-answer" [class.open]="openedFAQ === i">
+		 <p>
+          {{ faq.answer }}
+          </p>
+         </div>
+        </div>
+       </div>
+      <!-- RIGHT CARD : INCLUDED FEATURES -->
+      <div class="included-card" *ngIf="propertySEO.includedFeatures && propertySEO.includedFeatures.length">
+       <div class="card-header">
+         <h2>
+         What's Included in a 
+         {{ propertySEO.shortTitle }}?
+         </h2>
+         </div>
+       <div class="included-grid">
+         <div class="included-item" *ngFor="let item of propertySEO.includedFeatures">
+          <div class="included-icon">
+           <i [class]="item.icon"></i>
+          </div>
+          <h4>
+          {{ item.title }}
+          </h4>
+         </div>
+       </div>
+      </div>
+    </div>
+    <!-- NEWSLETTER -->
+    <div class="newsletter-box">
+     <div class="newsletter-left">
+      <div class="newsletter-icon">
+      <i class="far fa-envelope-open"></i>
+      </div>
+       <div>
+       <h3>
+       Stay Updated with Latest 
+       {{ propertySEO.shortTitle }}
+       </h3>
+       <p>
+       Get notified about new rental properties and exclusive deals.
+       </p>
+       </div>
+     </div>
+      <div class="newsletter-right">
+       <input type="email" placeholder="Enter your email">
+       <button>
+        Subscribe
+       </button>
+      </div>
+    </div>
+    <br>
+   </div>
+  </section>
+  
+</section>

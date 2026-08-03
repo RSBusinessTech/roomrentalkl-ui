@@ -5,6 +5,7 @@ import { AreasComponent } from './features/areas/areas.component';
 import { ContactComponent } from './features/contact/contact.component';
 import { RequestARoomComponent } from './features/request-a-room/request-a-room.component';
 import { RoomsComponent } from './features/rooms/rooms.component';
+import { PropertyTypeComponent } from './features/property-type/property-type.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,15 @@ const routes: Routes = [
   { path: 'furnished-rooms-kl', component: RoomsComponent,  data: { room: 'furnished-rooms-kl' }},
   { path: 'semi-furnished-rooms-kl', component: RoomsComponent,  data: { room: 'semi-furnished-rooms-kl' }},
   { path: 'unfurnished-rooms-kl', component: RoomsComponent,  data: { room: 'unfurnished-rooms-kl' }},
+
+  { path: 'condo-room-rental-kl', component: PropertyTypeComponent,  data: { property: 'condo-room-rental-kl' }},
+  { path: 'apartment-room-rental-kl', component: PropertyTypeComponent,  data: { property: 'apartment-room-rental-kl' }},
+  { path: 'landed-house-room-rental-kl', component: PropertyTypeComponent,  data: { property: 'landed-house-room-rental-kl' }},
+  { path: 'co-living-kl', component: PropertyTypeComponent,  data: { property: 'co-living-kl' }},
+  { path: 'service-residence-kl', component: PropertyTypeComponent,  data: { property: 'service-residence-kl' }},
+  { path: 'soho-kl', component: PropertyTypeComponent,  data: { property: 'soho-kl' }},
+  { path: 'serviced-apartment-kl', component: PropertyTypeComponent,  data: { property: 'serviced-apartment-kl' }},
+  { path: 'studio-unit-kl', component: PropertyTypeComponent,  data: { property: 'studio-unit-kl' }},
 
   { path: 'room-rental-klcc',component: AreasComponent,data: { area: 'klcc' }},
   { path: 'room-rental-bukit-bintang', component: AreasComponent,data: { area: 'bukit-bintang' }},
