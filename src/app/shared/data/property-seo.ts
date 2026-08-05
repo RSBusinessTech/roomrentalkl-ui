@@ -1760,10 +1760,10 @@ export const PROPERTY_SEO: { [key: string]: PropertySEO } = {
   url: '/service-residence-kl',
 
   metaTitle:
-    'Service Residence Rooms for Rent in Kuala Lumpur | Serviced Residence KL',
+    'Service Residence for Rent in Kuala Lumpur | Serviced Residence KL',
 
   metaDescription:
-    'Find service residence rooms for rent in Kuala Lumpur with modern facilities, furnished rooms, security, swimming pools, gyms and convenient locations near MRT, LRT, offices and shopping malls.',
+    'Find service residences for rent in Kuala Lumpur with modern facilities, furnished rooms, security, swimming pools, gyms and convenient locations near MRT, LRT, offices and shopping malls.',
 
   canonicalUrl:
     'https://anaangproperty.com/service-residence-kl',
@@ -1778,13 +1778,13 @@ export const PROPERTY_SEO: { [key: string]: PropertySEO } = {
     '/assets/images/hero-mobile.jpg',
 
   h1:
-    'Service Residence Rooms for Rent in Kuala Lumpur',
+    'Service Residences for Rent in KL',
 
   shortTitle:
-    'Service Residence Rooms KL',
+    'Service Residence KL',
 
   introContent:
-   'Find service residence rooms for rent in Kuala Lumpur with furnished accommodation, modern facilities and security services. Stay near business districts, shopping centres and public transport.',
+   'Find service residence for rent in Kuala Lumpur with furnished accommodation, modern facilities and security services. Stay near business districts, shopping centres and public transport.',
 
   propertyCountLabel:
     'Service Residence Rooms',
@@ -2182,7 +2182,7 @@ export const PROPERTY_SEO: { [key: string]: PropertySEO } = {
 
 
   h1:
-    'Serviced Apartments for Rent in Kuala Lumpur',
+    'Serviced Apartments for Rent in KL',
 
 
   shortTitle:
@@ -2190,7 +2190,7 @@ export const PROPERTY_SEO: { [key: string]: PropertySEO } = {
 
 
   introContent:
-'Find serviced apartments for rent in Kuala Lumpur with furnished units, modern facilities and flexible rentals. Explore KLCC, Bukit Bintang, Mont Kiara, Bangsar, Bukit Jalil and Cheras near offices and public transport.',
+    'Find serviced apartments for rent in Kuala Lumpur with furnished units, modern facilities and flexible rentals. Explore KLCC, Bukit Bintang, Mont Kiara, Bangsar, Bukit Jalil and Cheras near offices and public transport.',
 
   propertyCountLabel:
     'Serviced Apartments',
