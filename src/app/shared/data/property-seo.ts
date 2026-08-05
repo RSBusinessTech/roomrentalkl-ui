@@ -210,8 +210,7 @@ export const PROPERTY_SEO: { [key: string]: PropertySEO } = {
     'Condo Rooms KL',
 
   introContent:
-    'Discover condo rooms for rent in Kuala Lumpur across popular neighbourhoods including KLCC, Bukit Bintang, Bangsar, Mont Kiara, Bukit Jalil and Cheras. Compare furnished rooms, master rooms, single rooms and budget-friendly condominium rentals near MRT and LRT stations.',
-
+  'Discover condo rooms for rent in Kuala Lumpur including KLCC, Bukit Bintang, Bangsar, Mont Kiara, Bukit Jalil and Cheras. Find furnished, master, single and budget-friendly rooms near MRT and LRT stations.',
   propertyCountLabel:
     'Condo Rooms',
 
@@ -580,8 +579,7 @@ export const PROPERTY_SEO: { [key: string]: PropertySEO } = {
     'Apartment Rooms KL',
 
   introContent:
-    'Discover apartment rooms for rent in Kuala Lumpur across established residential areas with convenient access to workplaces, universities, shopping centres and public transportation. Compare affordable apartment room rentals including single rooms, master rooms, furnished rooms and budget-friendly accommodation options.',
-
+   'Find apartment rooms for rent in Kuala Lumpur near workplaces, universities, shopping centres and public transport. Browse affordable single rooms, master rooms, furnished rooms and budget-friendly rentals.',
   propertyCountLabel:
     'Apartment Rooms',
 
@@ -980,8 +978,7 @@ export const PROPERTY_SEO: { [key: string]: PropertySEO } = {
     'Landed House Rooms KL',
 
   introContent:
-    'Discover landed house rooms for rent in Kuala Lumpur including terrace house rooms, semi-detached house rooms and bungalow house rentals. Find spacious and practical accommodation in popular residential areas such as Cheras, Bukit Jalil, Bangsar, Mont Kiara and other KL neighbourhoods.',
-
+  'Find landed house rooms for rent in Kuala Lumpur including terrace, semi-detached and bungalow rooms. Explore spacious rentals in Cheras, Bukit Jalil, Bangsar, Mont Kiara and other KL areas.',
 
   propertyCountLabel:
     'Landed House Rooms',
@@ -1384,8 +1381,7 @@ export const PROPERTY_SEO: { [key: string]: PropertySEO } = {
     'Co-Living Rooms KL',
 
   introContent:
-    'Discover co-living rooms in Kuala Lumpur offering flexible accommodation solutions with furnished rooms, shared living spaces, community facilities and convenient access to workplaces, universities, shopping areas and public transportation.',
-
+    'Find co-living rooms in Kuala Lumpur with furnished rooms, shared spaces and community facilities. Enjoy flexible rentals near workplaces, universities, shopping areas and public transport.',
 
   propertyCountLabel:
     'Co-Living Rooms',
@@ -1788,8 +1784,7 @@ export const PROPERTY_SEO: { [key: string]: PropertySEO } = {
     'Service Residence Rooms KL',
 
   introContent:
-    'Discover service residence rooms for rent in Kuala Lumpur offering premium residential living with modern facilities, furnished accommodation, security services and convenient access to business districts, shopping centres and public transportation.',
-
+   'Find service residence rooms for rent in Kuala Lumpur with furnished accommodation, modern facilities and security services. Stay near business districts, shopping centres and public transport.',
 
   propertyCountLabel:
     'Service Residence Rooms',
@@ -2195,8 +2190,7 @@ export const PROPERTY_SEO: { [key: string]: PropertySEO } = {
 
 
   introContent:
-    'Discover serviced apartments for rent in Kuala Lumpur offering fully furnished accommodation with modern facilities, flexible rental options and convenient access to offices, shopping malls, business districts and public transportation. Explore serviced apartments in KLCC, Bukit Bintang, Mont Kiara, Bangsar, Bukit Jalil and Cheras.',
-
+'Find serviced apartments for rent in Kuala Lumpur with furnished units, modern facilities and flexible rentals. Explore KLCC, Bukit Bintang, Mont Kiara, Bangsar, Bukit Jalil and Cheras near offices and public transport.',
 
   propertyCountLabel:
     'Serviced Apartments',
@@ -2686,8 +2680,7 @@ export const PROPERTY_SEO: { [key: string]: PropertySEO } = {
     'Studio Units KL',
 
   introContent:
-    'Discover studio units for rent in Kuala Lumpur including private studio apartments, compact living spaces and furnished studio rentals across popular areas such as KLCC, Bukit Bintang, Mont Kiara, Bangsar, Bukit Jalil and Cheras. Find studio accommodation near MRT, LRT stations, offices, malls and lifestyle destinations.',
-
+    'Find studio units for rent in Kuala Lumpur with private studios, compact spaces and furnished rentals. Explore KLCC, Bukit Bintang, Mont Kiara, Bangsar, Bukit Jalil and Cheras near MRT, LRT stations and lifestyle areas.',
 
   propertyCountLabel:
     'Studio Units',
@@ -3128,8 +3121,7 @@ export const PROPERTY_SEO: { [key: string]: PropertySEO } = {
 
 
   introContent:
-    'Discover SOHO units for rent in Kuala Lumpur offering flexible live-work accommodation for professionals, entrepreneurs and tenants who prefer a combined residential and working environment. Explore SOHO rentals in KLCC, Bukit Bintang, Mont Kiara, Bangsar, Cheras and other locations near MRT, LRT stations etc.',
-
+   'Find SOHO units for rent in Kuala Lumpur with flexible live-work spaces for professionals and entrepreneurs. Explore rentals in KLCC, Bukit Bintang, Mont Kiara, Bangsar and Cheras near MRT, LRT stations.',
 
 
   propertyCountLabel:
