@@ -140,4 +140,5 @@ onQuickSearch(roomType: string) {
     roomType: roomType
   });
 }
+
 }

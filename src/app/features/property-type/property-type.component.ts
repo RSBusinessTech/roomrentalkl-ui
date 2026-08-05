@@ -2,7 +2,9 @@ import {
   Component,
   OnInit,
   OnDestroy,
-  HostListener
+  HostListener,
+  ViewChild,
+  ElementRef
 } from '@angular/core';
 
 
@@ -69,12 +71,10 @@ export class PropertyTypeComponent implements OnInit, OnDestroy {
   // =========================================
   // SEARCH FILTERS
   // =========================================
-
-  propertyType: string = '';
-
   selectedLocation: string = '';
 
   minPrice: number | null = null;
+  roomType: string = '';
 
   maxPrice: number | null = null;
 
@@ -129,7 +129,29 @@ export class PropertyTypeComponent implements OnInit, OnDestroy {
 
 
   latestRooms:Room[] = [];
+  featuredAreas = AREAS;
 
+  @ViewChild('areasContainer', { static: false })
+  areasContainer!: ElementRef;
+
+   scrollAreas(direction: string) {
+
+  const container = this.areasContainer.nativeElement;
+
+  const scrollAmount = 280;
+
+  if (direction === 'right') {
+    container.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  } else {
+    container.scrollBy({
+      left: -scrollAmount,
+      behavior: 'smooth'
+    });
+    }
+  }
 
 
 
@@ -170,15 +192,8 @@ export class PropertyTypeComponent implements OnInit, OnDestroy {
 
   ngOnInit():void {
   this.propertySlug = this.route.snapshot.data['property'];
-
-    this.propertySlug =
-      this.route.snapshot.data['property'];
-
-
-
     this.loadPropertyPage();
-
-
+      this.checkReveal();
 
     this.rentalPropertiesService
 
@@ -231,7 +246,44 @@ export class PropertyTypeComponent implements OnInit, OnDestroy {
 
   }
 
+  @HostListener('window:scroll')
+onScroll(): void {
+  this.checkReveal();
+}
 
+checkReveal(): void {
+
+  const elements = document.querySelectorAll('.reveal');
+  const windowHeight = window.innerHeight;
+
+  elements.forEach((el: any) => {
+
+    const position = el.getBoundingClientRect().top;
+
+    if (position < windowHeight - 100) {
+      el.classList.add('active');
+    }
+
+  });
+
+}
+
+showAllLocations = false;
+
+get displayedLocations() {
+
+  if (
+    !this.propertySEO ||
+    !this.propertySEO.popularLocations
+  ) {
+    return [];
+  }
+
+  return this.showAllLocations
+    ? this.propertySEO.popularLocations
+    : this.propertySEO.popularLocations.slice(0, 5);
+
+}
 
 
 
@@ -371,84 +423,67 @@ export class PropertyTypeComponent implements OnInit, OnDestroy {
   onSearch():void {
 
 
-    const queryParams:any = {};
+  const queryParams:any = {};
 
 
+  // Keep selected property page
+  if(this.propertySlug){
 
-    if(this.propertyType){
-
-
-      queryParams.propertyType =
-        this.propertyType;
-
-
-    }
-
-
-
-    if(this.selectedLocation){
-
-
-      queryParams.area =
-        this.selectedLocation;
-
-
-    }
-
-
-
-    if(this.minPrice !== null){
-
-
-      queryParams.minPrice =
-        this.minPrice;
-
-
-    }
-
-
-
-    if(this.maxPrice !== null){
-
-
-      queryParams.maxPrice =
-        this.maxPrice;
-
-
-    }
-
-
-
-
-    // Keep current property SEO filter
-
-    if(this.propertySlug){
-
-
-      queryParams.propertyType =
-        this.propertySlug;
-
-
-    }
-
-
-
-
-    this.router.navigate(
-
-      ['/rooms'],
-
-      {
-
-        queryParams
-
-      }
-
-    );
-
+    queryParams.propertyType =
+      this.propertySlug;
 
   }
 
+
+  // Room Type
+  if(this.roomType){
+
+    queryParams.roomType =
+      this.roomType;
+
+  }
+
+
+  // Area
+  if(this.selectedLocation){
+
+    queryParams.area =
+      this.selectedLocation;
+
+  }
+
+
+  // Minimum Price
+  if(this.minPrice !== null){
+
+    queryParams.minPrice =
+      this.minPrice;
+
+  }
+
+
+  // Maximum Price
+  if(this.maxPrice !== null){
+
+    queryParams.maxPrice =
+      this.maxPrice;
+
+  }
+
+
+
+  this.router.navigate(
+
+    ['/rooms'],
+
+    {
+      queryParams
+    }
+
+  );
+
+
+}
 
 
 

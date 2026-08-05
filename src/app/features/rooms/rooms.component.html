@@ -242,8 +242,14 @@
           </h2>
         </div>
         <!-- LOCATIONS -->
-        <div class="popular-locations-grid" *ngIf="roomSEO.popularLocations && roomSEO.popularLocations.length">
-          <a class="location-item" *ngFor="let location of roomSEO.popularLocations" [routerLink]="location.url">
+        <div
+  class="popular-locations-grid"
+  *ngIf="roomSEO.popularLocations && roomSEO.popularLocations.length">
+
+  <a
+    class="location-item"
+   *ngFor="let location of displayedLocations"
+    [routerLink]="location.url">
             <!-- ICON -->
             <div class="location-icon">
               <i
@@ -261,9 +267,14 @@
           </a>
         </div>
         <!-- VIEW ALL -->
-        <a routerLink="/rooms-for-rent-kl" class="room-info-button">
-          View All Locations
-        </a>
+        <a
+  href="javascript:void(0)"
+  class="room-info-button"
+  (click)="showAllLocations = !showAllLocations">
+
+  {{ showAllLocations ? 'Show Less Locations' : 'View All Locations' }}
+
+</a>
       </div>
 
       <!-- COLUMN 2:RENTAL PRICE GUIDE -->
