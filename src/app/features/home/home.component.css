@@ -231,7 +231,7 @@
     padding: 10px 12px;
   }
 
-  /* 🔥 IMPORTANT: ONLY PRICE GROUP ON MOBILE */
+  /*  IMPORTANT: ONLY PRICE GROUP ON MOBILE */
   .price-group {
     display: flex;
     gap: 10px;
@@ -267,8 +267,8 @@
   font-weight: 400;
  }
 }
-/* Scroll Reveal */
 
+/* Scroll Reveal */
 .reveal{
   opacity:0;
   transform:translateY(40px);

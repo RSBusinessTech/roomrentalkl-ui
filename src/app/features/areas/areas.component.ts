@@ -125,20 +125,19 @@ export class AreasComponent implements OnInit {
   }
 
   // =========================
-// QUICK SEARCH HANDLER
-// =========================
-onQuickSearch(roomType: string) {
-  // Update selected filter
-  this.filters.roomType = roomType;
-
-  // Optional: reset price filters for quick searches
-  this.filters.minPrice = null;
-  this.filters.maxPrice = null;
-
-  // Navigate with updated filter
-  this.navigateToRooms({
-    roomType: roomType
-  });
-}
-
+  // QUICK SEARCH HANDLER
+  // =========================
+  onQuickSearch(roomType: string) {
+    // Update selected filter
+    this.filters.roomType = roomType;
+  
+    // Optional: reset price filters for quick searches
+    this.filters.minPrice = null;
+    this.filters.maxPrice = null;
+  
+    // Navigate with updated filter
+    this.navigateToRooms({
+      roomType: roomType
+    });
+  }
 }

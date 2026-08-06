@@ -98,7 +98,6 @@
              <option value="Unfurnished Rooms">Unfurnished Rooms</option>
            </select>
           </div>
-
           <!-- AREA -->
           <div class="search-field">
             <select [(ngModel)]="selectedLocation">
@@ -223,31 +222,20 @@
         {{ propertySEO.shortTitle }}
         </h2>
        </div>
-       <div
-  class="popular-locations-grid"
-  *ngIf="displayedLocations.length">
-
-  <a
-    class="location-item"
-    *ngFor="let location of displayedLocations"
-    [routerLink]="location.url">
-         <div class="location-icon">
-          <i [class]="location.icon"></i>
-         </div>
-         <h3>
-         {{ location.name }}
-         </h3>
-        <span>{{ location.listingCount }}</span>
+       <div class="popular-locations-grid" *ngIf="displayedLocations.length">
+        <a class="location-item" *ngFor="let location of displayedLocations" [routerLink]="location.url">
+          <div class="location-icon">
+           <i [class]="location.icon"></i>
+          </div>
+          <h3>
+          {{ location.name }}
+          </h3>
+         <span>{{ location.listingCount }}</span>
         </a>
        </div>
-       <a
-  href="javascript:void(0)"
-  class="property-info-button"
-  (click)="showAllLocations = !showAllLocations">
-
-  {{ showAllLocations ? 'Show Less Locations' : 'View All Locations' }}
-
-</a>
+       <a href="javascript:void(0)" class="property-info-button"(click)="showAllLocations = !showAllLocations">
+        {{ showAllLocations ? 'Show Less Locations' : 'View All Locations' }}
+       </a>
      </div> 
      <!-- COLUMN 3:WHY CHOOSE -->
      <div class="property-info-card why-choose-card">
@@ -275,79 +263,43 @@
    </div>
   </section>
 
-    <section class="popular-areas">
-
-  <div class="section-header">
-
-    <div>
-
-      <h2>Popular Areas for {{ propertySEO.shortTitle }}</h2>
-
-      <p>Explore the most searched rental locations.</p>
-
-    </div>
-
-  </div>
-
-  <!-- CARDS -->
-
-<div class="areas-section">
-
-  <button
-    class="nav-btn left"
-    (click)="scrollAreas('left')">
-
-    <i class="fas fa-chevron-left"></i>
-
-  </button>
-
-  <div
-    class="areas-wrapper"
-    #areasContainer>
-
-    <a
-      class="area-card"
-      *ngFor="let area of featuredAreas"
-      [routerLink]="area.route">
-
-      <img
-        [src]="area.image"
-        [alt]="area.name + ' Rooms for Rent Kuala Lumpur'">
-
-      <div class="area-overlay"></div>
-
-      <div class="area-content">
-
-        <h3>
-          {{ area.shortName || area.name }}
-        </h3>
-
-        <span>
-          {{ area.listings }} listings
-        </span>
-
-        <div class="area-link">
-          See Now
-         <i class="fas fa-arrow-right"></i>
-        </div>
-
+   <section class="popular-areas">
+    <div class="section-header">
+      <div>
+        <h2>Popular Areas for {{ propertySEO.shortTitle }}</h2>
+        <p>Explore the most searched rental locations.</p>
       </div>
-
-    </a>
-
-  </div>
-
-  <button
-    class="nav-btn right"
-    (click)="scrollAreas('right')">
-
-    <i class="fas fa-chevron-right"></i>
-
-  </button>
-
-</div>
-
-</section>
+    </div>
+    <!-- CARDS -->
+    <div class="areas-section">
+      <button
+        class="nav-btn left"
+        (click)="scrollAreas('left')">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="areas-wrapper" #areasContainer>
+        <a class="area-card" *ngFor="let area of featuredAreas"[routerLink]="area.route">
+          <img [src]="area.image" [alt]="area.name + ' Rooms for Rent Kuala Lumpur'">
+          <div class="area-overlay"></div>
+          <div class="area-content">
+            <h3>
+              {{ area.shortName || area.name }}
+            </h3>
+            <span>
+              {{ area.listings }} listings
+            </span>
+            <div class="area-link">
+              See Now
+             <i class="fas fa-arrow-right"></i>
+            </div>
+          </div>
+        </a>
+      </div>
+      <button class="nav-btn right" (click)="scrollAreas('right')">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+   </section>
 
   <!-- FAQ + INCLUDED SECTION -->
   <section class="faq-section" *ngIf="propertySEO">
@@ -422,7 +374,5 @@
    </div>
   </section>
 
-
-  
 </section>
 

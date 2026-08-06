@@ -6,6 +6,7 @@ import { ContactComponent } from './features/contact/contact.component';
 import { RequestARoomComponent } from './features/request-a-room/request-a-room.component';
 import { RoomsComponent } from './features/rooms/rooms.component';
 import { PropertyTypeComponent } from './features/property-type/property-type.component';
+import { NearTransitComponent } from './features/near-transit/near-transit.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,18 @@ const routes: Routes = [
   { path: 'soho-kl', component: PropertyTypeComponent,  data: { property: 'soho-kl' }},
   { path: 'serviced-apartment-kl', component: PropertyTypeComponent,  data: { property: 'serviced-apartment-kl' }},
   { path: 'studio-unit-kl', component: PropertyTypeComponent,  data: { property: 'studio-unit-kl' }},
+
+  { path: 'room-near-mrt-kl', component: NearTransitComponent,  data: { transit: 'room-near-mrt-kl' }},
+  { path: 'room-near-lrt-kl', component: NearTransitComponent,  data: { transit: 'room-near-lrt-kl' }},
+  { path: 'room-near-monorail-kl', component: NearTransitComponent,  data: { transit: 'room-near-monorail-kl' }},
+  { path: 'room-near-ktm-kl', component: NearTransitComponent,  data: { transit: 'room-near-ktm-kl' }},
+  { path: 'room-near-kl-sentral', component: NearTransitComponent,  data: { transit: 'room-near-kl-sentral' }},
+  { path: 'room-near-klcc-mrt', component: NearTransitComponent,  data: { transit: 'room-near-klcc-mrt' }},
+  { path: 'room-near-bukit-bintang-mrt', component: NearTransitComponent,  data: { transit: 'room-near-bukit-bintang-mrt' }},
+  { path: 'room-near-trx-mrt', component: NearTransitComponent,  data: { transit: 'room-near-trx-mrt' }},
+  { path: 'room-near-muzium-negara', component: NearTransitComponent,  data: { transit: 'room-near-muzium-negara' }},
+  { path: 'room-near-pasar-seni', component: NearTransitComponent,  data: { transit: 'room-near-pasar-seni' }},
+  { path: 'room-near-ampang-park-mrt', component: NearTransitComponent,  data: { transit: 'room-near-ampang-park-mrt' }},
 
   { path: 'room-rental-klcc',component: AreasComponent,data: { area: 'klcc' }},
   { path: 'room-rental-bukit-bintang', component: AreasComponent,data: { area: 'bukit-bintang' }},

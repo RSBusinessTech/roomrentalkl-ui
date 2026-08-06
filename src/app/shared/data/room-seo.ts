@@ -5046,11 +5046,7 @@ faqs: [
       }
 
     ],
-
-
     breadcrumbName:
       'Unfurnished Rooms for Rent in Kuala Lumpur'
-
   }
-
 };

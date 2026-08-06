@@ -156,5 +156,4 @@ export const AREAS: Area[] = [
     image: 'assets/images/areas/putrajaya.jpg',
     listings: 49
   }
-
 ];

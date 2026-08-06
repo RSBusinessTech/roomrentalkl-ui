@@ -298,23 +298,19 @@ export class RoomsComponent implements OnInit, OnDestroy {
   }
   
   // =========================================
-// POPULAR LOCATIONS
-// =========================================
-showAllLocations: boolean = false;
-
-get displayedLocations() {
-
-  if (
-    !this.roomSEO ||
-    !this.roomSEO.popularLocations
-  ) {
-    return [];
-  }
-
-  return this.showAllLocations
-    ? this.roomSEO.popularLocations
-    : this.roomSEO.popularLocations.slice(0, 5);
-
-}
+  // POPULAR LOCATIONS
+  // =========================================
+  showAllLocations: boolean = false;
+  get displayedLocations() {
+    if (
+      !this.roomSEO ||
+      !this.roomSEO.popularLocations
+    ) {
+      return [];
+    }
+    return this.showAllLocations
+      ? this.roomSEO.popularLocations
+      : this.roomSEO.popularLocations.slice(0, 5);
   
+  } 
 }
